@@ -603,79 +603,89 @@
       slider.addEventListener("wheel", stopAuto, {passive:true});
     }
   </script>
-</body><!-- Messenger nổi liên kết Page Facebook -->
-<a class="messenger-chat-pro" href="https://m.me/61551243728713" target="_blank" rel="noopener" aria-label="Chat Messenger">
-  <div class="ms-bubble">Chat Messenger – phản hồi ngay</div>
-  <div class="ms-btn">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6c/Facebook_Messenger_logo_2020.svg" alt="Messenger">
+</body><!-- Messenger nổi - LOGO CHUẨN, KHÔNG LỖI -->
+<a class="fb-messenger-float" 
+   href="https://m.me/61551243728713" 
+   target="_blank" 
+   rel="noopener"
+   aria-label="Chat Messenger">
+  
+  <div class="fb-messenger-text">
+    Chat Messenger – phản hồi ngay
+  </div>
+
+  <div class="fb-messenger-btn">
+    <!-- LOGO MESSENGER SVG CHUẨN -->
+    <svg viewBox="0 0 48 48" width="34" height="34" xmlns="http://www.w3.org/2000/svg">
+      <radialGradient id="g" cx="19.247" cy="19.247" r="28.86" gradientUnits="userSpaceOnUse">
+        <stop offset="0" stop-color="#00C6FF"/>
+        <stop offset="1" stop-color="#0068FF"/>
+      </radialGradient>
+      <path fill="url(#g)" d="M24 4C12.954 4 4 12.06 4 22c0 5.017 2.286 9.54 6 12.722V44l6.758-3.708c2.213.614 4.594.95 7.242.95 11.046 0 20-8.06 20-18.242S35.046 4 24 4z"/>
+      <path fill="#fff" d="M15.5 26.5l7.1-7.6 4.9 4.9 7.5-4.9-7.1 7.6-4.9-4.9z"/>
+    </svg>
   </div>
 </a>
 
 <style>
-  .messenger-chat-pro{
-    position:fixed;
-    bottom:95px;            /* NẰM TRÊN ZALO */
-    right:20px;
-    z-index:99999;
-    display:flex;
-    align-items:center;
-    gap:10px;
-    font-family:Arial,sans-serif;
-  }
+.fb-messenger-float{
+  position:fixed;
+  right:20px;
+  bottom:95px; /* nằm trên Zalo */
+  z-index:99999;
+  display:flex;
+  align-items:center;
+  gap:10px;
+  font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial;
+}
 
-  .ms-bubble{
-    background:#ffffff;
-    color:#111;
-    padding:8px 12px;
-    border-radius:20px;
-    font-size:13px;
-    box-shadow:0 10px 24px rgba(0,0,0,.25);
-    animation:msFade .8s ease-in-out;
-    white-space:nowrap;
-  }
+.fb-messenger-text{
+  background:#fff;
+  color:#111;
+  padding:8px 14px;
+  border-radius:20px;
+  font-size:13px;
+  box-shadow:0 10px 25px rgba(0,0,0,.25);
+  white-space:nowrap;
+  animation:fadeIn .8s ease;
+}
 
-  .ms-btn{
-    width:64px;
-    height:64px;
-    border-radius:50%;
-    background:#00B2FF;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    box-shadow:0 0 0 rgba(0,178,255,.6);
-    animation:msPulse 1.4s infinite, msWiggle 2.5s infinite;
-  }
+.fb-messenger-btn{
+  width:64px;
+  height:64px;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:#0068FF;
+  box-shadow:0 0 0 rgba(0,104,255,.6);
+  animation:pulse 1.4s infinite, wiggle 2.6s infinite;
+}
 
-  .ms-btn img{
-    width:34px;
-    height:34px;
-  }
+@keyframes pulse{
+  0%{box-shadow:0 0 0 0 rgba(0,104,255,.6)}
+  70%{box-shadow:0 0 0 18px rgba(0,104,255,0)}
+  100%{box-shadow:0 0 0 0 rgba(0,104,255,0)}
+}
 
-  @keyframes msPulse{
-    0%{box-shadow:0 0 0 0 rgba(0,178,255,.6)}
-    70%{box-shadow:0 0 0 18px rgba(0,178,255,0)}
-    100%{box-shadow:0 0 0 0 rgba(0,178,255,0)}
-  }
+@keyframes wiggle{
+  0%,85%,100%{transform:rotate(0deg)}
+  88%{transform:rotate(6deg)}
+  91%{transform:rotate(-6deg)}
+  94%{transform:rotate(4deg)}
+  97%{transform:rotate(-4deg)}
+}
 
-  @keyframes msWiggle{
-    0%,85%,100%{transform:rotate(0deg)}
-    87%{transform:rotate(6deg)}
-    89%{transform:rotate(-6deg)}
-    91%{transform:rotate(6deg)}
-    93%{transform:rotate(-6deg)}
-    95%{transform:rotate(4deg)}
-    97%{transform:rotate(-4deg)}
-  }
+@keyframes fadeIn{
+  from{opacity:0;transform:translateX(10px)}
+  to{opacity:1;transform:translateX(0)}
+}
 
-  @keyframes msFade{
-    from{opacity:0;transform:translateX(10px)}
-    to{opacity:1;transform:translateX(0)}
-  }
+@media(max-width:768px){
+  .fb-messenger-text{display:none}
+}
+</style>
 
-  /* Mobile: ẩn bong bóng chữ cho gọn */
-  @media(max-width:768px){
-    .ms-bubble{display:none}
-  }
 </style>
 
 </html>
