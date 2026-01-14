@@ -1399,21 +1399,6 @@
       setInterval(tick, 1000);
     })();
 
-    // ====== QUICK VIEW + GALLERY + PRO FOMO ======
-    (function(){
-      // CTA đổi text sau 15s
-      setTimeout(()=>{
-        const ctaZalo = document.getElementById("ctaZalo");
-        const ctaCall = document.getElementById("ctaCall");
-        if(ctaZalo){
-          ctaZalo.textContent = "⚠️ Mẫu sắp hết – chốt ngay";
-          ctaZalo.classList.add("cta-hot");
-        }
-        if(ctaCall){
-          ctaCall.textContent = "Gọi chốt (ưu tiên)";
-          ctaCall.classList.add("cta-hot");
-        }
-      }, 15000);
 
       // Modal
       const bulletsMap = {
