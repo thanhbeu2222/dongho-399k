@@ -231,7 +231,24 @@
           <a class="btn" href="tel:0379156486">Gọi hotline</a>
         </div>
 
-        <div style="margin-top:14px;color:var(--muted);font-size:13px;">
+        <div style="margin-top:14px;color:var(--muted);font-size:13px;"><div class="card" style="margin-top:14px;padding:14px;border-color:rgba(212,175,55,.25);background:rgba(212,175,55,.06)">
+  <div style="display:flex;justify-content:space-between;gap:10px;align-items:center;flex-wrap:wrap;">
+    <div>
+      <div style="font-weight:900;color:var(--gold2);letter-spacing:.2px">🔥 SỐ LƯỢNG CÒN LẠI HÔM NAY</div>
+      <div style="margin-top:6px;color:var(--muted);font-size:13px;line-height:1.4">
+        Còn <b id="stockCount" style="color:#fff">—</b> chiếc • Ưu tiên khách chốt nhanh
+      </div>
+    </div>
+    <a id="holdBtn" class="btn gold" href="#" target="_blank">Giữ hàng qua Zalo</a>
+  </div>
+  <div style="margin-top:10px;height:10px;border-radius:999px;background:rgba(255,255,255,.06);overflow:hidden;border:1px solid rgba(255,255,255,.06)">
+    <div id="stockBar" style="height:100%;width:60%;background:linear-gradient(90deg, rgba(212,175,55,.95), rgba(255,221,119,.75));"></div>
+  </div>
+  <div style="margin-top:8px;color:var(--muted);font-size:12px">
+    *Số lượng hiển thị theo ngày trên trình duyệt. Muốn “đếm thật” theo kho cần bản nâng cao.
+  </div>
+</div>
+
           🔥 Mẹo chốt nhanh: Nhắn “<b>Mẫu A/B/C</b> + <b>địa chỉ</b>” để shop lên đơn.
         </div>
       </div>
@@ -255,7 +272,35 @@
     </div>
 
     <div id="mau" class="section">
-      <h2>Mẫu bán chạy</h2>
+      <h2>Mẫu bán chạy</h2><div class="section" id="feedback">
+  <h2>Feedback khách hàng</h2>
+  <div class="grid">
+    <div class="card product">
+      <div class="pimg">
+        <img src="fb-1.webp" loading="lazy" alt="Feedback 1">
+      </div>
+      <div class="ptitle"><b>Khách Hà Nội</b></div>
+      <p class="pdesc">“Hàng nhìn đẹp hơn tưởng tượng, lên tay sang. Đóng gói kỹ, giao nhanh.”</p>
+    </div>
+
+    <div class="card product">
+      <div class="pimg">
+        <img src="fb-2.webp" loading="lazy" alt="Feedback 2">
+      </div>
+      <div class="ptitle"><b>Khách đặt làm quà</b></div>
+      <p class="pdesc">“Tặng bạn rất hợp, nhìn lịch sự. Shop tư vấn nhiệt tình.”</p>
+    </div>
+
+    <div class="card product">
+      <div class="pimg">
+        <img src="fb-3.webp" loading="lazy" alt="Feedback 3">
+      </div>
+      <div class="ptitle"><b>Khách ở tỉnh</b></div>
+      <p class="pdesc">“Được kiểm tra trước khi nhận nên yên tâm. Sẽ ủng hộ thêm.”</p>
+    </div>
+  </div>
+</div>
+
       <div class="grid">
         <div class="card product">
           <div class="pimg"><img src="dongho-a.webp" loading="lazy" alt="Mẫu A 399K"></div>
@@ -299,6 +344,51 @@
       <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Icon_of_Zalo.svg" alt="Zalo">
     </div>
   </a>
-</body>
+</body><script>
+  // ====== STOCK COUNTER (đếm số lượng hiển thị) ======
+  const PHONE = "0379156486"; // đổi thành số Zalo của bạn nếu khác
+
+  // Mỗi ngày tạo 1 số lượng "còn lại" để tạo khan hiếm (mỗi máy sẽ giống nhau trong ngày)
+  const todayKey = new Date().toISOString().slice(0,10); // YYYY-MM-DD
+  const storageKey = "menwatch_stock_" + todayKey;
+
+  function seededNumber(seedStr){
+    // hash đơn giản -> số 0..1
+    let h = 0;
+    for (let i=0;i<seedStr.length;i++) h = (h*31 + seedStr.charCodeAt(i)) >>> 0;
+    return (h % 1000) / 1000;
+  }
+
+  let stock = localStorage.getItem(storageKey);
+  if(!stock){
+    // tạo stock trong khoảng 18-39
+    const r = seededNumber(todayKey + location.hostname);
+    stock = Math.floor(18 + r * 22);
+    localStorage.setItem(storageKey, String(stock));
+  } else {
+    stock = parseInt(stock, 10);
+  }
+
+  // Hiệu ứng "giảm nhẹ" theo thời gian trong ngày (không giảm dưới 6)
+  const minutes = new Date().getHours()*60 + new Date().getMinutes();
+  const drop = Math.floor(minutes / 180); // mỗi 3 giờ giảm 1
+  const shown = Math.max(6, stock - drop);
+
+  const stockEl = document.getElementById("stockCount");
+  const barEl = document.getElementById("stockBar");
+  const holdBtn = document.getElementById("holdBtn");
+
+  if(stockEl) stockEl.textContent = shown;
+
+  // Thanh tiến độ: giả định ban đầu 40 chiếc
+  const percent = Math.max(12, Math.min(100, Math.round((shown/40)*100)));
+  if(barEl) barEl.style.width = percent + "%";
+
+  // Link Zalo soạn sẵn
+  const msg = encodeURIComponent("Mình muốn GIỮ HÀNG đồng hồ 399K. Cho mình xin ảnh/video thật + chốt mẫu A/B/C. SĐT nhận hàng: ");
+  const zaloLink = `https://zalo.me/${PHONE}?text=${msg}`;
+  if(holdBtn) holdBtn.href = zaloLink;
+</script>
+
 </html>
 
