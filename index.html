@@ -32,12 +32,12 @@
       color:var(--text);
       min-height:100vh;
     }
-
     a{color:inherit}
+
     .wrap{
       max-width:980px;
       margin:0 auto;
-      padding:22px 16px 120px; /* chừa đáy cho mobile CTA */
+      padding:22px 16px 120px;
     }
 
     /* Top */
@@ -63,7 +63,6 @@
       color:var(--muted);
       font-size:13px;
     }
-
     .pill{
       display:inline-flex;
       align-items:center;
@@ -108,10 +107,7 @@
       gap:16px;
       padding:18px;
     }
-
-    .hero-left{
-      padding:6px 6px 10px;
-    }
+    .hero-left{padding:6px 6px 10px;}
     .h-title{
       font-size:28px;
       line-height:1.15;
@@ -310,7 +306,7 @@
     .c-actions{
       display:flex;
       gap:10px;
-      margin-top:12px;
+      margin-top:10px;
     }
     .c-actions a{
       flex:1;
@@ -330,6 +326,68 @@
       border:1px solid rgba(255,255,255,.08);
       color:#fff;
     }
+
+    /* ===== GIÁ CŨ – GIÁ MỚI TRONG CARD ===== */
+    .card-price{
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      gap:10px;
+      margin:10px 0 6px;
+    }
+    .card-price .old{
+      color:#8f8f8f;
+      text-decoration:line-through;
+      font-size:14px;
+    }
+    .card-price .new{
+      color:var(--gold);
+      font-size:16px;
+      font-weight:900;
+    }
+    .card-stars{
+      text-align:center;
+      color:#ffd700;
+      font-weight:900;
+      font-size:13px;
+      margin-bottom:4px;
+    }
+    .card-stock{
+      text-align:center;
+      font-size:12px;
+      color:#ffd700;
+      font-weight:800;
+      margin-bottom:4px;
+    }
+
+    /* ===== SALE BADGE + VIEW HINT ===== */
+    .sale-badge{
+      position:absolute;
+      top:10px; left:10px;
+      background:linear-gradient(90deg,#ff3b3b,#ff6b6b);
+      color:#fff;
+      font-size:12px;
+      font-weight:900;
+      padding:6px 10px;
+      border-radius:999px;
+      z-index:3;
+      box-shadow:0 6px 18px rgba(0,0,0,.35);
+    }
+    .view-hint{
+      position:absolute;
+      right:10px;
+      top:10px;
+      background:rgba(0,0,0,.55);
+      border:1px solid rgba(255,255,255,.10);
+      color:#fff;
+      font-size:11px;
+      font-weight:900;
+      padding:6px 10px;
+      border-radius:999px;
+      z-index:3;
+      display:none;
+    }
+    .view-hint.show{display:inline-flex}
 
     /* Best seller */
     .best-seller{
@@ -358,7 +416,7 @@
       padding:7px 12px;
       border-radius:999px;
       font-size:12px;
-      z-index:1;
+      z-index:2;
     }
     .bs-wrap{
       display:grid;
@@ -422,6 +480,77 @@
       font-size:14px;
     }
 
+    /* ===== BEST SELLER SUB IMAGES (2 ô ảnh phụ) ===== */
+    .bs-media{
+      display:grid;
+      grid-template-columns: 1fr 120px;
+      gap:12px;
+    }
+    .bs-subphotos{
+      display:flex;
+      flex-direction:column;
+      gap:12px;
+    }
+    .sub-photo{
+      border-radius:14px;
+      overflow:hidden;
+      border:1px solid rgba(255,255,255,.08);
+      background:#0b0d11;
+      aspect-ratio: 1/1;
+    }
+    .sub-photo img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      display:block;
+      transition:.25s;
+    }
+    .sub-photo:hover img{transform:scale(1.05)}
+    @media(max-width:768px){
+      .bs-media{grid-template-columns:1fr}
+      .bs-subphotos{flex-direction:row}
+    }
+
+    /* Compare */
+    .compare{
+      margin-top:14px;
+      padding:16px;
+      border-radius:20px;
+      background:linear-gradient(180deg,#090a0d,#121318);
+      border:1px solid rgba(255,215,0,.18);
+      box-shadow:0 0 40px rgba(255,215,0,.06);
+    }
+    .compare h3{
+      margin:0 0 10px;
+      font-size:16px;
+      font-weight:1000;
+      color:#fff;
+    }
+    .compare h3 span{color:var(--gold)}
+    .compare table{
+      width:100%;
+      border-collapse:separate;
+      border-spacing:0;
+      overflow:hidden;
+      border-radius:14px;
+      border:1px solid rgba(255,255,255,.08);
+    }
+    .compare th, .compare td{
+      padding:12px 12px;
+      font-size:13px;
+      text-align:left;
+      border-bottom:1px solid rgba(255,255,255,.06);
+    }
+    .compare th{
+      background:rgba(255,255,255,.04);
+      color:#fff;
+      font-weight:1000;
+    }
+    .compare td{color:var(--muted)}
+    .compare tr:last-child td{border-bottom:0}
+    .compare .ok{color:#2dff7a; font-weight:900}
+    .compare .no{color:#ff6b6b; font-weight:900}
+
     /* Video */
     .video-grid{
       display:grid;
@@ -479,10 +608,7 @@
       justify-content:space-between;
       gap:8px;
     }
-    .fb-title{
-      font-weight:1000;
-      color:#fff;
-    }
+    .fb-title{font-weight:1000;color:#fff;}
     .fb-stars{
       color:#ffd700;
       font-weight:1000;
@@ -573,7 +699,7 @@
     .fb-messenger-float{
       position:fixed;
       right:20px;
-      bottom:95px; /* nằm trên Zalo */
+      bottom:95px;
       z-index:99999;
       display:flex;
       align-items:center;
@@ -642,6 +768,180 @@
       color:#111;
       box-shadow:0 0 18px rgba(255,215,0,.22);
     }
+    .cta-hot{
+      animation: ctaPulse 1.2s infinite;
+    }
+    @keyframes ctaPulse{
+      0%{transform:scale(1); box-shadow:0 0 0 rgba(255,215,0,.0)}
+      70%{transform:scale(1.02); box-shadow:0 0 26px rgba(255,215,0,.18)}
+      100%{transform:scale(1); box-shadow:0 0 0 rgba(255,215,0,.0)}
+    }
+
+    /* Quickview button */
+    .quickview{
+      display:block;
+      margin-top:10px;
+      text-align:center;
+      padding:11px 10px;
+      border-radius:14px;
+      text-decoration:none;
+      font-weight:1000;
+      font-size:13px;
+      background:rgba(255,255,255,.06);
+      border:1px solid rgba(255,255,255,.10);
+      color:#fff;
+    }
+    .quickview:hover{opacity:.95; transform:translateY(-1px)}
+
+    /* Modal */
+    .modal{
+      position:fixed;
+      inset:0;
+      background:rgba(0,0,0,.72);
+      backdrop-filter: blur(8px);
+      display:none;
+      align-items:center;
+      justify-content:center;
+      padding:18px;
+      z-index:1000000;
+    }
+    .modal.show{display:flex;}
+    .modal-card{
+      width:min(920px, 100%);
+      border-radius:18px;
+      background:linear-gradient(180deg,#0a0c10,#141621);
+      border:1px solid rgba(255,215,0,.18);
+      box-shadow:0 20px 70px rgba(0,0,0,.6);
+      overflow:hidden;
+      position:relative;
+    }
+    .modal-close{
+      position:absolute;
+      top:10px; right:10px;
+      width:38px; height:38px;
+      border-radius:12px;
+      border:1px solid rgba(255,255,255,.10);
+      background:rgba(255,255,255,.06);
+      color:#fff;
+      font-weight:1000;
+      cursor:pointer;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      z-index:2;
+    }
+    .modal-inner{
+      display:grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap:0;
+    }
+    .modal-media{
+      background:#0b0d11;
+      border-right:1px solid rgba(255,255,255,.06);
+    }
+    .modal-media img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      display:block;
+      aspect-ratio: 4/3;
+    }
+
+    /* Gallery thumbs */
+    .thumb-row{
+      display:flex;
+      gap:10px;
+      padding:10px;
+      overflow:auto;
+      border-top:1px solid rgba(255,255,255,.06);
+      background:rgba(255,255,255,.02);
+    }
+    .thumb-row::-webkit-scrollbar{height:8px}
+    .thumb-row::-webkit-scrollbar-thumb{background:rgba(255,215,0,.18); border-radius:999px}
+    .thumb{
+      flex:0 0 86px;
+      border-radius:12px;
+      overflow:hidden;
+      border:1px solid rgba(255,255,255,.10);
+      background:#0b0d11;
+      cursor:pointer;
+    }
+    .thumb img{width:100%; height:64px; object-fit:cover; display:block}
+    .thumb.active{border-color:rgba(255,215,0,.55); box-shadow:0 0 0 2px rgba(255,215,0,.18) inset}
+
+    .modal-info{padding:14px 14px 16px;}
+    .modal-title{
+      font-size:18px;
+      font-weight:1000;
+      color:var(--gold);
+      margin:2px 0 6px;
+    }
+    .modal-desc{
+      color:var(--muted);
+      font-size:13px;
+      line-height:1.45;
+      margin:0 0 10px;
+    }
+    .modal-bullets{
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px 10px;
+      margin:10px 0 12px;
+    }
+    .modal-bullets span{
+      display:inline-flex;
+      align-items:center;
+      gap:6px;
+      background:rgba(255,255,255,.04);
+      border:1px solid rgba(255,255,255,.06);
+      border-radius:999px;
+      padding:6px 10px;
+      color:var(--muted);
+      font-size:13px;
+    }
+    .modal-bullets i{color:#2dff7a; font-style:normal}
+
+    .modal-actions{
+      display:flex;
+      gap:10px;
+      margin-top:10px;
+    }
+    .modal-actions a{
+      flex:1;
+      text-align:center;
+      padding:12px 12px;
+      border-radius:14px;
+      text-decoration:none;
+      font-weight:1000;
+      font-size:14px;
+    }
+    .modal-actions .m-buy{
+      background:linear-gradient(90deg,var(--gold),var(--gold2));
+      color:#111;
+    }
+    .modal-actions .m-call{
+      background:rgba(255,255,255,.06);
+      border:1px solid rgba(255,255,255,.10);
+      color:#fff;
+    }
+
+    /* toast */
+    .toast{
+      position:fixed;
+      left:50%;
+      bottom:140px;
+      transform:translateX(-50%);
+      background:rgba(0,0,0,.85);
+      color:#fff;
+      padding:10px 14px;
+      border-radius:14px;
+      font-size:13px;
+      box-shadow:0 10px 30px rgba(0,0,0,.45);
+      opacity:0;
+      transition:.4s;
+      z-index:999999;
+    }
+    .toast.show{opacity:1; transform:translateX(-50%) translateY(-6px);}
 
     /* Responsive */
     @media(max-width:900px){
@@ -649,6 +949,8 @@
       .video-grid{grid-template-columns:1fr}
       .video-card iframe{height:260px}
       .grid{grid-template-columns:1fr; gap:12px}
+      .modal-inner{grid-template-columns:1fr}
+      .modal-media{border-right:0; border-bottom:1px solid rgba(255,255,255,.06);}
     }
     @media(max-width:768px){
       .h-title{font-size:24px}
@@ -698,7 +1000,7 @@
               <span><i>✅</i> Có hộp</span>
               <span><i>✅</i> Đóng gói kỹ</span>
               <span><i>✅</i> Kiểm tra trước khi nhận</span>
-              <span><i>✅</i> Nhận Zalo để nhận ảnh/video thật</span>
+              <span><i>✅</i> Nhắn Zalo để nhận ảnh/video thật</span>
             </div>
           </div>
 
@@ -716,6 +1018,50 @@
       </div>
     </div>
 
+    <!-- SO SÁNH NHANH -->
+    <div class="section" id="compare">
+      <h2>So sánh nhanh <span class="gold">399K</span> vs đồng hồ hãng</h2>
+      <div class="compare">
+        <h3><span>Chốt nhanh:</span> 399K là lựa chọn “đeo sang – lên tay” tối ưu chi phí</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Tiêu chí</th>
+              <th>MenWatch Luxury 399K</th>
+              <th>Đồng hồ hãng (2–3 triệu)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Ngoại hình / lên tay</td>
+              <td class="ok">✔️ Đẹp – nổi bật</td>
+              <td class="ok">✔️</td>
+            </tr>
+            <tr>
+              <td>Phối đồ đi làm / đi chơi</td>
+              <td class="ok">✔️ Dễ phối</td>
+              <td class="ok">✔️</td>
+            </tr>
+            <tr>
+              <td>Quà tặng</td>
+              <td class="ok">✔️ Có hộp – lịch sự</td>
+              <td class="ok">✔️</td>
+            </tr>
+            <tr>
+              <td>Giá</td>
+              <td class="ok">✔️ 399K</td>
+              <td class="no">❌ 2–3 triệu</td>
+            </tr>
+            <tr>
+              <td>Nhận ảnh/video thật trước khi chốt</td>
+              <td class="ok">✔️ Có</td>
+              <td class="no">Tuỳ nơi</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
     <!-- BEST SELLER -->
     <div class="section" id="best">
       <h2><span class="gold">Mẫu Best Seller</span> (bán chạy nhất)</h2>
@@ -724,11 +1070,23 @@
         <div class="bs-badge">🔥 BEST SELLER</div>
 
         <div class="bs-wrap">
-          <div class="bs-photo">
-            <img src="dongho-b.jpg" loading="lazy" alt="Mẫu Hublot Quốc Dân ">
+          <!-- CỤM ẢNH (ảnh chính + 2 ảnh phụ) -->
+          <div class="bs-media">
+            <div class="bs-photo">
+              <img src="dongho-b.jpg" loading="lazy" alt="Mẫu Hublot Quốc Dân">
+            </div>
+            <div class="bs-subphotos">
+              <div class="sub-photo">
+                <img src="dongho-b-1.jpg" alt="Hublot mặt nghiêng">
+              </div>
+              <div class="sub-photo">
+                <img src="dongho-b-2.jpg" alt="Hublot lên tay">
+              </div>
+            </div>
           </div>
+
           <div class="bs-info">
-            <div class="bs-title">Đồng Hồ Hublot – Mặt Đen Đính Đá </div>
+            <div class="bs-title">Đồng Hồ Hublot – Mặt Đen Đính Đá</div>
             <div class="bs-sub">
               Hơn <b>999+</b> khách đã mua • Đổi trả lỗi kỹ thuật • Giao nhanh
             </div>
@@ -755,47 +1113,101 @@
       <h2>Mẫu bán chạy</h2>
       <div class="grid">
         <!-- A -->
-        <div class="card">
+        <div class="card"
+             data-tag="A"
+             data-title="Mẫu Hublot Trắng Đính Đá"
+             data-desc="Form gọn, mặt sáng, hợp đi làm/đi chơi."
+             data-img="dongho-a.jpg"
+             data-gallery="dongho-a.jpg,dongho-a-1.jpg,dongho-a-2.jpg">
+          <div class="sale-badge">-43%</div>
+          <div class="view-hint">👀 Vừa có người xem mẫu này</div>
           <div class="imgbox">
-            <img src="dongho-a.jbg" loading="lazy" alt="Chỉ còn 15 chiếc cuối">
+            <img src="dongho-a.jpg" loading="lazy" alt="Mẫu A 399K">
           </div>
           <div class="c-body">
-            <div class="c-title">Mẫu Hublot Trắng Đính Đá  – 399K</div>
+            <div class="c-title">Mẫu Hublot Trắng Đính Đá – 399K</div>
             <p class="c-desc">Form gọn, mặt sáng, hợp đi làm/đi chơi.</p>
+
+            <div class="card-stars">★★★★★ <small>(5.0)</small></div>
+            <div class="card-stock">⏳ Còn <b>3</b> chiếc</div>
+
+            <div class="card-price">
+              <span class="old">699.000đ</span>
+              <span class="new">399.000đ</span>
+            </div>
+
             <div class="c-actions">
               <a class="buy" href="https://zalo.me/0966922183" target="_blank" rel="noopener">Đặt Ngay</a>
               <a class="call" href="tel:0966922183">Gọi</a>
             </div>
+
+            <a class="quickview" href="#" data-qv="1">Xem nhanh (ảnh lớn + thông tin)</a>
           </div>
         </div>
 
         <!-- B -->
-        <div class="card">
+        <div class="card"
+             data-tag="B"
+             data-title="Mẫu Hublot Đính Đá Full"
+             data-desc="Nhìn nam tính, dễ phối đồ, tặng quà hợp."
+             data-img="dongho-c.jpg"
+             data-gallery="dongho-c.jpg,dongho-c-1.jpg,dongho-c-2.jpg">
+          <div class="sale-badge">-50%</div>
+          <div class="view-hint">👀 Vừa có người xem mẫu này</div>
           <div class="imgbox">
-            <img src="dongho-c.jbg" loading="lazy" alt="Chỉ còn 22 chiếc cuối">
+            <img src="dongho-c.jpg" loading="lazy" alt="Mẫu B 399K">
           </div>
           <div class="c-body">
             <div class="c-title">Mẫu Hublot Đính Đá Full – 399K</div>
             <p class="c-desc">Nhìn nam tính, dễ phối đồ, tặng quà hợp.</p>
+
+            <div class="card-stars">★★★★★ <small>(5.0)</small></div>
+            <div class="card-stock">⏳ Còn <b>2</b> chiếc</div>
+
+            <div class="card-price">
+              <span class="old">799.000đ</span>
+              <span class="new">399.000đ</span>
+            </div>
+
             <div class="c-actions">
               <a class="buy" href="https://zalo.me/0966922183" target="_blank" rel="noopener">Đặt Ngay</a>
               <a class="call" href="tel:0966922183">Gọi</a>
             </div>
+
+            <a class="quickview" href="#" data-qv="1">Xem nhanh (ảnh lớn + thông tin)</a>
           </div>
         </div>
 
-        <!-- C (tạm dùng ảnh B nếu chưa có) -->
-        <div class="card">
+        <!-- C -->
+        <div class="card"
+             data-tag="C"
+             data-title="Mẫu C"
+             data-desc="Dây chắc, khoá tiện, đeo êm tay."
+             data-img="dongho-d.jpg"
+             data-gallery="dongho-d.jpg,dongho-d-1.jpg,dongho-d-2.jpg">
+          <div class="sale-badge">-33%</div>
+          <div class="view-hint">👀 Vừa có người xem mẫu này</div>
           <div class="imgbox">
-            <img src="dongho-d.jbg" loading="lazy" alt="Mẫu C 399K">
+            <img src="dongho-d.jpg" loading="lazy" alt="Mẫu C 399K">
           </div>
           <div class="c-body">
             <div class="c-title">Mẫu C – 399K</div>
             <p class="c-desc">Dây chắc, khoá tiện, đeo êm tay.</p>
+
+            <div class="card-stars">★★★★★ <small>(5.0)</small></div>
+            <div class="card-stock">⏳ Còn <b>4</b> chiếc</div>
+
+            <div class="card-price">
+              <span class="old">599.000đ</span>
+              <span class="new">399.000đ</span>
+            </div>
+
             <div class="c-actions">
               <a class="buy" href="https://zalo.me/0966922183" target="_blank" rel="noopener">Đặt Ngay</a>
               <a class="call" href="tel:0966922183">Gọi</a>
             </div>
+
+            <a class="quickview" href="#" data-qv="1">Xem nhanh (ảnh lớn + thông tin)</a>
           </div>
         </div>
       </div>
@@ -807,9 +1219,10 @@
 
       <div class="video-grid">
         <div class="video-card">
-          <!-- Bạn thay link YouTube/TikTok embed ở đây -->
+          <!-- Lưu ý: iframe chỉ chạy đúng khi dùng link embed chuẩn (YouTube/Facebook embed).
+               Nếu bạn muốn, gửi link video thật mình đổi giúp. -->
           <iframe
-            src="https://www.facebook.com/share/r/17vPHtp212/"
+            src="about:blank"
             title="Video review"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             allowfullscreen>
@@ -830,19 +1243,41 @@
       </div>
     </div>
 
-    <!-- FEEDBACK (SLIDER) - Ở CUỐI -->
+    <!-- FEEDBACK -->
     <div class="section" id="feedback">
       <h2>Feedback khách hàng</h2>
 
       <div class="slider" aria-label="Feedback slider">
         <div class="fb-card">
           <div class="fb-head">
-            <div class="fb-title">Khách Hà Nội</div>
+            <div class="fb-title">Khách Hà Nội (mẫu Hublot Trắng)</div>
             <div class="fb-stars">★★★★★</div>
           </div>
           <div class="fb-body">
-            “Hàng nhìn đẹp hơn tưởng tượng, lên tay sang. Đóng gói kỹ, giao nhanh.”
-            <div class="fb-tag">✅ Đã mua</div>
+            “Mẫu trắng lên tay sáng, nhìn sang hơn ảnh. Giao nhanh, đóng gói kỹ.”
+            <div class="fb-tag">✅ Đã mua mẫu A</div>
+          </div>
+        </div>
+
+        <div class="fb-card">
+          <div class="fb-head">
+            <div class="fb-title">Khách TP.HCM (mẫu Full Đá)</div>
+            <div class="fb-stars">★★★★★</div>
+          </div>
+          <div class="fb-body">
+            “Full đá nhìn nổi bật, đi tiệc hợp. Shop gửi ảnh/video thật trước khi chốt.”
+            <div class="fb-tag">✅ Đã mua mẫu B</div>
+          </div>
+        </div>
+
+        <div class="fb-card">
+          <div class="fb-head">
+            <div class="fb-title">Khách Hải Phòng (mẫu C)</div>
+            <div class="fb-stars">★★★★★</div>
+          </div>
+          <div class="fb-body">
+            “Dây chắc, khoá tiện. Giá 399K quá ổn, được kiểm tra trước khi nhận.”
+            <div class="fb-tag">🚚 Giao nhanh</div>
           </div>
         </div>
 
@@ -852,43 +1287,25 @@
             <div class="fb-stars">★★★★★</div>
           </div>
           <div class="fb-body">
-            “Tặng bạn rất hợp, nhìn lịch sự. Shop tư vấn nhiệt tình.”
+            “Tặng bạn rất hợp, có hộp nhìn lịch sự. Bạn nhận quà khen đẹp.”
             <div class="fb-tag">🎁 Quà tặng</div>
-          </div>
-        </div>
-
-        <div class="fb-card">
-          <div class="fb-head">
-            <div class="fb-title">Khách ở tỉnh</div>
-            <div class="fb-stars">★★★★★</div>
-          </div>
-          <div class="fb-body">
-            “Được kiểm tra trước khi nhận nên yên tâm. Sẽ ủng hộ thêm.”
-            <div class="fb-tag">🚚 Giao nhanh</div>
-          </div>
-        </div>
-
-        <div class="fb-card">
-          <div class="fb-head">
-            <div class="fb-title">Khách quay lại</div>
-            <div class="fb-stars">★★★★★</div>
-          </div>
-          <div class="fb-body">
-            “Đeo êm tay, phối đồ dễ. Giá quá ổn so với ngoại hình.”
-            <div class="fb-tag">⭐ Best value</div>
           </div>
         </div>
       </div>
 
       <div class="footer">
-        © MenWatch Luxury • menwatchluxury.com 
-        • Hotline/Zalo: 0966922183
-        • Fanpage : MenWatch Luxury 
+        © MenWatch Luxury • Hotline/Zalo: 0966922183 • Fanpage: MenWatch Luxury
       </div>
     </div>
   </div>
 
-  <!-- Messenger nổi - LOGO CHUẨN -->
+  <!-- MOBILE STICKY CTA -->
+  <div class="mobile-cta" id="mobileCta">
+    <a class="cta-zalo" id="ctaZalo" href="https://zalo.me/0966922183" target="_blank" rel="noopener">Nhắn Zalo chốt mẫu</a>
+    <a class="cta-call" id="ctaCall" href="tel:0966922183">Gọi chốt nhanh</a>
+  </div>
+
+  <!-- Messenger nổi -->
   <a class="fb-messenger-float" href="https://m.me/61551243728713" target="_blank" rel="noopener" aria-label="Chat Messenger">
     <div class="fb-messenger-text">Chat Messenger – phản hồi ngay</div>
     <div class="fb-messenger-btn">
@@ -909,6 +1326,36 @@
     <div class="zalo-btn"><span>Zalo</span></div>
   </a>
 
+  <!-- QUICK VIEW MODAL -->
+  <div class="modal" id="qvModal" aria-hidden="true">
+    <div class="modal-card" role="dialog" aria-modal="true" aria-label="Xem nhanh sản phẩm">
+      <button class="modal-close" id="qvClose" aria-label="Đóng">✕</button>
+      <div class="modal-inner">
+        <div class="modal-media">
+          <img id="qvImg" src="" alt="Ảnh sản phẩm">
+          <div class="thumb-row" id="qvThumbs" aria-label="Ảnh khác"></div>
+        </div>
+        <div class="modal-info">
+          <div class="modal-title" id="qvTitle">Sản phẩm</div>
+          <p class="modal-desc" id="qvDesc"></p>
+
+          <div class="modal-bullets" id="qvBullets"></div>
+
+          <div class="modal-actions">
+            <a class="m-buy" href="https://zalo.me/0966922183" target="_blank" rel="noopener">Chốt qua Zalo</a>
+            <a class="m-call" href="tel:0966922183">Gọi để chốt</a>
+          </div>
+
+          <div class="checks" style="margin-top:12px">
+            <span><i>✅</i> Nhận ảnh/video thật</span>
+            <span><i>✅</i> Kiểm tra trước khi nhận</span>
+            <span><i>✅</i> Giao nhanh</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <script>
     // ====== ĐANG CÓ NGƯỜI XEM (nhảy số) ======
     (function(){
@@ -925,16 +1372,16 @@
       }, 3500);
     })();
 
-    // ====== KHAN HIẾM + ĐẾM NGƯỢC ======
+    // ====== KHAN HIẾM CHUNG + ĐẾM NGƯỢC ======
     (function(){
       const stockEl = document.getElementById("stockCount");
       const cdEl = document.getElementById("countdown");
       if(!stockEl || !cdEl) return;
 
-      let stock = 7;              // <-- chỉnh tồn ở đây
+      let stock = 7;
       stockEl.textContent = stock;
 
-      let seconds = 10 * 60;      // 10 phút
+      let seconds = 10 * 60; // 10 phút
 
       function tick(){
         seconds--;
@@ -950,6 +1397,185 @@
         cdEl.textContent = m + ":" + s;
       }
       setInterval(tick, 1000);
+    })();
+
+    // ====== QUICK VIEW + GALLERY + PRO FOMO ======
+    (function(){
+      // CTA đổi text sau 15s
+      setTimeout(()=>{
+        const ctaZalo = document.getElementById("ctaZalo");
+        const ctaCall = document.getElementById("ctaCall");
+        if(ctaZalo){
+          ctaZalo.textContent = "⚠️ Mẫu sắp hết – chốt ngay";
+          ctaZalo.classList.add("cta-hot");
+        }
+        if(ctaCall){
+          ctaCall.textContent = "Gọi chốt (ưu tiên)";
+          ctaCall.classList.add("cta-hot");
+        }
+      }, 15000);
+
+      // Modal
+      const bulletsMap = {
+        "A": ["✅ Đeo sang – lên tay","✅ Có hộp","✅ Kiểm tra trước khi nhận","✅ Nhắn Zalo nhận ảnh/video thật"],
+        "B": ["✅ Nam tính – dễ phối đồ","✅ Có hộp","✅ Đóng gói kỹ","✅ Giao nhanh toàn quốc"],
+        "C": ["✅ Dây chắc – khoá tiện","✅ Đeo êm tay","✅ Có hộp","✅ Kiểm tra trước khi nhận"]
+      };
+
+      const modal = document.getElementById("qvModal");
+      const closeBtn = document.getElementById("qvClose");
+      const imgEl = document.getElementById("qvImg");
+      const thumbsEl = document.getElementById("qvThumbs");
+      const titleEl = document.getElementById("qvTitle");
+      const descEl = document.getElementById("qvDesc");
+      const bulletsEl = document.getElementById("qvBullets");
+
+      function renderThumbs(card){
+        if(!thumbsEl || !imgEl) return;
+        const gallery = (card.dataset.gallery || card.dataset.img || "")
+          .split(",").map(s=>s.trim()).filter(Boolean);
+
+        thumbsEl.innerHTML = "";
+        gallery.forEach((src, idx)=>{
+          const d = document.createElement("div");
+          d.className = "thumb" + (idx===0 ? " active" : "");
+          d.innerHTML = '<img src="'+src+'" alt="Ảnh '+(idx+1)+'">';
+          d.addEventListener("click", ()=>{
+            imgEl.src = src;
+            thumbsEl.querySelectorAll(".thumb").forEach(t=>t.classList.remove("active"));
+            d.classList.add("active");
+          });
+          thumbsEl.appendChild(d);
+        });
+      }
+
+      function openModal(card){
+        const title = card.dataset.title || "Sản phẩm";
+        const desc = card.dataset.desc || "";
+        const img = card.dataset.img || "";
+        const tag = card.dataset.tag || "A";
+
+        titleEl.textContent = title + " – 399K";
+        descEl.textContent = desc;
+        imgEl.src = img;
+
+        bulletsEl.innerHTML = "";
+        (bulletsMap[tag] || []).forEach(t=>{
+          const s = document.createElement("span");
+          s.innerHTML = '<i>✅</i> ' + t.replace("✅ ","");
+          bulletsEl.appendChild(s);
+        });
+
+        renderThumbs(card);
+
+        modal.classList.add("show");
+        modal.setAttribute("aria-hidden","false");
+        document.body.style.overflow = "hidden";
+      }
+
+      function closeModal(){
+        modal.classList.remove("show");
+        modal.setAttribute("aria-hidden","true");
+        document.body.style.overflow = "";
+      }
+
+      document.addEventListener("click", (e)=>{
+        const btn = e.target.closest('a.quickview[data-qv="1"]');
+        if(!btn) return;
+        e.preventDefault();
+        const card = btn.closest(".card");
+        if(card) openModal(card);
+      });
+
+      closeBtn && closeBtn.addEventListener("click", closeModal);
+      modal && modal.addEventListener("click", (e)=>{
+        if(e.target === modal) closeModal();
+      });
+      document.addEventListener("keydown",(e)=>{
+        if(e.key === "Escape") closeModal();
+      });
+
+      // PRO: view hint khi card vào viewport
+      const io = new IntersectionObserver((entries)=>{
+        entries.forEach(e=>{
+          if(!e.isIntersecting) return;
+          const card = e.target;
+          const hint = card.querySelector(".view-hint");
+          if(!hint) return;
+          hint.classList.add("show");
+          setTimeout(()=>hint.classList.remove("show"), 1600);
+        });
+      }, {threshold: 0.55});
+      document.querySelectorAll(".card[data-tag]").forEach(c=>io.observe(c));
+
+      // PRO: tồn kho riêng từng mẫu + tự giảm ngẫu nhiên
+      let currentTag = null;
+      const stock = {A:3, B:2, C:4};
+      const stockEls = {};
+
+      document.querySelectorAll('.card[data-tag]').forEach(card=>{
+        const tag = card.dataset.tag;
+        const el = card.querySelector('.card-stock');
+        if(tag && el) stockEls[tag] = el;
+      });
+
+      function updateStock(tag){
+        if(stockEls[tag]) stockEls[tag].innerHTML = "⏳ Còn <b>"+stock[tag]+"</b> chiếc";
+      }
+      Object.keys(stock).forEach(updateStock);
+
+      function scheduleStockDrop(){
+        const delay = 70000 + Math.floor(Math.random()*50000);
+        setTimeout(()=>{
+          const tags = ["A","B","C"];
+          const pick = tags[Math.floor(Math.random()*tags.length)];
+          if(stock[pick] > 1){
+            stock[pick]--;
+            updateStock(pick);
+          }
+          scheduleStockDrop();
+        }, delay);
+      }
+      scheduleStockDrop();
+
+      // PRO: ưu tiên mẫu đang xem cho toast
+      document.addEventListener("click",(e)=>{
+        const card = e.target.closest(".card[data-tag]");
+        if(card) currentTag = card.dataset.tag || currentTag;
+      });
+
+      const names = ["Hà Nội","TP.HCM","Hải Phòng","Đà Nẵng","Cần Thơ","Bình Dương"];
+      const products = {A:"Hublot Trắng", B:"Hublot Full Đá", C:"Mẫu C"};
+      let toast = document.querySelector(".toast");
+      if(!toast){
+        toast = document.createElement("div");
+        toast.className = "toast";
+        document.body.appendChild(toast);
+      }
+
+      function showToast(){
+        const city = names[Math.floor(Math.random()*names.length)];
+        const tag = currentTag && products[currentTag] ? currentTag : ["A","B","C"][Math.floor(Math.random()*3)];
+        const p = products[tag] || "mẫu hot";
+        const variant = Math.random() < 0.5
+          ? "🔥 Khách ở <b>"+city+"</b> vừa đặt <b>"+p+"</b>"
+          : "👀 Có người vừa xem <b>"+p+"</b> (đang hot)";
+        toast.innerHTML = variant;
+        toast.classList.add("show");
+        setTimeout(()=>toast.classList.remove("show"),2200);
+      }
+      setInterval(showToast, 6500);
+
+      // Nếu mẫu đang xem tồn <=2 thì CTA đổi theo mẫu
+      function checkHotCTA(){
+        const ctaZalo = document.getElementById("ctaZalo");
+        if(!ctaZalo) return;
+        if(currentTag && stock[currentTag] <= 2){
+          ctaZalo.textContent = "⚠️ "+(products[currentTag]||"Mẫu hot")+" sắp hết – chốt ngay";
+          ctaZalo.classList.add("cta-hot");
+        }
+      }
+      setInterval(checkHotCTA, 2500);
     })();
   </script>
 </body>
