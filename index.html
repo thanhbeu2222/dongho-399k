@@ -339,24 +339,6 @@
           <div class="small">
             ✅ Có hộp • ✅ Đóng gói kỹ • ✅ Kiểm tra trước khi nhận<br>
             📦 Nhắn Zalo để nhận ảnh/video thật & chọn mẫu hợp tay.
-             <!-- BEST SELLER SECTION -->
-<div class="best-seller">
-  <div class="bs-badge">🔥 BEST SELLER</div>
-
-  <div class="bs-gallery">
-    <img src="dongho-a.webp" alt="Đồng hồ best seller 1">
-    <img src="dongho-b.webp" alt="Đồng hồ best seller 2">
-  </div>
-
-  <div class="bs-info">
-    <div class="bs-title">Mẫu A – Bán chạy nhất</div>
-    <div class="bs-sub">Hơn <b>999+</b> khách đã mua • Đánh giá 5⭐</div>
-
-    <div class="bs-actions">
-      <a href="https://zalo.me/0966922183" class="bs-btn">👉 Đặt mẫu này qua Zalo</a>
-    </div>
-  </div>
-</div>
           </div>
         </div>
       </div>
@@ -369,6 +351,18 @@
         <div class="card product">
           <div class="pimg"><img src="dongho-a.webp" loading="lazy" alt="Mẫu A 399K"></div>
           <div class="ptitle"><b>Mẫu A</b> • 399K</div>
+          <!-- KHU KÍCH CHỐT: đang xem + khan hiếm -->
+<div class="urgency-bar">
+  <div class="live-view">
+    <span class="dot"></span>
+    <span><b id="viewCount">23</b> người đang xem</span>
+  </div>
+
+  <div class="stock-left">
+    ⏳ Còn <b id="stockCount">7</b> sản phẩm • Chốt nhanh trong <b id="countdown">09:59</b>
+  </div>
+</div>
+
           <p class="pdesc">Form gọn, mặt sáng, hợp đi làm/đi chơi.</p>
           <div class="row">
             <a class="btn gold" id="buyA" href="#" target="_blank" rel="noopener">Đặt mẫu A</a>
@@ -379,6 +373,18 @@
         <div class="card product">
           <div class="pimg"><img src="dongho-b.webp" loading="lazy" alt="Mẫu B 399K"></div>
           <div class="ptitle"><b>Mẫu B</b> • 399K</div>
+          <!-- KHU KÍCH CHỐT: đang xem + khan hiếm -->
+<div class="urgency-bar">
+  <div class="live-view">
+    <span class="dot"></span>
+    <span><b id="viewCount">23</b> người đang xem</span>
+  </div>
+
+  <div class="stock-left">
+    ⏳ Còn <b id="stockCount">7</b> sản phẩm • Chốt nhanh trong <b id="countdown">09:59</b>
+  </div>
+</div>
+
           <p class="pdesc">Nhìn nam tính, dễ phối đồ, tặng quà hợp.</p>
           <div class="row">
             <a class="btn gold" id="buyB" href="#" target="_blank" rel="noopener">Đặt mẫu B</a>
@@ -389,6 +395,18 @@
         <div class="card product">
           <div class="pimg"><img src="dongho-c.webp" loading="lazy" alt="Mẫu C 399K"></div>
           <div class="ptitle"><b>Mẫu C</b> • 399K</div>
+          <!-- KHU KÍCH CHỐT: đang xem + khan hiếm -->
+<div class="urgency-bar">
+  <div class="live-view">
+    <span class="dot"></span>
+    <span><b id="viewCount">23</b> người đang xem</span>
+  </div>
+
+  <div class="stock-left">
+    ⏳ Còn <b id="stockCount">7</b> sản phẩm • Chốt nhanh trong <b id="countdown">09:59</b>
+  </div>
+</div>
+
           <p class="pdesc">Dây chắc, khoá tiện, đeo êm tay.</p>
           <div class="row">
             <a class="btn gold" id="buyC" href="#" target="_blank" rel="noopener">Đặt mẫu C</a>
@@ -621,6 +639,65 @@
       slider.addEventListener("wheel", stopAuto, {passive:true});
     }
   </script>
+<script>
+  // ========== ĐANG CÓ NGƯỜI XEM (tự nhảy số) ==========
+  (function(){
+    const el = document.getElementById("viewCount");
+    if(!el) return;
+
+    function rand(min,max){ return Math.floor(Math.random()*(max-min+1))+min; }
+
+    let current = rand(18, 46);
+    el.textContent = current;
+
+    setInterval(() => {
+      // tăng/giảm nhẹ cho giống thật
+      current += rand(-3, 4);
+      if(current < 12) current = 12;
+      if(current > 69) current = 69;
+      el.textContent = current;
+    }, 3500);
+  })();
+
+  // ========== KHAN HIẾM + ĐẾM NGƯỢC ==========
+  (function(){
+    const stockEl = document.getElementById("stockCount");
+    const cdEl = document.getElementById("countdown");
+    if(!stockEl || !cdEl) return;
+
+    // Bạn chỉnh số tồn ở đây:
+    let stock = 7;             // <-- còn 7 sản phẩm
+    stockEl.textContent = stock;
+
+    // Đếm ngược 10 phút, hết thì reset và giảm tồn (giống “cháy hàng”)
+    let seconds = 10 * 60;     // 10 phút
+
+    function tick(){
+      seconds--;
+      if(seconds <= 0){
+        // reset 10 phút
+        seconds = 10 * 60;
+
+        // thỉnh thoảng giảm tồn 1
+        if(stock > 1){
+          stock--;
+          stockEl.textContent = stock;
+        }
+      }
+
+      const m = String(Math.floor(seconds/60)).padStart(2,"0");
+      const s = String(seconds%60).padStart(2,"0");
+      cdEl.textContent = `${m}:${s}`;
+    }
+
+    setInterval(tick, 1000);
+  })();
+</script>
+<!-- MOBILE STICKY CTA: Zalo + Gọi -->
+<div class="mobile-cta">
+  <a class="cta-zalo" href="https://zalo.me/0966922183" target="_blank" rel="noopener">Đặt qua Zalo</a>
+  <a class="cta-call" href="tel:0966922183">Gọi ngay</a>
+</div>
 </body><!-- Messenger nổi - LOGO CHUẨN, KHÔNG LỖI -->
 <a class="fb-messenger-float" 
    href="https://m.me/61551243728713" 
@@ -702,91 +779,101 @@
 @media(max-width:768px){
   .fb-messenger-text{display:none}
 }
-</style>/* BEST SELLER */
-.best-seller{
-  margin-top:30px;
-  padding:20px;
-  border-radius:16px;
-  background:linear-gradient(180deg,#0b0b0b,#141414);
-  border:1px solid rgba(255,215,0,.25);
-  box-shadow:0 0 40px rgba(255,215,0,.08);
-  position:relative;
+</style>/* MOBILE STICKY CTA */
+.mobile-cta{
+  position:fixed;
+  left:0; right:0;
+  bottom:0;
+  padding:10px 12px;
+  background:rgba(0,0,0,.78);
+  backdrop-filter: blur(10px);
+  border-top:1px solid rgba(255,215,0,.15);
+  display:none;
+  gap:10px;
+  z-index:999999;
 }
 
-.bs-badge{
-  position:absolute;
-  top:-12px;
-  left:20px;
-  background:linear-gradient(90deg,#ffd700,#c9a227);
-  color:#111;
-  font-weight:700;
-  padding:6px 14px;
-  border-radius:999px;
-  font-size:13px;
-}
-
-.bs-gallery{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:14px;
-}
-
-.bs-gallery img{
-  width:100%;
-  border-radius:14px;
-  object-fit:cover;
-  transition:.3s;
-}
-
-.bs-gallery img:hover{
-  transform:scale(1.05);
-  box-shadow:0 0 25px rgba(255,215,0,.3);
-}
-
-.bs-info{
-  margin-top:16px;
+.mobile-cta a{
+  flex:1;
   text-align:center;
+  padding:14px 12px;
+  border-radius:14px;
+  font-weight:800;
+  text-decoration:none;
+  font-size:15px;
 }
 
-.bs-title{
-  color:#ffd700;
-  font-size:18px;
-  font-weight:700;
+.cta-zalo{
+  background:linear-gradient(90deg,#00e676,#00c853);
+  color:#08110b;
+  box-shadow:0 0 18px rgba(0,230,118,.25);
 }
 
-.bs-sub{
-  color:#ccc;
-  font-size:14px;
-  margin-top:4px;
-}
-
-.bs-actions{
-  margin-top:14px;
-}
-
-.bs-btn{
-  display:inline-block;
-  padding:12px 20px;
+.cta-call{
   background:linear-gradient(90deg,#ffd700,#c9a227);
   color:#111;
-  font-weight:700;
-  border-radius:999px;
-  text-decoration:none;
-  box-shadow:0 0 20px rgba(255,215,0,.4);
+  box-shadow:0 0 18px rgba(255,215,0,.22);
 }
 
-.bs-btn:hover{
-  opacity:.9;
-}
-
-/* Mobile */
+/* Chỉ hiện trên mobile */
 @media(max-width:768px){
-  .bs-gallery{
-    grid-template-columns:1fr;
-  }
+  .mobile-cta{display:flex;}
+  body{ padding-bottom:86px; } /* chừa chỗ không che nội dung */
 }
 
 
 </style>
+/* URGENCY BAR */
+.urgency-bar{
+  margin-top:14px;
+  padding:12px 14px;
+  border-radius:14px;
+  background:linear-gradient(180deg,#0c0c0c,#141414);
+  border:1px solid rgba(255,215,0,.22);
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+  box-shadow:0 0 30px rgba(255,215,0,.06);
+}
+
+.live-view{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  color:#eaeaea;
+  font-size:13px;
+}
+
+.live-view .dot{
+  width:9px;height:9px;border-radius:50%;
+  background:#2dff7a;
+  box-shadow:0 0 0 rgba(45,255,122,.6);
+  animation:dotPulse 1.2s infinite;
+}
+
+@keyframes dotPulse{
+  0%{box-shadow:0 0 0 0 rgba(45,255,122,.55)}
+  70%{box-shadow:0 0 0 10px rgba(45,255,122,0)}
+  100%{box-shadow:0 0 0 0 rgba(45,255,122,0)}
+}
+
+.stock-left{
+  color:#ffd700;
+  font-size:13px;
+  text-align:right;
+}
+
+/* MOBILE: dồn xuống 2 dòng cho dễ nhìn */
+@media(max-width:768px){
+  .urgency-bar{
+    flex-direction:column;
+    align-items:flex-start;
+  }
+  .stock-left{
+    text-align:left;
+    width:100%;
+  }
+}
 
 </html>
