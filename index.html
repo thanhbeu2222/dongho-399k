@@ -603,5 +603,79 @@
       slider.addEventListener("wheel", stopAuto, {passive:true});
     }
   </script>
-</body>
+</body><!-- Messenger nổi liên kết Page Facebook -->
+<a class="messenger-chat-pro" href="https://m.me/61551243728713" target="_blank" rel="noopener" aria-label="Chat Messenger">
+  <div class="ms-bubble">Chat Messenger – phản hồi ngay</div>
+  <div class="ms-btn">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6c/Facebook_Messenger_logo_2020.svg" alt="Messenger">
+  </div>
+</a>
+
+<style>
+  .messenger-chat-pro{
+    position:fixed;
+    bottom:95px;            /* NẰM TRÊN ZALO */
+    right:20px;
+    z-index:99999;
+    display:flex;
+    align-items:center;
+    gap:10px;
+    font-family:Arial,sans-serif;
+  }
+
+  .ms-bubble{
+    background:#ffffff;
+    color:#111;
+    padding:8px 12px;
+    border-radius:20px;
+    font-size:13px;
+    box-shadow:0 10px 24px rgba(0,0,0,.25);
+    animation:msFade .8s ease-in-out;
+    white-space:nowrap;
+  }
+
+  .ms-btn{
+    width:64px;
+    height:64px;
+    border-radius:50%;
+    background:#00B2FF;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    box-shadow:0 0 0 rgba(0,178,255,.6);
+    animation:msPulse 1.4s infinite, msWiggle 2.5s infinite;
+  }
+
+  .ms-btn img{
+    width:34px;
+    height:34px;
+  }
+
+  @keyframes msPulse{
+    0%{box-shadow:0 0 0 0 rgba(0,178,255,.6)}
+    70%{box-shadow:0 0 0 18px rgba(0,178,255,0)}
+    100%{box-shadow:0 0 0 0 rgba(0,178,255,0)}
+  }
+
+  @keyframes msWiggle{
+    0%,85%,100%{transform:rotate(0deg)}
+    87%{transform:rotate(6deg)}
+    89%{transform:rotate(-6deg)}
+    91%{transform:rotate(6deg)}
+    93%{transform:rotate(-6deg)}
+    95%{transform:rotate(4deg)}
+    97%{transform:rotate(-4deg)}
+  }
+
+  @keyframes msFade{
+    from{opacity:0;transform:translateX(10px)}
+    to{opacity:1;transform:translateX(0)}
+  }
+
+  /* Mobile: ẩn bong bóng chữ cho gọn */
+  @media(max-width:768px){
+    .ms-bubble{display:none}
+  }
+</style>
+
 </html>
