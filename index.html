@@ -4,31 +4,9 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>MenWatch Luxury • Đồng hồ nam 399K</title>
-  <meta name="description" content="Đồng hồ nam cao cấp  – thiết kế sang, đeo đẹp. Đặt hàng nhanh qua Zalo. MenWatch Luxury." />
+  <meta name="description" content="Đồng hồ nam 399K – thiết kế sang, đeo đẹp. Đặt hàng nhanh qua Zalo. MenWatch Luxury." />
 
-  <style>.pimg {
-  width: 100%;
-  height: 260px;        /* CHIỀU CAO CỐ ĐỊNH */
-  overflow: hidden;
-  border-radius: 14px;
-  background: #0b0f1a;
-}
-
-.pimg img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;   /* CẮT ẢNH CHO ĐỀU */
-  display: block;
-}
-.pimg {
-  height: 240px;
-  background: radial-gradient(
-    120% 120% at 50% 0%,
-    rgba(212,175,55,.12),
-    rgba(0,0,0,.9)
-  );
-}
-
+  <style>
     :root{
       --bg:#07070a;
       --card:#0f1015;
@@ -52,24 +30,14 @@
     }
     a{color:inherit;text-decoration:none}
     .wrap{max-width:1080px;margin:0 auto;padding:20px}
-    .topbar{
-      display:flex;align-items:center;justify-content:space-between;gap:12px;
-      padding:12px 0;
-    }
-    .brand{
-      display:flex;align-items:center;gap:10px;font-weight:900;letter-spacing:.4px;
-    }
+    .topbar{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 0}
+    .brand{display:flex;align-items:center;gap:10px;font-weight:900;letter-spacing:.4px}
     .logo{
       width:36px;height:36px;border-radius:12px;
       background:linear-gradient(135deg, rgba(212,175,55,.95), rgba(255,221,119,.65));
       box-shadow:0 10px 30px rgba(212,175,55,.25);
     }
-    .pill{
-      border:1px solid var(--line);
-      background:rgba(255,255,255,.03);
-      padding:10px 14px;border-radius:999px;
-      color:var(--muted);
-    }
+    .pill{border:1px solid var(--line);background:rgba(255,255,255,.03);padding:10px 14px;border-radius:999px;color:var(--muted)}
     .pill b{color:var(--txt)}
     .btn{
       display:inline-flex;align-items:center;gap:10px;
@@ -79,6 +47,7 @@
       font-weight:800;
       transition:.15s transform ease, .15s background ease, .15s border-color ease;
       will-change:transform;
+      cursor:pointer;
     }
     .btn:hover{transform:translateY(-1px);border-color:rgba(212,175,55,.45)}
     .btn.gold{
@@ -91,10 +60,7 @@
       box-shadow:0 18px 40px rgba(34,197,94,.12);
     }
 
-    .hero{
-      display:grid;grid-template-columns:1.15fr .85fr;gap:18px;align-items:stretch;
-      margin-top:10px;
-    }
+    .hero{display:grid;grid-template-columns:1.15fr .85fr;gap:18px;align-items:stretch;margin-top:10px}
     @media (max-width:900px){.hero{grid-template-columns:1fr}}
     .card{
       background:linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.015));
@@ -109,15 +75,9 @@
       border:1px solid rgba(212,175,55,.28);
       background:rgba(212,175,55,.08);
       color:var(--gold2);
-      font-weight:800;
-      font-size:13px;
-      letter-spacing:.3px;
+      font-weight:800;font-size:13px;letter-spacing:.3px;
     }
-    h1{
-      margin:14px 0 10px;
-      font-size:44px;line-height:1.08;
-      letter-spacing:-.6px;
-    }
+    h1{margin:14px 0 10px;font-size:44px;line-height:1.08;letter-spacing:-.6px}
     @media (max-width:900px){h1{font-size:38px}}
     .sub{color:var(--muted);margin:0 0 16px;max-width:52ch}
     .hl{color:var(--gold2)}
@@ -127,13 +87,11 @@
       padding:10px 12px;border-radius:999px;
       border:1px solid var(--line);
       background:rgba(255,255,255,.03);
-      color:var(--muted);font-weight:700;font-size:13px;
+      color:var(--muted);
+      font-weight:800;font-size:13px;
     }
     .tag b{color:var(--txt)}
-    .hero-right{
-      padding:12px;
-      display:flex;flex-direction:column;gap:12px;
-    }
+    .hero-right{padding:12px;display:flex;flex-direction:column;gap:12px}
     .media{
       border-radius:calc(var(--radius) - 6px);
       overflow:hidden;
@@ -142,11 +100,7 @@
       aspect-ratio:4/3;
       position:relative;
     }
-    .media img{
-      width:100%;height:100%;object-fit:cover;display:block;
-      transform:scale(1.02);
-      filter:contrast(1.05) saturate(1.05);
-    }
+    .media img{width:100%;height:100%;object-fit:cover;display:block;transform:scale(1.02);filter:contrast(1.05) saturate(1.05)}
     .shine{
       position:absolute;inset:-40%;
       background:linear-gradient(110deg, transparent 35%, rgba(255,255,255,.08) 50%, transparent 65%);
@@ -154,43 +108,137 @@
       animation:shine 3.2s infinite;
       pointer-events:none;
     }
-    @keyframes shine{
-      0%{transform:translateX(-40%) rotate(10deg)}
-      100%{transform:translateX(40%) rotate(10deg)}
-    }
+    @keyframes shine{0%{transform:translateX(-40%) rotate(10deg)}100%{transform:translateX(40%) rotate(10deg)}}
+
     .pricebox{
       padding:14px 14px 16px;
       border-radius:calc(var(--radius) - 6px);
       border:1px solid var(--line);
       background:rgba(0,0,0,.22);
     }
-    .price{
-      display:flex;justify-content:space-between;align-items:flex-end;gap:10px;
-    }
-    .price strong{
-      font-size:28px;letter-spacing:.3px;color:var(--gold2);
-    }
-    .price span{color:var(--muted);font-weight:700}
+    .price{display:flex;justify-content:space-between;align-items:flex-end;gap:10px}
+    .price strong{font-size:28px;letter-spacing:.3px;color:var(--gold2)}
+    .price span{color:var(--muted);font-weight:800}
     .small{color:var(--muted);font-size:13px;margin-top:8px;line-height:1.45}
+
     .section{margin-top:18px}
     .section h2{margin:0 0 10px;font-size:20px;letter-spacing:.2px}
-    .grid{
-      display:grid;grid-template-columns:repeat(3,1fr);gap:14px;
-    }
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
     @media (max-width:900px){.grid{grid-template-columns:1fr}}
+
     .product{padding:12px}
+
+    /* FIX “PHÌNH ẢNH” (khung ảnh cố định) */
     .pimg{
-      aspect-ratio:4/3;border-radius:14px;overflow:hidden;
+      width:100%;
+      height:260px;
+      border-radius:14px;
+      overflow:hidden;
       border:1px solid rgba(255,255,255,.06);
-      background:linear-gradient(135deg,#141626,#0b0c12);
+      background:radial-gradient(120% 120% at 50% 0%, rgba(212,175,55,.12), rgba(0,0,0,.9));
     }
     .pimg img{width:100%;height:100%;object-fit:cover;display:block}
+
     .ptitle{margin:10px 0 6px;font-size:16px}
     .pdesc{margin:0 0 10px;color:var(--muted);font-size:13px;line-height:1.45}
     .row{display:flex;gap:10px;flex-wrap:wrap}
-    .foot{
-      margin:18px 0 8px;color:var(--muted);font-size:13px;text-align:center;
+
+    .foot{margin:18px 0 8px;color:var(--muted);font-size:13px;text-align:center}
+
+    /* STOCK + SOCIAL PROOF */
+    .proof{
+      display:flex;gap:10px;flex-wrap:wrap;margin-top:12px
     }
+    .proof .tag{
+      border-color:rgba(212,175,55,.22);
+      background:rgba(212,175,55,.06);
+      color:var(--gold2);
+    }
+    .stock{
+      margin-top:14px;
+      padding:14px;
+      border-radius:calc(var(--radius) - 6px);
+      border:1px solid rgba(212,175,55,.25);
+      background:rgba(212,175,55,.06);
+    }
+    .stockTop{display:flex;justify-content:space-between;gap:10px;align-items:center;flex-wrap:wrap}
+    .stockTitle{font-weight:900;color:var(--gold2);letter-spacing:.2px}
+    .stockSub{margin-top:6px;color:var(--muted);font-size:13px;line-height:1.4}
+    .bar{
+      margin-top:10px;height:10px;border-radius:999px;
+      background:rgba(255,255,255,.06);
+      overflow:hidden;border:1px solid rgba(255,255,255,.06)
+    }
+    .bar > div{
+      height:100%;
+      width:60%;
+      background:linear-gradient(90deg, rgba(212,175,55,.95), rgba(255,221,119,.75));
+    }
+    .note{margin-top:8px;color:var(--muted);font-size:12px}
+
+    /* VIDEO SHORTS */
+    .videoGrid{display:grid;grid-template-columns:1.2fr .8fr;gap:14px}
+    @media (max-width:900px){.videoGrid{grid-template-columns:1fr}}
+    .videoBox{padding:12px}
+    .videoFrame{
+      width:100%;
+      aspect-ratio:16/9;
+      border-radius:14px;
+      overflow:hidden;
+      border:1px solid rgba(255,255,255,.08);
+      background:linear-gradient(135deg,#141626,#0b0c12);
+      position:relative;
+    }
+    .videoFrame video, .videoFrame iframe{
+      width:100%;height:100%;display:block;object-fit:cover;border:0;
+    }
+    .videoHint{margin-top:10px;color:var(--muted);font-size:13px;line-height:1.45}
+
+    /* FEEDBACK SLIDER */
+    .sliderWrap{
+      position:relative;
+      padding:12px;
+    }
+    .sliderHeader{
+      display:flex;align-items:flex-end;justify-content:space-between;gap:10px;flex-wrap:wrap;
+      margin-bottom:10px;
+    }
+    .stars{color:var(--gold2);letter-spacing:1px;font-weight:900}
+    .slider{
+      display:flex;
+      gap:12px;
+      overflow:auto;
+      scroll-snap-type:x mandatory;
+      -webkit-overflow-scrolling:touch;
+      padding-bottom:8px;
+    }
+    .slider::-webkit-scrollbar{height:8px}
+    .slider::-webkit-scrollbar-thumb{background:rgba(255,255,255,.12);border-radius:999px}
+    .fbCard{
+      min-width:320px;
+      max-width:320px;
+      scroll-snap-align:start;
+      padding:12px;
+    }
+    @media (max-width:900px){
+      .fbCard{min-width:80vw;max-width:80vw}
+    }
+    .fbTop{display:flex;align-items:center;justify-content:space-between;gap:8px}
+    .fbName{font-weight:900}
+    .fbStars{color:var(--gold2);font-weight:900}
+    .fbText{margin:8px 0 0;color:var(--muted);font-size:13px;line-height:1.45}
+    .fbImg{margin-top:10px}
+    .sliderNav{
+      display:flex;gap:8px;
+    }
+    .navBtn{
+      padding:10px 12px;border-radius:12px;
+      border:1px solid rgba(212,175,55,.25);
+      background:rgba(212,175,55,.08);
+      color:var(--gold2);
+      font-weight:900;
+    }
+    .navBtn:hover{border-color:rgba(212,175,55,.45);transform:translateY(-1px)}
 
     /* Zalo floating PRO */
     .zalo-chat-pro{
@@ -204,7 +252,8 @@
     }
     .zalo-btn{
       width:62px;height:62px;border-radius:50%;
-      background:#0a5cff;display:flex;align-items:center;justify-content:center;
+      background:#0a5cff;
+      display:flex;align-items:center;justify-content:center;
       box-shadow:0 0 0 rgba(10,92,255,.55);
       animation:pulse 1.5s infinite;
     }
@@ -228,62 +277,64 @@
       <div class="brand">
         <div class="logo"></div>
         <div>
-          <div style="font-size:14px;color:var(--muted);font-weight:800;letter-spacing:.3px">Premium Watch Store</div>
+          <div style="font-size:14px;color:var(--muted);font-weight:900;letter-spacing:.3px">Premium Watch Store</div>
           <div style="font-size:18px;font-weight:900">MenWatch Luxury</div>
         </div>
       </div>
-      <div class="pill">Hotline: <b>0966922183</b></div>
+      <div class="pill">Hotline: <b id="hotlineText">0966 922 183</b></div>
     </div>
 
     <div class="hero">
       <div class="card hero-left">
-        <div class="kicker">⌚ BÁN CHẠY • SỐ LƯỢNG GIỚI HẠN</div>
-        <h1>Đồng hồ nam <span class="hl">Cao Cấp</span> — trẻ trung, lịch lãm - giá tốt</h1>
+        <div class="kicker">⌚ BÁN CHẠY • TONE ĐEN – VÀNG</div>
+        <h1>Đồng hồ nam <span class="hl">399K</span> — đeo đẹp, nhìn sang hơn giá</h1>
         <p class="sub">Thiết kế lịch lãm • Đóng gói chắc chắn • <b>Kiểm tra hàng trước khi thanh toán</b>. Ưu tiên khách chốt nhanh.</p>
 
         <div class="kpis">
           <div class="tag">✅ <b>Giao nhanh</b> toàn quốc</div>
-          <div class="tag">✅ <b>Bảo hành</b> lỗi 1 đổi </div>
+          <div class="tag">✅ <b>Bảo hành</b> lỗi kỹ thuật</div>
           <div class="tag">✅ <b>Hỗ trợ</b> tư vấn size</div>
+        </div>
+
+        <!-- 999+ social proof -->
+        <div class="proof">
+          <div class="tag">⭐ <b>Hơn 999+</b> khách đã mua</div>
+          <div class="tag">🔥 <b>Chốt nhanh</b> giữ giá hôm nay</div>
         </div>
 
         <div class="cta">
           <a class="btn gold" href="#mau">Xem mẫu bán chạy</a>
-          <a class="btn zalo" href="https://zalo.me/0966922183" target="_blank">Chat Zalo đặt hàng</a>
-          <a class="btn" href="tel:0966922183">Gọi hotline</a>
+          <a class="btn zalo" id="zaloHero" href="#" target="_blank" rel="noopener">Chat Zalo đặt hàng</a>
+          <a class="btn" id="callHero" href="#">Gọi hotline</a>
         </div>
 
-        <div style="margin-top:14px;color:var(--muted);font-size:13px;"><div class="card" style="margin-top:14px;padding:14px;border-color:rgba(212,175,55,.25);background:rgba(212,175,55,.06)">
-  <div style="display:flex;justify-content:space-between;gap:10px;align-items:center;flex-wrap:wrap;">
-    <div>
-      <div style="font-weight:900;color:var(--gold2);letter-spacing:.2px">🔥 SỐ LƯỢNG CÒN LẠI HÔM NAY</div>
-      <div style="margin-top:6px;color:var(--muted);font-size:13px;line-height:1.4">
-        Còn <b id="stockCount" style="color:#fff">—</b> chiếc • Ưu tiên khách chốt nhanh
-      </div>
-    </div>
-    <a id="holdBtn" class="btn gold" href="#" target="_blank">Giữ hàng qua Zalo</a>
-  </div>
-  <div style="margin-top:10px;height:10px;border-radius:999px;background:rgba(255,255,255,.06);overflow:hidden;border:1px solid rgba(255,255,255,.06)">
-    <div id="stockBar" style="height:100%;width:60%;background:linear-gradient(90deg, rgba(212,175,55,.95), rgba(255,221,119,.75));"></div>
-  </div>
-  <div style="margin-top:8px;color:var(--muted);font-size:12px">
-    *Số lượng giới hạn hằng ngày . Chương trình khuyến mãi kết thúc khi hết ngày .
-  </div>
-</div>
-
+        <div style="margin-top:14px;color:var(--muted);font-size:13px;">
           🔥 Mẹo chốt nhanh: Nhắn “<b>Mẫu A/B/C</b> + <b>địa chỉ</b>” để shop lên đơn.
+        </div>
+
+        <!-- STOCK COUNTER -->
+        <div class="stock">
+          <div class="stockTop">
+            <div>
+              <div class="stockTitle">🔥 SỐ LƯỢNG CÒN LẠI HÔM NAY</div>
+              <div class="stockSub">Còn <b id="stockCount" style="color:#fff">—</b> chiếc • Ưu tiên khách chốt nhanh</div>
+            </div>
+            <a class="btn gold" id="holdBtn" href="#" target="_blank" rel="noopener">Giữ hàng qua Zalo</a>
+          </div>
+          <div class="bar"><div id="stockBar"></div></div>
+          <div class="note">*Số lượng hiển thị theo ngày (tạo cảm giác khan hiếm). Muốn đếm theo kho thật cần bản nâng cao.</div>
         </div>
       </div>
 
       <div class="card hero-right">
         <div class="media">
-          <img src="dongho-b.jpg" loading="lazy" alt="Đồng hồ nam 399K">
+          <img src="dongho-a.webp" loading="lazy" alt="Đồng hồ nam 399K">
           <div class="shine"></div>
         </div>
         <div class="pricebox">
           <div class="price">
-            <strong> Chỉ 399.000đ</strong>
-            <span>Giá sale trong hôm nay</span>
+            <strong>399.000đ</strong>
+            <span>Giá chốt nhanh hôm nay</span>
           </div>
           <div class="small">
             ✅ Có hộp • ✅ Đóng gói kỹ • ✅ Kiểm tra trước khi nhận<br>
@@ -293,19 +344,17 @@
       </div>
     </div>
 
+    <!-- MẪU BÁN CHẠY -->
     <div id="mau" class="section">
       <h2>Mẫu bán chạy</h2>
-  </div>
-</div>
-
       <div class="grid">
         <div class="card product">
-          <div class="pimg"><img src="dongho-a.jpg" loading="lazy" alt="Đồng Hồ Hublot Mặt Đen  399K"></div>
+          <div class="pimg"><img src="dongho-a.webp" loading="lazy" alt="Mẫu A 399K"></div>
           <div class="ptitle"><b>Mẫu A</b> • 399K</div>
           <p class="pdesc">Form gọn, mặt sáng, hợp đi làm/đi chơi.</p>
           <div class="row">
-            <a class="btn gold" href="https://zalo.me/0966922183?text=Toi%20muon%20dat%20Mau%20A%20399K" target="_blank">Đặt mẫu A</a>
-            <a class="btn" href="tel:0966922183">Gọi</a>
+            <a class="btn gold" id="buyA" href="#" target="_blank" rel="noopener">Đặt mẫu A</a>
+            <a class="btn" id="callA" href="#">Gọi</a>
           </div>
         </div>
 
@@ -314,8 +363,8 @@
           <div class="ptitle"><b>Mẫu B</b> • 399K</div>
           <p class="pdesc">Nhìn nam tính, dễ phối đồ, tặng quà hợp.</p>
           <div class="row">
-            <a class="btn gold" href="https://zalo.me/0966922183?text=Toi%20muon%20dat%20Mau%20B%20399K" target="_blank">Đặt mẫu B</a>
-            <a class="btn" href="tel:0966922183">Gọi</a>
+            <a class="btn gold" id="buyB" href="#" target="_blank" rel="noopener">Đặt mẫu B</a>
+            <a class="btn" id="callB" href="#">Gọi</a>
           </div>
         </div>
 
@@ -324,93 +373,235 @@
           <div class="ptitle"><b>Mẫu C</b> • 399K</div>
           <p class="pdesc">Dây chắc, khoá tiện, đeo êm tay.</p>
           <div class="row">
-            <a class="btn gold" href="https://zalo.me/0966922183?text=Toi%20muon%20dat%20Mau%20C%20399K" target="_blank">Đặt mẫu C</a>
-            <a class="btn" href="tel:0966922183">Gọi</a>
+            <a class="btn gold" id="buyC" href="#" target="_blank" rel="noopener">Đặt mẫu C</a>
+            <a class="btn" id="callC" href="#">Gọi</a>
           </div>
         </div>
       </div>
-
-      <div class="foot">© MenWatch Luxury • menwatchluxury.com</div>
     </div>
+
+    <!-- VIDEO NGẮN -->
+    <div class="section" id="video">
+      <h2>Video ngắn (xem nhanh 10–20s)</h2>
+      <div class="videoGrid">
+        <div class="card videoBox">
+          <div class="videoFrame">
+            <!-- CÁCH 1: Nếu bạn có file video: đổi src="video-1.mp4" -->
+            <video id="shortVideo" src="video-1.mp4" controls playsinline preload="metadata"></video>
+            <!-- CÁCH 2: Nếu bạn dùng YouTube Shorts, thay cả khối video bằng iframe YouTube -->
+            <!--
+            <iframe src="https://www.youtube.com/embed/VIDEO_ID" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            -->
+          </div>
+          <div class="videoHint">
+            ✅ Tip: Nếu chưa có video, bạn cứ để file <b>video-1.mp4</b> (upload lên GitHub giống upload ảnh).<br>
+            👉 Video nên quay: <b>cận mặt</b> + <b>cận dây</b> + <b>lên tay</b> (15 giây).
+          </div>
+        </div>
+
+        <div class="card videoBox">
+          <div style="font-weight:900;color:var(--gold2);letter-spacing:.2px">Tư vấn chọn mẫu nhanh</div>
+          <div class="small" style="margin-top:10px">
+            • Tay nhỏ → ưu tiên <b>Mẫu A</b><br>
+            • Nam tính, tặng quà → <b>Mẫu B</b><br>
+            • Dây chắc, đeo êm → <b>Mẫu C</b><br><br>
+            Nhắn Zalo: “<b>Mẫu A/B/C</b> + <b>cổ tay</b> (cm)” để shop tư vấn chuẩn.
+          </div>
+          <div class="cta" style="margin-top:12px">
+            <a class="btn gold" id="zaloVideo" href="#" target="_blank" rel="noopener">Chat Zalo nhận video thật</a>
+            <a class="btn" href="#feedback">Xem feedback</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FEEDBACK (ĐẶT Ở CUỐI) -->
+    <div class="section" id="feedback">
+      <div class="sliderHeader">
+        <div>
+          <h2 style="margin:0">Feedback khách hàng</h2>
+          <div class="small" style="margin:6px 0 0">⭐ <b>Hơn 999+</b> khách đã mua • Đánh giá thực tế từ khách</div>
+        </div>
+        <div class="sliderNav">
+          <button class="btn navBtn" id="fbPrev" type="button">‹ Trước</button>
+          <button class="btn navBtn" id="fbNext" type="button">Sau ›</button>
+        </div>
+      </div>
+
+      <div class="card sliderWrap">
+        <div class="slider" id="fbSlider">
+          <!-- Feedback 1 -->
+          <div class="card fbCard">
+            <div class="fbTop">
+              <div class="fbName">Khách Hà Nội</div>
+              <div class="fbStars">★★★★★</div>
+            </div>
+            <div class="fbText">“Hàng nhìn đẹp hơn tưởng tượng, lên tay sang. Đóng gói kỹ, giao nhanh.”</div>
+            <div class="fbImg pimg" style="height:200px;margin-top:10px">
+              <img src="fb-1.webp" loading="lazy" alt="Feedback 1">
+            </div>
+          </div>
+
+          <!-- Feedback 2 -->
+          <div class="card fbCard">
+            <div class="fbTop">
+              <div class="fbName">Khách đặt làm quà</div>
+              <div class="fbStars">★★★★★</div>
+            </div>
+            <div class="fbText">“Tặng bạn rất hợp, nhìn lịch sự. Shop tư vấn nhiệt tình.”</div>
+            <div class="fbImg pimg" style="height:200px;margin-top:10px">
+              <img src="fb-2.webp" loading="lazy" alt="Feedback 2">
+            </div>
+          </div>
+
+          <!-- Feedback 3 -->
+          <div class="card fbCard">
+            <div class="fbTop">
+              <div class="fbName">Khách ở tỉnh</div>
+              <div class="fbStars">★★★★★</div>
+            </div>
+            <div class="fbText">“Được kiểm tra trước khi nhận nên yên tâm. Sẽ ủng hộ thêm.”</div>
+            <div class="fbImg pimg" style="height:200px;margin-top:10px">
+              <img src="fb-3.webp" loading="lazy" alt="Feedback 3">
+            </div>
+          </div>
+
+          <!-- Feedback 4 -->
+          <div class="card fbCard">
+            <div class="fbTop">
+              <div class="fbName">Khách công sở</div>
+              <div class="fbStars">★★★★★</div>
+            </div>
+            <div class="fbText">“Đeo đi làm nhìn gọn – sang. Mặt sáng, dễ phối đồ.”</div>
+            <div class="fbImg pimg" style="height:200px;margin-top:10px">
+              <img src="fb-4.webp" loading="lazy" alt="Feedback 4">
+            </div>
+          </div>
+        </div>
+
+        <div class="cta" style="margin-top:12px">
+          <a class="btn gold" id="zaloFeedback" href="#" target="_blank" rel="noopener">Chat Zalo chốt đơn</a>
+          <a class="btn" id="callFeedback" href="#">Gọi hotline</a>
+        </div>
+
+        <div class="note">
+          📌 Nếu ảnh feedback chưa hiện: hãy upload đúng tên file: <b>fb-1.webp fb-2.webp fb-3.webp fb-4.webp</b> (hoặc đổi đuôi .jpg trong code cho đúng).
+        </div>
+      </div>
+    </div>
+
+    <div class="foot">© MenWatch Luxury • menwatchluxury.com</div>
   </div>
 
   <!-- Zalo floating PRO -->
-  <a class="zalo-chat-pro" href="https://zalo.me/0966922183" target="_blank" aria-label="Chat Zalo">
+  <a class="zalo-chat-pro" id="zaloFloat" href="#" target="_blank" rel="noopener" aria-label="Chat Zalo">
     <div class="zalo-bubble">Chat Zalo – Tư vấn nhanh</div>
     <div class="zalo-btn">
       <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Icon_of_Zalo.svg" alt="Zalo">
     </div>
   </a>
-</body><div class="section" id="feedback">
-  <h2>Feedback khách hàng</h2>
-  <div class="grid">
-    <div class="card product">
-      <div class="pimg">
-        <img src="fb-1.webp" loading="lazy" alt="Feedback 1">
-      </div>
-      <div class="ptitle"><b>Khách Hà Nội</b></div>
-      <p class="pdesc">“Hàng nhìn đẹp hơn tưởng tượng, lên tay sang. Đóng gói kỹ, giao nhanh.”</p>
-    </div>
 
-    <div class="card product">
-      <div class="pimg">
-        <img src="fb-2.webp" loading="lazy" alt="Feedback 2">
-      </div>
-      <div class="ptitle"><b>Khách đặt làm quà</b></div>
-      <p class="pdesc">“Tặng bạn rất hợp, nhìn lịch sự. Shop tư vấn nhiệt tình.”</p>
-    </div>
+  <script>
+    // ====== CONFIG ======
+    const PHONE = "0966922183"; // SĐT/Zalo của bạn
+    const PHONE_PRETTY = "0966 922 183";
 
-    <div class="card product">
-      <div class="pimg">
-        <img src="fb-3.webp" loading="lazy" alt="Feedback 3">
-      </div>
-      <div class="ptitle"><b>Khách ở tỉnh</b></div>
-      <p class="pdesc">“Được kiểm tra trước khi nhận nên yên tâm. Sẽ ủng hộ thêm.”</p>
-    </div><script>
-  // ====== STOCK COUNTER (đếm số lượng hiển thị) ======
-  const PHONE = "0966922183"; // đổi thành số Zalo của bạn nếu khác
+    // ====== LINKS (Zalo + Call) ======
+    const hotlineText = document.getElementById("hotlineText");
+    if (hotlineText) hotlineText.textContent = PHONE_PRETTY;
 
-  // Mỗi ngày tạo 1 số lượng "còn lại" để tạo khan hiếm (mỗi máy sẽ giống nhau trong ngày)
-  const todayKey = new Date().toISOString().slice(0,10); // YYYY-MM-DD
-  const storageKey = "menwatch_stock_" + todayKey;
+    function zaloLink(text){
+      const msg = encodeURIComponent(text || "Mình muốn đặt đồng hồ 399K. Cho mình xin ảnh/video thật + chốt mẫu A/B/C. SĐT nhận hàng: ");
+      return `https://zalo.me/${PHONE}?text=${msg}`;
+    }
+    function telLink(){ return `tel:${PHONE}`; }
 
-  function seededNumber(seedStr){
-    // hash đơn giản -> số 0..1
-    let h = 0;
-    for (let i=0;i<seedStr.length;i++) h = (h*31 + seedStr.charCodeAt(i)) >>> 0;
-    return (h % 1000) / 1000;
-  }
+    const linkMap = [
+      ["zaloHero", zaloLink("Mình muốn đặt đồng hồ 399K. Xin shop tư vấn mẫu phù hợp (A/B/C). SĐT nhận hàng: ")],
+      ["zaloVideo", zaloLink("Gửi mình video thật mẫu A/B/C giúp mình với. SĐT nhận hàng: ")],
+      ["zaloFeedback", zaloLink("Mình xem feedback rồi, muốn chốt đồng hồ 399K. Xin shop xác nhận còn hàng. SĐT nhận hàng: ")],
+      ["zaloFloat", zaloLink("Mình muốn đặt đồng hồ 399K. Xin shop tư vấn mẫu A/B/C. SĐT nhận hàng: ")]
+    ];
+    linkMap.forEach(([id, href]) => {
+      const el = document.getElementById(id);
+      if (el) el.href = href;
+    });
 
-  let stock = localStorage.getItem(storageKey);
-  if(!stock){
-    // tạo stock trong khoảng 18-39
-    const r = seededNumber(todayKey + location.hostname);
-    stock = Math.floor(18 + r * 22);
-    localStorage.setItem(storageKey, String(stock));
-  } else {
-    stock = parseInt(stock, 10);
-  }
+    const callIds = ["callHero","callA","callB","callC","callFeedback"];
+    callIds.forEach(id=>{
+      const el = document.getElementById(id);
+      if(el) el.href = telLink();
+    });
 
-  // Hiệu ứng "giảm nhẹ" theo thời gian trong ngày (không giảm dưới 6)
-  const minutes = new Date().getHours()*60 + new Date().getMinutes();
-  const drop = Math.floor(minutes / 180); // mỗi 3 giờ giảm 1
-  const shown = Math.max(6, stock - drop);
+    // Buttons đặt mẫu A/B/C
+    const buyA = document.getElementById("buyA");
+    const buyB = document.getElementById("buyB");
+    const buyC = document.getElementById("buyC");
+    if(buyA) buyA.href = zaloLink("Mình muốn đặt Mẫu A (399K). Cho mình xin ảnh/video thật + chốt đơn. SĐT nhận hàng: ");
+    if(buyB) buyB.href = zaloLink("Mình muốn đặt Mẫu B (399K). Cho mình xin ảnh/video thật + chốt đơn. SĐT nhận hàng: ");
+    if(buyC) buyC.href = zaloLink("Mình muốn đặt Mẫu C (399K). Cho mình xin ảnh/video thật + chốt đơn. SĐT nhận hàng: ");
 
-  const stockEl = document.getElementById("stockCount");
-  const barEl = document.getElementById("stockBar");
-  const holdBtn = document.getElementById("holdBtn");
+    // ====== STOCK COUNTER (khan hiếm hiển thị) ======
+    const todayKey = new Date().toISOString().slice(0,10); // YYYY-MM-DD
+    const storageKey = "menwatch_stock_" + todayKey;
 
-  if(stockEl) stockEl.textContent = shown;
+    function seededNumber(seedStr){
+      let h = 0;
+      for (let i=0;i<seedStr.length;i++) h = (h*31 + seedStr.charCodeAt(i)) >>> 0;
+      return (h % 1000) / 1000;
+    }
 
-  // Thanh tiến độ: giả định ban đầu 40 chiếc
-  const percent = Math.max(12, Math.min(100, Math.round((shown/40)*100)));
-  if(barEl) barEl.style.width = percent + "%";
+    let stock = localStorage.getItem(storageKey);
+    if(!stock){
+      const r = seededNumber(todayKey + location.hostname);
+      stock = Math.floor(18 + r * 22); // 18-40
+      localStorage.setItem(storageKey, String(stock));
+    } else {
+      stock = parseInt(stock, 10);
+    }
 
-  // Link Zalo soạn sẵn
-  const msg = encodeURIComponent("Mình muốn GIỮ HÀNG đồng hồ 399K. Cho mình xin ảnh/video thật + chốt mẫu A/B/C. SĐT nhận hàng: ");
-  const zaloLink = `https://zalo.me/${PHONE}?text=${msg}`;
-  if(holdBtn) holdBtn.href = zaloLink;
-</script>
+    const minutes = new Date().getHours()*60 + new Date().getMinutes();
+    const drop = Math.floor(minutes / 180); // mỗi 3h giảm 1
+    const shown = Math.max(6, stock - drop);
 
+    const stockEl = document.getElementById("stockCount");
+    const barEl = document.getElementById("stockBar");
+    const holdBtn = document.getElementById("holdBtn");
+
+    if(stockEl) stockEl.textContent = shown;
+
+    const percent = Math.max(12, Math.min(100, Math.round((shown/40)*100)));
+    if(barEl) barEl.style.width = percent + "%";
+
+    if(holdBtn) holdBtn.href = zaloLink("Mình muốn GIỮ HÀNG đồng hồ 399K. Xin shop xác nhận còn hàng + chốt mẫu A/B/C. SĐT nhận hàng: ");
+
+    // ====== FEEDBACK SLIDER NAV ======
+    const slider = document.getElementById("fbSlider");
+    const prev = document.getElementById("fbPrev");
+    const next = document.getElementById("fbNext");
+
+    function scrollByCard(dir){
+      if(!slider) return;
+      const card = slider.querySelector(".fbCard");
+      const step = card ? (card.getBoundingClientRect().width + 12) : 340;
+      slider.scrollBy({ left: dir * step, behavior: "smooth" });
+    }
+    if(prev) prev.addEventListener("click", ()=>scrollByCard(-1));
+    if(next) next.addEventListener("click", ()=>scrollByCard(1));
+
+    // Auto "nhẹ" kéo ngang mỗi 4s (dừng khi user kéo)
+    let auto = setInterval(()=>scrollByCard(1), 4000);
+    if(slider){
+      let userInteracted = false;
+      const stopAuto = ()=>{
+        if(userInteracted) return;
+        userInteracted = true;
+        clearInterval(auto);
+      };
+      slider.addEventListener("touchstart", stopAuto, {passive:true});
+      slider.addEventListener("mousedown", stopAuto);
+      slider.addEventListener("wheel", stopAuto, {passive:true});
+    }
+  </script>
+</body>
 </html>
-
