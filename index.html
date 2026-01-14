@@ -334,6 +334,25 @@
         <div class="pricebox">
           <div class="price">
             <strong>399.000đ</strong>
+            <!-- BEST SELLER SECTION -->
+<div class="best-seller">
+  <div class="bs-badge">🔥 BEST SELLER</div>
+
+  <div class="bs-gallery">
+    <img src="dongho-a.webp" alt="Đồng hồ best seller 1">
+    <img src="dongho-b.webp" alt="Đồng hồ best seller 2">
+  </div>
+
+  <div class="bs-info">
+    <div class="bs-title">Mẫu A – Bán chạy nhất</div>
+    <div class="bs-sub">Hơn <b>999+</b> khách đã mua • Đánh giá 5⭐</div>
+
+    <div class="bs-actions">
+      <a href="https://zalo.me/0966922183" class="bs-btn">👉 Đặt mẫu này qua Zalo</a>
+    </div>
+  </div>
+</div>
+
             <span>Giá chốt nhanh hôm nay</span>
           </div>
           <div class="small">
@@ -684,7 +703,90 @@
 @media(max-width:768px){
   .fb-messenger-text{display:none}
 }
-</style>
+</style>/* BEST SELLER */
+.best-seller{
+  margin-top:30px;
+  padding:20px;
+  border-radius:16px;
+  background:linear-gradient(180deg,#0b0b0b,#141414);
+  border:1px solid rgba(255,215,0,.25);
+  box-shadow:0 0 40px rgba(255,215,0,.08);
+  position:relative;
+}
+
+.bs-badge{
+  position:absolute;
+  top:-12px;
+  left:20px;
+  background:linear-gradient(90deg,#ffd700,#c9a227);
+  color:#111;
+  font-weight:700;
+  padding:6px 14px;
+  border-radius:999px;
+  font-size:13px;
+}
+
+.bs-gallery{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:14px;
+}
+
+.bs-gallery img{
+  width:100%;
+  border-radius:14px;
+  object-fit:cover;
+  transition:.3s;
+}
+
+.bs-gallery img:hover{
+  transform:scale(1.05);
+  box-shadow:0 0 25px rgba(255,215,0,.3);
+}
+
+.bs-info{
+  margin-top:16px;
+  text-align:center;
+}
+
+.bs-title{
+  color:#ffd700;
+  font-size:18px;
+  font-weight:700;
+}
+
+.bs-sub{
+  color:#ccc;
+  font-size:14px;
+  margin-top:4px;
+}
+
+.bs-actions{
+  margin-top:14px;
+}
+
+.bs-btn{
+  display:inline-block;
+  padding:12px 20px;
+  background:linear-gradient(90deg,#ffd700,#c9a227);
+  color:#111;
+  font-weight:700;
+  border-radius:999px;
+  text-decoration:none;
+  box-shadow:0 0 20px rgba(255,215,0,.4);
+}
+
+.bs-btn:hover{
+  opacity:.9;
+}
+
+/* Mobile */
+@media(max-width:768px){
+  .bs-gallery{
+    grid-template-columns:1fr;
+  }
+}
+
 
 </style>
 
