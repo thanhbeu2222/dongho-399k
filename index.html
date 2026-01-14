@@ -1,130 +1,304 @@
 <!doctype html>
 <html lang="vi">
 <head>
-  <meta charset="utf-8">
-  <title>Đồng hồ nam 399K – MenWatch Luxury</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>MenWatch Luxury • Đồng hồ nam 399K</title>
+  <meta name="description" content="Đồng hồ nam 399K – thiết kế sang, đeo đẹp. Đặt hàng nhanh qua Zalo. MenWatch Luxury." />
+
   <style>
-    body{margin:0;font-family:Arial;background:#0b0c10;color:#fff}
-    .wrap{max-width:1000px;margin:auto;padding:20px}
-    .header{display:flex;justify-content:space-between;align-items:center}
-    .btn{padding:12px 16px;background:#ffd166;color:#000;border-radius:8px;font-weight:bold;text-decoration:none}
-    .zalo{background:#22c55e;color:#000}
-    .hero{margin-top:30px}
-    .box{background:#111;border-radius:10px;padding:20px;margin-top:20px}
-    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px}
-    .product{background:#1a1a1a;padding:15px;border-radius:10px}
-    .footer{text-align:center;color:#aaa;margin-top:40px}
+    :root{
+      --bg:#07070a;
+      --card:#0f1015;
+      --line:#1f2230;
+      --txt:#f2f2f2;
+      --muted:#b9bcc7;
+      --gold:#d4af37;
+      --gold2:#ffdd77;
+      --shadow:0 18px 60px rgba(0,0,0,.55);
+      --radius:18px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial;
+      color:var(--txt);
+      background:
+        radial-gradient(900px 450px at 15% 10%, rgba(212,175,55,.18), transparent 55%),
+        radial-gradient(800px 400px at 85% 0%, rgba(255,221,119,.10), transparent 55%),
+        linear-gradient(180deg, #05050a, #0b0c12 65%, #07070a);
+    }
+    a{color:inherit;text-decoration:none}
+    .wrap{max-width:1080px;margin:0 auto;padding:20px}
+    .topbar{
+      display:flex;align-items:center;justify-content:space-between;gap:12px;
+      padding:12px 0;
+    }
+    .brand{
+      display:flex;align-items:center;gap:10px;font-weight:900;letter-spacing:.4px;
+    }
+    .logo{
+      width:36px;height:36px;border-radius:12px;
+      background:linear-gradient(135deg, rgba(212,175,55,.95), rgba(255,221,119,.65));
+      box-shadow:0 10px 30px rgba(212,175,55,.25);
+    }
+    .pill{
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.03);
+      padding:10px 14px;border-radius:999px;
+      color:var(--muted);
+    }
+    .pill b{color:var(--txt)}
+    .btn{
+      display:inline-flex;align-items:center;gap:10px;
+      padding:12px 16px;border-radius:14px;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.04);
+      font-weight:800;
+      transition:.15s transform ease, .15s background ease, .15s border-color ease;
+      will-change:transform;
+    }
+    .btn:hover{transform:translateY(-1px);border-color:rgba(212,175,55,.45)}
+    .btn.gold{
+      background:linear-gradient(135deg, rgba(212,175,55,.95), rgba(255,221,119,.75));
+      border:none;color:#111;
+      box-shadow:0 18px 40px rgba(212,175,55,.18);
+    }
+    .btn.zalo{
+      background:#22c55e;border:none;color:#06120a;
+      box-shadow:0 18px 40px rgba(34,197,94,.12);
+    }
+
+    .hero{
+      display:grid;grid-template-columns:1.15fr .85fr;gap:18px;align-items:stretch;
+      margin-top:10px;
+    }
+    @media (max-width:900px){.hero{grid-template-columns:1fr}}
+    .card{
+      background:linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.015));
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+    }
+    .hero-left{padding:22px}
+    .kicker{
+      display:inline-flex;align-items:center;gap:10px;
+      padding:8px 12px;border-radius:999px;
+      border:1px solid rgba(212,175,55,.28);
+      background:rgba(212,175,55,.08);
+      color:var(--gold2);
+      font-weight:800;
+      font-size:13px;
+      letter-spacing:.3px;
+    }
+    h1{
+      margin:14px 0 10px;
+      font-size:44px;line-height:1.08;
+      letter-spacing:-.6px;
+    }
+    @media (max-width:900px){h1{font-size:38px}}
+    .sub{color:var(--muted);margin:0 0 16px;max-width:52ch}
+    .hl{color:var(--gold2)}
+    .cta{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
+    .kpis{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+    .tag{
+      padding:10px 12px;border-radius:999px;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.03);
+      color:var(--muted);font-weight:700;font-size:13px;
+    }
+    .tag b{color:var(--txt)}
+    .hero-right{
+      padding:12px;
+      display:flex;flex-direction:column;gap:12px;
+    }
+    .media{
+      border-radius:calc(var(--radius) - 6px);
+      overflow:hidden;
+      border:1px solid rgba(212,175,55,.20);
+      background:linear-gradient(135deg,#131522,#0b0c12);
+      aspect-ratio:4/3;
+      position:relative;
+    }
+    .media img{
+      width:100%;height:100%;object-fit:cover;display:block;
+      transform:scale(1.02);
+      filter:contrast(1.05) saturate(1.05);
+    }
+    .shine{
+      position:absolute;inset:-40%;
+      background:linear-gradient(110deg, transparent 35%, rgba(255,255,255,.08) 50%, transparent 65%);
+      transform:rotate(10deg);
+      animation:shine 3.2s infinite;
+      pointer-events:none;
+    }
+    @keyframes shine{
+      0%{transform:translateX(-40%) rotate(10deg)}
+      100%{transform:translateX(40%) rotate(10deg)}
+    }
+    .pricebox{
+      padding:14px 14px 16px;
+      border-radius:calc(var(--radius) - 6px);
+      border:1px solid var(--line);
+      background:rgba(0,0,0,.22);
+    }
+    .price{
+      display:flex;justify-content:space-between;align-items:flex-end;gap:10px;
+    }
+    .price strong{
+      font-size:28px;letter-spacing:.3px;color:var(--gold2);
+    }
+    .price span{color:var(--muted);font-weight:700}
+    .small{color:var(--muted);font-size:13px;margin-top:8px;line-height:1.45}
+    .section{margin-top:18px}
+    .section h2{margin:0 0 10px;font-size:20px;letter-spacing:.2px}
+    .grid{
+      display:grid;grid-template-columns:repeat(3,1fr);gap:14px;
+    }
+    @media (max-width:900px){.grid{grid-template-columns:1fr}}
+    .product{padding:12px}
+    .pimg{
+      aspect-ratio:4/3;border-radius:14px;overflow:hidden;
+      border:1px solid rgba(255,255,255,.06);
+      background:linear-gradient(135deg,#141626,#0b0c12);
+    }
+    .pimg img{width:100%;height:100%;object-fit:cover;display:block}
+    .ptitle{margin:10px 0 6px;font-size:16px}
+    .pdesc{margin:0 0 10px;color:var(--muted);font-size:13px;line-height:1.45}
+    .row{display:flex;gap:10px;flex-wrap:wrap}
+    .foot{
+      margin:18px 0 8px;color:var(--muted);font-size:13px;text-align:center;
+    }
+
+    /* Zalo floating PRO */
+    .zalo-chat-pro{
+      position:fixed;bottom:20px;right:20px;z-index:99999;
+      display:flex;align-items:center;gap:10px;
+    }
+    .zalo-bubble{
+      background:#fff;color:#222;padding:8px 12px;border-radius:20px;
+      font-size:13px;box-shadow:0 10px 24px rgba(0,0,0,.25);
+      animation:fadeIn 1s ease-in-out;
+    }
+    .zalo-btn{
+      width:62px;height:62px;border-radius:50%;
+      background:#0a5cff;display:flex;align-items:center;justify-content:center;
+      box-shadow:0 0 0 rgba(10,92,255,.55);
+      animation:pulse 1.5s infinite;
+    }
+    .zalo-btn img{width:36px;height:36px}
+    @keyframes pulse{
+      0%{box-shadow:0 0 0 0 rgba(10,92,255,.55)}
+      70%{box-shadow:0 0 0 16px rgba(10,92,255,0)}
+      100%{box-shadow:0 0 0 0 rgba(10,92,255,0)}
+    }
+    @keyframes fadeIn{
+      from{opacity:0;transform:translateX(10px)}
+      to{opacity:1;transform:translateX(0)}
+    }
+    @media(max-width:768px){.zalo-bubble{display:none}}
   </style>
 </head>
+
 <body>
+  <div class="wrap">
+    <div class="topbar">
+      <div class="brand">
+        <div class="logo"></div>
+        <div>
+          <div style="font-size:14px;color:var(--muted);font-weight:800;letter-spacing:.3px">Premium Watch Store</div>
+          <div style="font-size:18px;font-weight:900">MenWatch Luxury</div>
+        </div>
+      </div>
+      <div class="pill">Hotline: <b>0379 156 486</b></div>
+    </div>
 
-<div class="wrap">
+    <div class="hero">
+      <div class="card hero-left">
+        <div class="kicker">⌚ BÁN CHẠY • TONE ĐEN – VÀNG</div>
+        <h1>Đồng hồ nam <span class="hl">399K</span> — đeo đẹp, nhìn sang hơn giá</h1>
+        <p class="sub">Thiết kế lịch lãm • Đóng gói chắc chắn • <b>Kiểm tra hàng trước khi thanh toán</b>. Ưu tiên khách chốt nhanh.</p>
 
-  <div class="header">
-    <h2>MenWatch Luxury</h2>
-    <a class="btn" href="tel:0966922183">📞 0966922183</a>
-  </div>
+        <div class="kpis">
+          <div class="tag">✅ <b>Giao nhanh</b> toàn quốc</div>
+          <div class="tag">✅ <b>Bảo hành</b> lỗi kỹ thuật</div>
+          <div class="tag">✅ <b>Hỗ trợ</b> tư vấn size</div>
+        </div>
 
-  <div class="hero">
-    <h1>ĐỒNG HỒ NAM 399K</h1>
-    <p>Đeo đẹp – nhìn sang hơn giá • Giao nhanh • Kiểm tra trước khi nhận</p><img src="dongho-a.jpg" style="width:100%;max-width:400px;border-radius:10px;margin:20px 0;">
-    <a class="btn zalo" href="https://zalo.me/0966922183" target="_blank">
-      💬 ĐẶT HÀNG QUA ZALO
-    </a>
-  </div>
+        <div class="cta">
+          <a class="btn gold" href="#mau">Xem mẫu bán chạy</a>
+          <a class="btn zalo" href="https://zalo.me/0379156486" target="_blank">Chat Zalo đặt hàng</a>
+          <a class="btn" href="tel:0379156486">Gọi hotline</a>
+        </div>
 
-  <div class="box">
-    <h2>MẪU BÁN CHẠY</h2>
-    <div class="grid">
-
-      <div class="product">
-        <h3>Mẫu A – 399K</h3><img src="dongho-a.jpg" style="width:100%;border-radius:8px;margin-bottom:10px;">
-        <p>Form gọn – dễ phối đồ – đeo hằng ngày</p>
-        <a class="btn zalo" href="https://zalo.me/0966922183?text=Tôi%20muốn%20đặt%20Mẫu%20A%20399K">
-          Đặt mẫu A
-        </a>
+        <div style="margin-top:14px;color:var(--muted);font-size:13px;">
+          🔥 Mẹo chốt nhanh: Nhắn “<b>Mẫu A/B/C</b> + <b>địa chỉ</b>” để shop lên đơn.
+        </div>
       </div>
 
-      <div class="product">
-        <h3>Mẫu B – 399K</h3><img src="dongho-b.jpg" style="width:100%;border-radius:8px;margin-bottom:10px;">
-        <p>Mặt sáng – nhìn nam tính – tặng quà hợp</p>
-        <a class="btn zalo" href="https://zalo.me/0966922183?text=Tôi%20muốn%20đặt%20Mẫu%20B%20399K">
-          Đặt mẫu B
-        </a>
+      <div class="card hero-right">
+        <div class="media">
+          <img src="dongho-a.webp" loading="lazy" alt="Đồng hồ nam 399K">
+          <div class="shine"></div>
+        </div>
+        <div class="pricebox">
+          <div class="price">
+            <strong>399.000đ</strong>
+            <span>Giá chốt nhanh hôm nay</span>
+          </div>
+          <div class="small">
+            ✅ Có hộp • ✅ Đóng gói kỹ • ✅ Kiểm tra trước khi nhận<br>
+            📦 Nhắn Zalo để nhận ảnh/video thật & chọn mẫu hợp tay.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="mau" class="section">
+      <h2>Mẫu bán chạy</h2>
+      <div class="grid">
+        <div class="card product">
+          <div class="pimg"><img src="dongho-a.webp" loading="lazy" alt="Mẫu A 399K"></div>
+          <div class="ptitle"><b>Mẫu A</b> • 399K</div>
+          <p class="pdesc">Form gọn, mặt sáng, hợp đi làm/đi chơi.</p>
+          <div class="row">
+            <a class="btn gold" href="https://zalo.me/0379156486?text=Toi%20muon%20dat%20Mau%20A%20399K" target="_blank">Đặt mẫu A</a>
+            <a class="btn" href="tel:0379156486">Gọi</a>
+          </div>
+        </div>
+
+        <div class="card product">
+          <div class="pimg"><img src="dongho-b.webp" loading="lazy" alt="Mẫu B 399K"></div>
+          <div class="ptitle"><b>Mẫu B</b> • 399K</div>
+          <p class="pdesc">Nhìn nam tính, dễ phối đồ, tặng quà hợp.</p>
+          <div class="row">
+            <a class="btn gold" href="https://zalo.me/0379156486?text=Toi%20muon%20dat%20Mau%20B%20399K" target="_blank">Đặt mẫu B</a>
+            <a class="btn" href="tel:0379156486">Gọi</a>
+          </div>
+        </div>
+
+        <div class="card product">
+          <div class="pimg"><img src="dongho-c.webp" loading="lazy" alt="Mẫu C 399K"></div>
+          <div class="ptitle"><b>Mẫu C</b> • 399K</div>
+          <p class="pdesc">Dây chắc, khoá tiện, đeo êm tay.</p>
+          <div class="row">
+            <a class="btn gold" href="https://zalo.me/0379156486?text=Toi%20muon%20dat%20Mau%20C%20399K" target="_blank">Đặt mẫu C</a>
+            <a class="btn" href="tel:0379156486">Gọi</a>
+          </div>
+        </div>
       </div>
 
-      <div class="product">
-        <h3>Mẫu C – 399K</h3>
-        <p>Dây chắc – khoá tiện – đeo êm tay</p>
-        <a class="btn zalo" href="https://zalo.me/0966922183?text=Tôi%20muốn%20đặt%20Mẫu%20C%20399K">
-          Đặt mẫu C
-        </a>
-      </div>
-
+      <div class="foot">© MenWatch Luxury • menwatchluxury.com</div>
     </div>
   </div>
 
-  <div class="footer">
-    © MenWatch Luxury – Website bán đồng hồ 399K
-  </div>
-
-</div>
-
-</body><!-- ZALO CHAT PRO -->
-<style>
-.zalo-chat-pro{
-  position:fixed;
-  bottom:20px;
-  right:20px;
-  z-index:99999;
-  display:flex;
-  align-items:center;
-  gap:10px;
-}
-.zalo-bubble{
-  background:#fff;
-  color:#333;
-  padding:8px 12px;
-  border-radius:20px;
-  font-size:13px;
-  box-shadow:0 4px 12px rgba(0,0,0,.2);
-  animation:fadeIn 1s ease-in-out;
-}
-.zalo-btn{
-  width:60px;
-  height:60px;
-  border-radius:50%;
-  background:#0a5cff;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  box-shadow:0 0 0 rgba(10,92,255,.6);
-  animation:pulse 1.5s infinite;
-}
-.zalo-btn img{
-  width:36px;
-  height:36px;
-}
-@keyframes pulse{
-  0%{box-shadow:0 0 0 0 rgba(10,92,255,.6);}
-  70%{box-shadow:0 0 0 15px rgba(10,92,255,0);}
-  100%{box-shadow:0 0 0 0 rgba(10,92,255,0);}
-}
-@keyframes fadeIn{
-  from{opacity:0;transform:translateX(10px);}
-  to{opacity:1;transform:translateX(0);}
-}
-@media(max-width:768px){
-  .zalo-bubble{display:none;}
-}
-</style>
-
-<a class="zalo-chat-pro" href="https://zalo.me/0966922183" target="_blank">
-  <div class="zalo-bubble">Chat Zalo – Để không bỏ lỡ ưu đãi</div>
-  <div class="zalo-btn">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Icon_of_Zalo.svg" alt="Zalo">
-  </div>
-</a>
-<!-- END ZALO CHAT PRO -->
+  <!-- Zalo floating PRO -->
+  <a class="zalo-chat-pro" href="https://zalo.me/0379156486" target="_blank" aria-label="Chat Zalo">
+    <div class="zalo-bubble">Chat Zalo – Tư vấn nhanh</div>
+    <div class="zalo-btn">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Icon_of_Zalo.svg" alt="Zalo">
+    </div>
+  </a>
+</body>
 </html>
+
