@@ -6,7 +6,30 @@
   <title>Đồng hồ nam 399K – MenWatch Luxury</title>
   <meta name="description" content="Đồng hồ nam 399K – đeo sang, giao nhanh, kiểm tra trước khi nhận. Đặt hàng qua Zalo 0966922183." />
 
-  <style>
+  <style>/* HERO IMAGE (thay cho đoạn chữ mô tả) */
+.hero-banner{
+  margin:10px 0 12px;
+  border-radius:18px;
+  overflow:hidden;
+  border:1px solid rgba(255,255,255,.08);
+  background:linear-gradient(135deg, rgba(255,215,0,.06), rgba(0,104,255,.05));
+  box-shadow:0 12px 40px rgba(0,0,0,.25);
+}
+
+.hero-banner img{
+  width:100%;
+  height:170px;         /* desktop */
+  object-fit:cover;
+  display:block;
+}
+
+@media(max-width:900px){
+  .hero-banner img{ height:190px; }  /* tablet */
+}
+@media(max-width:768px){
+  .hero-banner img{ height:200px; }  /* mobile */
+}
+
 /* ===== VIDEO EMBED + MOBILE VIEW FIX ===== */
 .video-wrapper{
   position:relative;
@@ -851,17 +874,10 @@ a{color:inherit}
     <div class="hero">
       <div class="hero-inner">
         <div class="hero-left">
-          <div class="h-title">MenWatch Luxury – Đồng hồ nam Sang Trọng <span>Lịch Lãm</span></div>
-          <div class="h-luxline">Thiết kế nổi bật • Lên tay sang • Hoàn thiện sắc nét • Tặng hộp</div>
-          <p class="h-note">
-            Nhận <b>ảnh/video thật</b> trước khi chốt • <b>Kiểm tra trước khi nhận</b> • Đóng gói quà tặng • Giao nhanh toàn quốc.
-          </p>
+         <div class="hero-banner">
+  <img src="hero-banner.jpg" loading="lazy" alt="MenWatch Luxury - 399K">
+</div>
 
-          <div class="cta-row">
-            <a class="btn btn-green" href="https://zalo.me/0966922183" target="_blank" rel="noopener">Đặt hàng qua Zalo</a>
-            <a class="btn" href="tel:0966922183">Gọi ngay: 0966922183</a>
-            <a class="btn btn-gold" href="#best">Xem mẫu bán chạy</a>
-          </div>
         </div>
 
         <div class="hero-right">
