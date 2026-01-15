@@ -6,7 +6,9 @@
   <title>Đồng hồ nam 399K – MenWatch Luxury</title>
   <meta name="description" content="Đồng hồ nam 399K – đeo sang, giao nhanh, kiểm tra trước khi nhận. Đặt hàng qua Zalo 0966922183." />
 
-  <style>.video-wrapper{
+  <style>
+/* ===== VIDEO EMBED + MOBILE VIEW FIX ===== */
+.video-wrapper{
   position:relative;
   width:100%;
   padding-top:56.25%;
@@ -14,7 +16,6 @@
   overflow:hidden;
   background:#000;
 }
-
 .video-wrapper iframe{
   position:absolute;
   top:0; left:0;
@@ -22,7 +23,6 @@
   height:100%;
   border:0;
 }
-
 .video-mobile-cover{
   position:absolute;
   inset:0;
@@ -35,979 +35,778 @@
   font-size:16px;
   text-decoration:none;
 }
-
 .video-mobile-cover span{
   padding:14px 20px;
   border-radius:999px;
   background:linear-gradient(90deg,#ffd700,#c9a227);
   color:#111;
 }
-
 @media(max-width:768px){
-  .video-wrapper iframe{
-    pointer-events:none;
-  }
-  .video-mobile-cover{
-    display:flex;
-  }
+  .video-wrapper iframe{ pointer-events:none; }
+  .video-mobile-cover{ display:flex; }
 }
 
-    :root{
-      --bg:#07080a;
-      --panel:#0c0f14;
-      --panel2:#0a0c10;
-      --text:#e9eef6;
-      --muted:#b7c0cd;
-      --gold:#ffd700;
-      --gold2:#c9a227;
-      --line:rgba(255,215,0,.18);
-      --shadow: 0 18px 55px rgba(0,0,0,.55);
-      --radius:18px;
-    }
+/* ===== BASE ===== */
+:root{
+  --bg:#07080a;
+  --panel:#0c0f14;
+  --panel2:#0a0c10;
+  --text:#e9eef6;
+  --muted:#b7c0cd;
+  --gold:#ffd700;
+  --gold2:#c9a227;
+  --line:rgba(255,215,0,.18);
+  --shadow: 0 18px 55px rgba(0,0,0,.55);
+  --radius:18px;
+}
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial;
+  background:
+    radial-gradient(900px 450px at 10% 0%, rgba(255,215,0,.08), transparent 60%),
+    radial-gradient(900px 450px at 90% 20%, rgba(0,104,255,.10), transparent 60%),
+    radial-gradient(900px 700px at 50% 100%, rgba(255,215,0,.05), transparent 60%),
+    var(--bg);
+  color:var(--text);
+  min-height:100vh;
+}
+a{color:inherit}
 
-    *{box-sizing:border-box}
-    body{
-      margin:0;
-      font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial;
-      background:
-        radial-gradient(900px 450px at 10% 0%, rgba(255,215,0,.08), transparent 60%),
-        radial-gradient(900px 450px at 90% 20%, rgba(0,104,255,.10), transparent 60%),
-        radial-gradient(900px 700px at 50% 100%, rgba(255,215,0,.05), transparent 60%),
-        var(--bg);
-      color:var(--text);
-      min-height:100vh;
-    }
-    a{color:inherit}
+.wrap{
+  max-width:980px;
+  margin:0 auto;
+  padding:22px 16px 120px;
+}
 
-    .wrap{
-      max-width:980px;
-      margin:0 auto;
-      padding:22px 16px 120px;
-    }
+/* Top */
+.topbar{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  margin-bottom:14px;
+}
+.brand{display:flex; flex-direction:column; gap:4px;}
+.brand .name{font-weight:900; letter-spacing:.2px; color:#fff; opacity:.95;}
+.brand .sub{color:var(--muted); font-size:13px;}
+.pill{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding:10px 12px;
+  border-radius:999px;
+  background:rgba(255,215,0,.10);
+  border:1px solid var(--line);
+  box-shadow:0 0 22px rgba(255,215,0,.08);
+  font-size:13px;
+  color:#fff;
+  white-space:nowrap;
+}
+.pill b{color:var(--gold)}
 
-    /* Top */
-    .topbar{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:12px;
-      margin-bottom:14px;
-    }
-    .brand{
-      display:flex;
-      flex-direction:column;
-      gap:4px;
-    }
-    .brand .name{
-      font-weight:900;
-      letter-spacing:.2px;
-      color:#fff;
-      opacity:.95;
-    }
-    .brand .sub{
-      color:var(--muted);
-      font-size:13px;
-    }
-    .pill{
-      display:inline-flex;
-      align-items:center;
-      gap:8px;
-      padding:10px 12px;
-      border-radius:999px;
-      background:rgba(255,215,0,.10);
-      border:1px solid var(--line);
-      box-shadow:0 0 22px rgba(255,215,0,.08);
-      font-size:13px;
-      color:#fff;
-      white-space:nowrap;
-    }
-    .pill b{color:var(--gold)}
+/* Hero */
+.hero{
+  border-radius:22px;
+  background:linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.01));
+  border:1px solid rgba(255,255,255,.06);
+  box-shadow: var(--shadow);
+  overflow:hidden;
+  position:relative;
+}
+.hero::before{
+  content:"";
+  position:absolute; inset:-1px;
+  border-radius:22px;
+  padding:1px;
+  background:linear-gradient(135deg, rgba(255,215,0,.30), rgba(0,104,255,.18), rgba(255,215,0,.10));
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite:xor;
+  mask-composite:exclude;
+  pointer-events:none;
+}
+.hero-inner{
+  display:grid;
+  grid-template-columns: 1.2fr .8fr;
+  gap:16px;
+  padding:18px;
+}
+.hero-left{padding:6px 6px 10px;}
+.h-title{
+  font-size:28px;
+  line-height:1.15;
+  margin:6px 0 10px;
+  font-weight:1000;
+  letter-spacing:.2px;
+}
+.h-title span{
+  color:var(--gold);
+  text-shadow:0 0 18px rgba(255,215,0,.18);
+}
+.h-note{
+  color:var(--muted);
+  margin:0 0 12px;
+  font-size:14px;
+  line-height:1.45;
+}
+.cta-row{display:flex; flex-wrap:wrap; gap:10px; margin-top:12px;}
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  padding:12px 14px;
+  border-radius:14px;
+  text-decoration:none;
+  font-weight:900;
+  font-size:14px;
+  border:1px solid rgba(255,255,255,.08);
+  background:rgba(255,255,255,.06);
+  color:#fff;
+  transition:.2s;
+}
+.btn:hover{transform:translateY(-1px); opacity:.95}
+.btn-gold{
+  background:linear-gradient(90deg,var(--gold),var(--gold2));
+  color:#111;
+  border:0;
+  box-shadow:0 0 22px rgba(255,215,0,.22);
+}
+.btn-green{
+  background:linear-gradient(90deg,#00e676,#00c853);
+  color:#08110b;
+  border:0;
+  box-shadow:0 0 22px rgba(0,230,118,.18);
+}
+.hero-right{
+  border-radius:18px;
+  background:linear-gradient(180deg, rgba(0,0,0,.35), rgba(0,0,0,.15));
+  border:1px solid rgba(255,215,0,.12);
+  overflow:hidden;
+  display:flex;
+  flex-direction:column;
+}
+.price-box{
+  padding:16px;
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+}
+.price{
+  font-size:30px;
+  font-weight:1000;
+  color:var(--gold);
+  letter-spacing:.3px;
+  text-shadow:0 0 20px rgba(255,215,0,.15);
+}
+.checks{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px 10px;
+  color:var(--muted);
+  font-size:13px;
+  line-height:1.35;
+}
+.checks span{
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  background:rgba(255,255,255,.04);
+  border:1px solid rgba(255,255,255,.06);
+  border-radius:999px;
+  padding:6px 10px;
+}
+.checks i{color:#2dff7a; font-style:normal}
 
-    /* Hero */
-    .hero{
-      border-radius:22px;
-      background:linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.01));
-      border:1px solid rgba(255,255,255,.06);
-      box-shadow: var(--shadow);
-      overflow:hidden;
-      position:relative;
-    }
-    .hero::before{
-      content:"";
-      position:absolute; inset:-1px;
-      border-radius:22px;
-      padding:1px;
-      background:linear-gradient(135deg, rgba(255,215,0,.30), rgba(0,104,255,.18), rgba(255,215,0,.10));
-      -webkit-mask:
-        linear-gradient(#000 0 0) content-box,
-        linear-gradient(#000 0 0);
-      -webkit-mask-composite:xor;
-      mask-composite:exclude;
-      pointer-events:none;
-    }
+/* URGENCY BAR */
+.urgency-bar{
+  margin:0 16px 14px;
+  padding:12px 14px;
+  border-radius:14px;
+  background:linear-gradient(180deg,#0c0c0c,#141414);
+  border:1px solid rgba(255,215,0,.22);
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+  box-shadow:0 0 30px rgba(255,215,0,.06);
+}
+.live-view{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  color:#eaeaea;
+  font-size:13px;
+  font-weight:700;
+}
+.live-view .dot{
+  width:9px;height:9px;border-radius:50%;
+  background:#2dff7a;
+  box-shadow:0 0 0 rgba(45,255,122,.6);
+  animation:dotPulse 1.2s infinite;
+}
+@keyframes dotPulse{
+  0%{box-shadow:0 0 0 0 rgba(45,255,122,.55)}
+  70%{box-shadow:0 0 0 10px rgba(45,255,122,0)}
+  100%{box-shadow:0 0 0 0 rgba(45,255,122,0)}
+}
+.stock-left{
+  color:var(--gold);
+  font-size:13px;
+  text-align:right;
+  font-weight:800;
+}
 
-    .hero-inner{
-      display:grid;
-      grid-template-columns: 1.2fr .8fr;
-      gap:16px;
-      padding:18px;
-    }
-    .hero-left{padding:6px 6px 10px;}
-    .h-title{
-      font-size:28px;
-      line-height:1.15;
-      margin:6px 0 10px;
-      font-weight:1000;
-      letter-spacing:.2px;
-    }
-    .h-title span{
-      color:var(--gold);
-      text-shadow:0 0 18px rgba(255,215,0,.18);
-    }
-    .h-note{
-      color:var(--muted);
-      margin:0 0 12px;
-      font-size:14px;
-      line-height:1.45;
-    }
+/* Sections */
+.section{margin-top:18px; padding:4px;}
+.section h2{margin:14px 0 12px; font-size:18px; letter-spacing:.2px; color:#fff;}
+.section h2 .gold{color:var(--gold)}
+.grid{display:grid; grid-template-columns: repeat(3, 1fr); gap:14px;}
 
-    .cta-row{
-      display:flex;
-      flex-wrap:wrap;
-      gap:10px;
-      margin-top:12px;
-    }
-    .btn{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      gap:10px;
-      padding:12px 14px;
-      border-radius:14px;
-      text-decoration:none;
-      font-weight:900;
-      font-size:14px;
-      border:1px solid rgba(255,255,255,.08);
-      background:rgba(255,255,255,.06);
-      color:#fff;
-      transition:.2s;
-    }
-    .btn:hover{transform:translateY(-1px); opacity:.95}
-    .btn-gold{
-      background:linear-gradient(90deg,var(--gold),var(--gold2));
-      color:#111;
-      border:0;
-      box-shadow:0 0 22px rgba(255,215,0,.22);
-    }
-    .btn-green{
-      background:linear-gradient(90deg,#00e676,#00c853);
-      color:#08110b;
-      border:0;
-      box-shadow:0 0 22px rgba(0,230,118,.18);
-    }
+.card{
+  background:linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.01));
+  border:1px solid rgba(255,255,255,.07);
+  border-radius:var(--radius);
+  box-shadow:0 12px 40px rgba(0,0,0,.35);
+  overflow:hidden;
+  position:relative;
+}
+.card::after{
+  content:"";
+  position:absolute; inset:0;
+  background: radial-gradient(300px 180px at 30% 0%, rgba(255,215,0,.10), transparent 60%);
+  pointer-events:none;
+}
+.imgbox{
+  aspect-ratio: 4/3;
+  background:linear-gradient(135deg, rgba(255,215,0,.06), rgba(0,104,255,.05));
+  border-bottom:1px solid rgba(255,255,255,.06);
+  overflow:hidden;
+  position:relative;
+}
+.imgbox img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+}
+.c-body{padding:14px}
+.c-title{font-weight:1000; margin:0 0 6px; color:#fff;}
+.c-desc{margin:0; color:var(--muted); font-size:13px; line-height:1.35; min-height:36px;}
+.c-actions{display:flex; gap:10px; margin-top:10px;}
+.c-actions a{
+  flex:1;
+  text-align:center;
+  padding:11px 10px;
+  border-radius:14px;
+  text-decoration:none;
+  font-weight:1000;
+  font-size:13px;
+}
+.c-actions .buy{background:linear-gradient(90deg,var(--gold),var(--gold2)); color:#111;}
+.c-actions .call{
+  background:rgba(255,255,255,.06);
+  border:1px solid rgba(255,255,255,.08);
+  color:#fff;
+}
 
-    .hero-right{
-      border-radius:18px;
-      background:linear-gradient(180deg, rgba(0,0,0,.35), rgba(0,0,0,.15));
-      border:1px solid rgba(255,215,0,.12);
-      overflow:hidden;
-      display:flex;
-      flex-direction:column;
-    }
-    .price-box{
-      padding:16px;
-      display:flex;
-      flex-direction:column;
-      gap:10px;
-    }
-    .price{
-      font-size:30px;
-      font-weight:1000;
-      color:var(--gold);
-      letter-spacing:.3px;
-      text-shadow:0 0 20px rgba(255,215,0,.15);
-    }
-    .quick{
-      color:#dfe7f3;
-      font-weight:800;
-      margin-top:-6px;
-    }
-    .checks{
-      display:flex;
-      flex-wrap:wrap;
-      gap:8px 10px;
-      color:var(--muted);
-      font-size:13px;
-      line-height:1.35;
-    }
-    .checks span{
-      display:inline-flex;
-      align-items:center;
-      gap:6px;
-      background:rgba(255,255,255,.04);
-      border:1px solid rgba(255,255,255,.06);
-      border-radius:999px;
-      padding:6px 10px;
-    }
-    .checks i{color:#2dff7a; font-style:normal}
+/* ===== GIÁ CŨ – GIÁ MỚI ===== */
+.card-price{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:10px;
+  margin:10px 0 6px;
+}
+.card-price .old{color:#8f8f8f; text-decoration:line-through; font-size:14px;}
+.card-price .new{color:var(--gold); font-size:16px; font-weight:900;}
+.card-stars{text-align:center; color:#ffd700; font-weight:900; font-size:13px; margin-bottom:4px;}
+.card-stock{text-align:center; font-size:12px; color:#ffd700; font-weight:800; margin-bottom:4px;}
 
-    /* URGENCY BAR */
-    .urgency-bar{
-      margin:0 16px 14px;
-      padding:12px 14px;
-      border-radius:14px;
-      background:linear-gradient(180deg,#0c0c0c,#141414);
-      border:1px solid rgba(255,215,0,.22);
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:10px;
-      box-shadow:0 0 30px rgba(255,215,0,.06);
-    }
-    .live-view{
-      display:flex;
-      align-items:center;
-      gap:8px;
-      color:#eaeaea;
-      font-size:13px;
-      font-weight:700;
-    }
-    .live-view .dot{
-      width:9px;height:9px;border-radius:50%;
-      background:#2dff7a;
-      box-shadow:0 0 0 rgba(45,255,122,.6);
-      animation:dotPulse 1.2s infinite;
-    }
-    @keyframes dotPulse{
-      0%{box-shadow:0 0 0 0 rgba(45,255,122,.55)}
-      70%{box-shadow:0 0 0 10px rgba(45,255,122,0)}
-      100%{box-shadow:0 0 0 0 rgba(45,255,122,0)}
-    }
-    .stock-left{
-      color:var(--gold);
-      font-size:13px;
-      text-align:right;
-      font-weight:800;
-    }
+/* ===== SALE BADGE + VIEW HINT ===== */
+.sale-badge{
+  position:absolute;
+  top:10px; left:10px;
+  background:linear-gradient(90deg,#ff3b3b,#ff6b6b);
+  color:#fff;
+  font-size:12px;
+  font-weight:900;
+  padding:6px 10px;
+  border-radius:999px;
+  z-index:3;
+  box-shadow:0 6px 18px rgba(0,0,0,.35);
+}
+.view-hint{
+  position:absolute;
+  right:10px;
+  top:10px;
+  background:rgba(0,0,0,.55);
+  border:1px solid rgba(255,255,255,.10);
+  color:#fff;
+  font-size:11px;
+  font-weight:900;
+  padding:6px 10px;
+  border-radius:999px;
+  z-index:3;
+  display:none;
+}
+.view-hint.show{display:inline-flex}
 
-    /* Sections */
-    .section{
-      margin-top:18px;
-      padding:4px;
-    }
-    .section h2{
-      margin:14px 0 12px;
-      font-size:18px;
-      letter-spacing:.2px;
-      color:#fff;
-    }
-    .section h2 .gold{color:var(--gold)}
-    .grid{
-      display:grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap:14px;
-    }
+/* Best seller */
+.best-seller{
+  margin-top:14px;
+  padding:18px;
+  border-radius:20px;
+  background:linear-gradient(180deg,#090a0d,#121318);
+  border:1px solid rgba(255,215,0,.22);
+  box-shadow:0 0 40px rgba(255,215,0,.08);
+  position:relative;
+  overflow:hidden;
+}
+.best-seller::before{
+  content:"";
+  position:absolute; inset:-2px;
+  background:radial-gradient(500px 250px at 20% 0%, rgba(255,215,0,.12), transparent 60%);
+  pointer-events:none;
+}
+.bs-badge{
+  position:absolute;
+  top:14px;
+  left:14px;
+  background:linear-gradient(90deg,#ffd700,#c9a227);
+  color:#111;
+  font-weight:1000;
+  padding:7px 12px;
+  border-radius:999px;
+  font-size:12px;
+  z-index:2;
+}
+.bs-wrap{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap:14px;
+  position:relative;
+  z-index:1;
+}
+.bs-photo{
+  border-radius:16px;
+  overflow:hidden;
+  border:1px solid rgba(255,255,255,.08);
+  background:#0b0d11;
+}
+.bs-photo img{
+  width:100%; height:100%;
+  object-fit:cover;
+  display:block;
+  transition:.25s;
+}
+.bs-photo:hover img{transform:scale(1.04)}
+.bs-info{
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+  padding:4px 2px;
+}
+.bs-title{font-size:20px; font-weight:1000; color:var(--gold); margin-top:2px;}
+.bs-sub{color:#dfe7f3; font-size:14px; line-height:1.4;}
+.bs-sub b{color:#fff}
+.stars{display:flex; align-items:center; gap:6px; color:#ffd700; font-weight:900;}
+.stars small{color:var(--muted); font-weight:700}
+.bs-cta{display:flex; gap:10px; margin-top:6px;}
+.bs-cta a{
+  flex:1;
+  text-align:center;
+  padding:12px 12px;
+  border-radius:14px;
+  text-decoration:none;
+  font-weight:1000;
+  font-size:14px;
+}
 
-    .card{
-      background:linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.01));
-      border:1px solid rgba(255,255,255,.07);
-      border-radius:var(--radius);
-      box-shadow:0 12px 40px rgba(0,0,0,.35);
-      overflow:hidden;
-      position:relative;
-    }
-    .card::after{
-      content:"";
-      position:absolute; inset:0;
-      background: radial-gradient(300px 180px at 30% 0%, rgba(255,215,0,.10), transparent 60%);
-      pointer-events:none;
-    }
-    .imgbox{
-      aspect-ratio: 4/3;
-      background:linear-gradient(135deg, rgba(255,215,0,.06), rgba(0,104,255,.05));
-      border-bottom:1px solid rgba(255,255,255,.06);
-      overflow:hidden;
-    }
-    .imgbox img{
-      width:100%;
-      height:100%;
-      object-fit:cover;
-      display:block;
-    }
-    .c-body{padding:14px}
-    .c-title{
-      font-weight:1000;
-      margin:0 0 6px;
-      color:#fff;
-    }
-    .c-desc{
-      margin:0;
-      color:var(--muted);
-      font-size:13px;
-      line-height:1.35;
-      min-height:36px;
-    }
+/* ===== BEST SELLER SUB IMAGES (2 ô ảnh phụ) ===== */
+.bs-media{
+  display:grid;
+  grid-template-columns: 1fr 120px;
+  gap:12px;
+  align-items:stretch;
+}
+.bs-photo{height:100%;}
+.bs-subphotos{display:flex; flex-direction:column; gap:12px; height:100%;}
+.sub-photo{
+  border-radius:14px;
+  overflow:hidden;
+  border:1px solid rgba(255,255,255,.08);
+  background:#0b0d11;
+  flex:1;
+  aspect-ratio:auto;
+}
+.sub-photo img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+  transition:.25s;
+}
+.sub-photo:hover img{transform:scale(1.05)}
+@media(max-width:768px){
+  .bs-media{grid-template-columns:1fr}
+  .bs-subphotos{flex-direction:row}
+}
 
-    .c-actions{
-      display:flex;
-      gap:10px;
-      margin-top:10px;
-    }
-    .c-actions a{
-      flex:1;
-      text-align:center;
-      padding:11px 10px;
-      border-radius:14px;
-      text-decoration:none;
-      font-weight:1000;
-      font-size:13px;
-    }
-    .c-actions .buy{
-      background:linear-gradient(90deg,var(--gold),var(--gold2));
-      color:#111;
-    }
-    .c-actions .call{
-      background:rgba(255,255,255,.06);
-      border:1px solid rgba(255,255,255,.08);
-      color:#fff;
-    }
+/* Compare panel reuse (for Standard section) */
+.compare{
+  margin-top:14px;
+  padding:16px;
+  border-radius:20px;
+  background:linear-gradient(180deg,#090a0d,#121318);
+  border:1px solid rgba(255,215,0,.18);
+  box-shadow:0 0 40px rgba(255,215,0,.06);
+}
+.compare h3{
+  margin:0 0 10px;
+  font-size:16px;
+  font-weight:1000;
+  color:#fff;
+}
+.compare h3 span{color:var(--gold)}
 
-    /* ===== GIÁ CŨ – GIÁ MỚI TRONG CARD ===== */
-    .card-price{
-      display:flex;
-      justify-content:center;
-      align-items:center;
-      gap:10px;
-      margin:10px 0 6px;
-    }
-    .card-price .old{
-      color:#8f8f8f;
-      text-decoration:line-through;
-      font-size:14px;
-    }
-    .card-price .new{
-      color:var(--gold);
-      font-size:16px;
-      font-weight:900;
-    }
-    .card-stars{
-      text-align:center;
-      color:#ffd700;
-      font-weight:900;
-      font-size:13px;
-      margin-bottom:4px;
-    }
-    .card-stock{
-      text-align:center;
-      font-size:12px;
-      color:#ffd700;
-      font-weight:800;
-      margin-bottom:4px;
-    }
+/* Video */
+.video-grid{
+  display:grid;
+  grid-template-columns: 1.2fr .8fr;
+  gap:14px;
+}
+.video-card{
+  border-radius:18px;
+  overflow:hidden;
+  border:1px solid rgba(255,255,255,.08);
+  background:#0b0d11;
+  box-shadow:0 12px 40px rgba(0,0,0,.35);
+}
+.video-note{
+  padding:14px;
+  color:var(--muted);
+  font-size:13px;
+  line-height:1.5;
+}
+.video-note b{color:#fff}
 
-    /* ===== SALE BADGE + VIEW HINT ===== */
-    .sale-badge{
-      position:absolute;
-      top:10px; left:10px;
-      background:linear-gradient(90deg,#ff3b3b,#ff6b6b);
-      color:#fff;
-      font-size:12px;
-      font-weight:900;
-      padding:6px 10px;
-      border-radius:999px;
-      z-index:3;
-      box-shadow:0 6px 18px rgba(0,0,0,.35);
-    }
-    .view-hint{
-      position:absolute;
-      right:10px;
-      top:10px;
-      background:rgba(0,0,0,.55);
-      border:1px solid rgba(255,255,255,.10);
-      color:#fff;
-      font-size:11px;
-      font-weight:900;
-      padding:6px 10px;
-      border-radius:999px;
-      z-index:3;
-      display:none;
-    }
-    .view-hint.show{display:inline-flex}
+/* Feedback slider */
+.slider{
+  display:flex;
+  gap:12px;
+  overflow:auto;
+  scroll-snap-type:x mandatory;
+  padding:6px 2px 10px;
+  -webkit-overflow-scrolling:touch;
+}
+.slider::-webkit-scrollbar{height:8px}
+.slider::-webkit-scrollbar-thumb{background:rgba(255,215,0,.18); border-radius:999px;}
+.fb-card{
+  flex:0 0 320px;
+  scroll-snap-align:start;
+  background:linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.01));
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:18px;
+  overflow:hidden;
+  box-shadow:0 12px 40px rgba(0,0,0,.35);
+}
+.fb-head{
+  padding:12px 14px 10px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:8px;
+}
+.fb-title{font-weight:1000;color:#fff;}
+.fb-stars{color:#ffd700; font-weight:1000; font-size:14px; white-space:nowrap;}
+.fb-body{padding:0 14px 14px; color:var(--muted); font-size:13px; line-height:1.45;}
+.fb-tag{
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  margin-top:10px;
+  padding:6px 10px;
+  border-radius:999px;
+  background:rgba(255,215,0,.10);
+  border:1px solid rgba(255,215,0,.18);
+  color:#fff;
+  font-weight:900;
+  font-size:12px;
+}
 
-    /* Best seller */
-    .best-seller{
-      margin-top:14px;
-      padding:18px;
-      border-radius:20px;
-      background:linear-gradient(180deg,#090a0d,#121318);
-      border:1px solid rgba(255,215,0,.22);
-      box-shadow:0 0 40px rgba(255,215,0,.08);
-      position:relative;
-      overflow:hidden;
-    }
-    .best-seller::before{
-      content:"";
-      position:absolute; inset:-2px;
-      background:radial-gradient(500px 250px at 20% 0%, rgba(255,215,0,.12), transparent 60%);
-      pointer-events:none;
-    }
-    .bs-badge{
-      position:absolute;
-      top:14px;
-      left:14px;
-      background:linear-gradient(90deg,#ffd700,#c9a227);
-      color:#111;
-      font-weight:1000;
-      padding:7px 12px;
-      border-radius:999px;
-      font-size:12px;
-      z-index:2;
-    }
-    .bs-wrap{
-      display:grid;
-      grid-template-columns: 1fr 1fr;
-      gap:14px;
-      position:relative;
-      z-index:1;
-    }
-    .bs-photo{
-      border-radius:16px;
-      overflow:hidden;
-      border:1px solid rgba(255,255,255,.08);
-      background:#0b0d11;
-    }
-    .bs-photo img{
-      width:100%; height:100%;
-      object-fit:cover;
-      display:block;
-      transition:.25s;
-    }
-    .bs-photo:hover img{transform:scale(1.04)}
-    .bs-info{
-      display:flex;
-      flex-direction:column;
-      gap:10px;
-      padding:4px 2px;
-    }
-    .bs-title{
-      font-size:20px;
-      font-weight:1000;
-      color:var(--gold);
-      margin-top:2px;
-    }
-    .bs-sub{
-      color:#dfe7f3;
-      font-size:14px;
-      line-height:1.4;
-    }
-    .bs-sub b{color:#fff}
-    .stars{
-      display:flex;
-      align-items:center;
-      gap:6px;
-      color:#ffd700;
-      font-weight:900;
-    }
-    .stars small{color:var(--muted); font-weight:700}
-    .bs-cta{
-      display:flex;
-      gap:10px;
-      margin-top:6px;
-    }
-    .bs-cta a{
-      flex:1;
-      text-align:center;
-      padding:12px 12px;
-      border-radius:14px;
-      text-decoration:none;
-      font-weight:1000;
-      font-size:14px;
-    }
+/* Footer */
+.footer{margin-top:22px; text-align:center; color:rgba(255,255,255,.55); font-size:12px; padding:10px 0 0;}
 
-    /* ===== BEST SELLER SUB IMAGES (2 ô ảnh phụ) ===== */
-    .bs-media{
-      display:grid;
-      grid-template-columns: 1fr 120px;
-      gap:12px;
-    }
-    .bs-subphotos{
-      display:flex;
-      flex-direction:column;
-      gap:12px;
-    }
-    .sub-photo{
-      border-radius:14px;
-      overflow:hidden;
-      border:1px solid rgba(255,255,255,.08);
-      background:#0b0d11;
-      aspect-ratio: 1/1;
-    }
-    .sub-photo img{
-      width:100%;
-      height:100%;
-      object-fit:cover;
-      display:block;
-      transition:.25s;
-    }
-    .sub-photo:hover img{transform:scale(1.05)}
-    @media(max-width:768px){
-      .bs-media{grid-template-columns:1fr}
-      .bs-subphotos{flex-direction:row}
-    }
+/* Zalo float */
+.zalo-float{
+  position:fixed;
+  right:20px;
+  bottom:18px;
+  z-index:99998;
+  display:flex;
+  align-items:center;
+  gap:10px;
+  text-decoration:none;
+  font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial;
+}
+.zalo-text{
+  background:#fff;
+  color:#111;
+  padding:8px 12px;
+  border-radius:20px;
+  font-size:13px;
+  box-shadow:0 10px 25px rgba(0,0,0,.25);
+  white-space:nowrap;
+}
+.zalo-btn{
+  width:64px;height:64px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  background:#0a68ff;
+  box-shadow:0 0 0 rgba(10,104,255,.55);
+  animation: zPulse 1.4s infinite, zWiggle 2.6s infinite;
+}
+.zalo-btn span{
+  width:38px;height:38px;border-radius:12px;
+  display:flex;align-items:center;justify-content:center;
+  background:rgba(255,255,255,.12);
+  color:#fff;
+  font-weight:1000;
+  font-size:14px;
+  letter-spacing:.5px;
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,.18);
+}
+@keyframes zPulse{
+  0%{box-shadow:0 0 0 0 rgba(10,104,255,.55)}
+  70%{box-shadow:0 0 0 18px rgba(10,104,255,0)}
+  100%{box-shadow:0 0 0 0 rgba(10,104,255,0)}
+}
+@keyframes zWiggle{
+  0%,85%,100%{transform:rotate(0deg)}
+  88%{transform:rotate(6deg)}
+  91%{transform:rotate(-6deg)}
+  94%{transform:rotate(4deg)}
+  97%{transform:rotate(-4deg)}
+}
 
-    /* Compare */
-    .compare{
-      margin-top:14px;
-      padding:16px;
-      border-radius:20px;
-      background:linear-gradient(180deg,#090a0d,#121318);
-      border:1px solid rgba(255,215,0,.18);
-      box-shadow:0 0 40px rgba(255,215,0,.06);
-    }
-    .compare h3{
-      margin:0 0 10px;
-      font-size:16px;
-      font-weight:1000;
-      color:#fff;
-    }
-    .compare h3 span{color:var(--gold)}
-    .compare table{
-      width:100%;
-      border-collapse:separate;
-      border-spacing:0;
-      overflow:hidden;
-      border-radius:14px;
-      border:1px solid rgba(255,255,255,.08);
-    }
-    .compare th, .compare td{
-      padding:12px 12px;
-      font-size:13px;
-      text-align:left;
-      border-bottom:1px solid rgba(255,255,255,.06);
-    }
-    .compare th{
-      background:rgba(255,255,255,.04);
-      color:#fff;
-      font-weight:1000;
-    }
-    .compare td{color:var(--muted)}
-    .compare tr:last-child td{border-bottom:0}
-    .compare .ok{color:#2dff7a; font-weight:900}
-    .compare .no{color:#ff6b6b; font-weight:900}
+/* Messenger float */
+.fb-messenger-float{
+  position:fixed;
+  right:20px;
+  bottom:95px;
+  z-index:99999;
+  display:flex;
+  align-items:center;
+  gap:10px;
+  text-decoration:none;
+  font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial;
+}
+.fb-messenger-text{
+  background:#fff;
+  color:#111;
+  padding:8px 12px;
+  border-radius:20px;
+  font-size:13px;
+  box-shadow:0 10px 25px rgba(0,0,0,.25);
+  white-space:nowrap;
+}
+.fb-messenger-btn{
+  width:64px;height:64px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  background:#0068FF;
+  box-shadow:0 0 0 rgba(0,104,255,.6);
+  animation: pulse 1.4s infinite, wiggle 2.6s infinite;
+}
+@keyframes pulse{
+  0%{box-shadow:0 0 0 0 rgba(0,104,255,.6)}
+  70%{box-shadow:0 0 0 18px rgba(0,104,255,0)}
+  100%{box-shadow:0 0 0 0 rgba(0,104,255,0)}
+}
+@keyframes wiggle{
+  0%,85%,100%{transform:rotate(0deg)}
+  88%{transform:rotate(6deg)}
+  91%{transform:rotate(-6deg)}
+  94%{transform:rotate(4deg)}
+  97%{transform:rotate(-4deg)}
+}
 
-    /* Video */
-    .video-grid{
-      display:grid;
-      grid-template-columns: 1.2fr .8fr;
-      gap:14px;
-    }
-    .video-card{
-      border-radius:18px;
-      overflow:hidden;
-      border:1px solid rgba(255,255,255,.08);
-      background:#0b0d11;
-      box-shadow:0 12px 40px rgba(0,0,0,.35);
-    }
-    .video-card iframe{
-      width:100%;
-      height:330px;
-      border:0;
-      display:block;
-    }
-    .video-note{
-      padding:14px;
-      color:var(--muted);
-      font-size:13px;
-      line-height:1.5;
-    }
-    .video-note b{color:#fff}
+/* MOBILE STICKY CTA */
+.mobile-cta{
+  position:fixed;
+  left:0; right:0;
+  bottom:0;
+  padding:10px 12px;
+  background:rgba(0,0,0,.78);
+  backdrop-filter: blur(10px);
+  border-top:1px solid rgba(255,215,0,.15);
+  display:none;
+  gap:10px;
+  z-index:999999;
+}
+.mobile-cta a{
+  flex:1;
+  text-align:center;
+  padding:14px 12px;
+  border-radius:14px;
+  font-weight:1000;
+  text-decoration:none;
+  font-size:15px;
+}
+.cta-zalo{
+  background:linear-gradient(90deg,#00e676,#00c853);
+  color:#08110b;
+  box-shadow:0 0 18px rgba(0,230,118,.25);
+}
+.cta-call{
+  background:linear-gradient(90deg,#ffd700,#c9a227);
+  color:#111;
+  box-shadow:0 0 18px rgba(255,215,0,.22);
+}
+.cta-hot{ animation: ctaPulse 1.2s infinite; }
+@keyframes ctaPulse{
+  0%{transform:scale(1); box-shadow:0 0 0 rgba(255,215,0,.0)}
+  70%{transform:scale(1.02); box-shadow:0 0 26px rgba(255,215,0,.18)}
+  100%{transform:scale(1); box-shadow:0 0 0 rgba(255,215,0,.0)}
+}
 
-    /* Feedback slider */
-    .slider{
-      display:flex;
-      gap:12px;
-      overflow:auto;
-      scroll-snap-type:x mandatory;
-      padding:6px 2px 10px;
-      -webkit-overflow-scrolling:touch;
-    }
-    .slider::-webkit-scrollbar{height:8px}
-    .slider::-webkit-scrollbar-thumb{
-      background:rgba(255,215,0,.18);
-      border-radius:999px;
-    }
-    .fb-card{
-      flex:0 0 320px;
-      scroll-snap-align:start;
-      background:linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.01));
-      border:1px solid rgba(255,255,255,.08);
-      border-radius:18px;
-      overflow:hidden;
-      box-shadow:0 12px 40px rgba(0,0,0,.35);
-    }
-    .fb-head{
-      padding:12px 14px 10px;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:8px;
-    }
-    .fb-title{font-weight:1000;color:#fff;}
-    .fb-stars{
-      color:#ffd700;
-      font-weight:1000;
-      font-size:14px;
-      white-space:nowrap;
-    }
-    .fb-body{
-      padding:0 14px 14px;
-      color:var(--muted);
-      font-size:13px;
-      line-height:1.45;
-    }
-    .fb-tag{
-      display:inline-flex;
-      align-items:center;
-      gap:6px;
-      margin-top:10px;
-      padding:6px 10px;
-      border-radius:999px;
-      background:rgba(255,215,0,.10);
-      border:1px solid rgba(255,215,0,.18);
-      color:#fff;
-      font-weight:900;
-      font-size:12px;
-    }
+/* Quickview */
+.quickview{
+  display:block;
+  margin-top:10px;
+  text-align:center;
+  padding:11px 10px;
+  border-radius:14px;
+  text-decoration:none;
+  font-weight:1000;
+  font-size:13px;
+  background:rgba(255,255,255,.06);
+  border:1px solid rgba(255,255,255,.10);
+  color:#fff;
+}
+.quickview:hover{opacity:.95; transform:translateY(-1px)}
 
-    /* Footer */
-    .footer{
-      margin-top:22px;
-      text-align:center;
-      color:rgba(255,255,255,.55);
-      font-size:12px;
-      padding:10px 0 0;
-    }
+/* Modal */
+.modal{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.72);
+  backdrop-filter: blur(8px);
+  display:none;
+  align-items:center;
+  justify-content:center;
+  padding:18px;
+  z-index:1000000;
+}
+.modal.show{display:flex;}
+.modal-card{
+  width:min(920px, 100%);
+  border-radius:18px;
+  background:linear-gradient(180deg,#0a0c10,#141621);
+  border:1px solid rgba(255,215,0,.18);
+  box-shadow:0 20px 70px rgba(0,0,0,.6);
+  overflow:hidden;
+  position:relative;
+}
+.modal-close{
+  position:absolute;
+  top:10px; right:10px;
+  width:38px; height:38px;
+  border-radius:12px;
+  border:1px solid rgba(255,255,255,.10);
+  background:rgba(255,255,255,.06);
+  color:#fff;
+  font-weight:1000;
+  cursor:pointer;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  z-index:2;
+}
+.modal-inner{display:grid; grid-template-columns: 1.2fr .8fr; gap:0;}
+.modal-media{background:#0b0d11; border-right:1px solid rgba(255,255,255,.06);}
+.modal-media img{width:100%; height:100%; object-fit:cover; display:block; aspect-ratio: 4/3;}
+.thumb-row{
+  display:flex; gap:10px; padding:10px;
+  overflow:auto;
+  border-top:1px solid rgba(255,255,255,.06);
+  background:rgba(255,255,255,.02);
+}
+.thumb-row::-webkit-scrollbar{height:8px}
+.thumb-row::-webkit-scrollbar-thumb{background:rgba(255,215,0,.18); border-radius:999px}
+.thumb{
+  flex:0 0 86px;
+  border-radius:12px;
+  overflow:hidden;
+  border:1px solid rgba(255,255,255,.10);
+  background:#0b0d11;
+  cursor:pointer;
+}
+.thumb img{width:100%; height:64px; object-fit:cover; display:block}
+.thumb.active{border-color:rgba(255,215,0,.55); box-shadow:0 0 0 2px rgba(255,215,0,.18) inset}
 
-    /* Zalo float */
-    .zalo-float{
-      position:fixed;
-      right:20px;
-      bottom:18px;
-      z-index:99998;
-      display:flex;
-      align-items:center;
-      gap:10px;
-      text-decoration:none;
-      font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial;
-    }
-    .zalo-text{
-      background:#fff;
-      color:#111;
-      padding:8px 12px;
-      border-radius:20px;
-      font-size:13px;
-      box-shadow:0 10px 25px rgba(0,0,0,.25);
-      white-space:nowrap;
-    }
-    .zalo-btn{
-      width:64px;height:64px;border-radius:50%;
-      display:flex;align-items:center;justify-content:center;
-      background:#0a68ff;
-      box-shadow:0 0 0 rgba(10,104,255,.55);
-      animation: zPulse 1.4s infinite, zWiggle 2.6s infinite;
-    }
-    .zalo-btn span{
-      width:38px;height:38px;border-radius:12px;
-      display:flex;align-items:center;justify-content:center;
-      background:rgba(255,255,255,.12);
-      color:#fff;
-      font-weight:1000;
-      font-size:14px;
-      letter-spacing:.5px;
-      box-shadow: inset 0 0 0 1px rgba(255,255,255,.18);
-    }
-    @keyframes zPulse{
-      0%{box-shadow:0 0 0 0 rgba(10,104,255,.55)}
-      70%{box-shadow:0 0 0 18px rgba(10,104,255,0)}
-      100%{box-shadow:0 0 0 0 rgba(10,104,255,0)}
-    }
-    @keyframes zWiggle{
-      0%,85%,100%{transform:rotate(0deg)}
-      88%{transform:rotate(6deg)}
-      91%{transform:rotate(-6deg)}
-      94%{transform:rotate(4deg)}
-      97%{transform:rotate(-4deg)}
-    }
+.modal-info{padding:14px 14px 16px;}
+.modal-title{font-size:18px; font-weight:1000; color:var(--gold); margin:2px 0 6px;}
+.modal-desc{color:var(--muted); font-size:13px; line-height:1.45; margin:0 0 10px;}
+.modal-bullets{display:flex; flex-wrap:wrap; gap:8px 10px; margin:10px 0 12px;}
+.modal-bullets span{
+  display:inline-flex; align-items:center; gap:6px;
+  background:rgba(255,255,255,.04);
+  border:1px solid rgba(255,255,255,.06);
+  border-radius:999px;
+  padding:6px 10px;
+  color:var(--muted);
+  font-size:13px;
+}
+.modal-bullets i{color:#2dff7a; font-style:normal}
+.modal-actions{display:flex; gap:10px; margin-top:10px;}
+.modal-actions a{
+  flex:1; text-align:center; padding:12px 12px;
+  border-radius:14px; text-decoration:none; font-weight:1000; font-size:14px;
+}
+.modal-actions .m-buy{background:linear-gradient(90deg,var(--gold),var(--gold2)); color:#111;}
+.modal-actions .m-call{background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.10); color:#fff;}
 
-    /* Messenger float */
-    .fb-messenger-float{
-      position:fixed;
-      right:20px;
-      bottom:95px;
-      z-index:99999;
-      display:flex;
-      align-items:center;
-      gap:10px;
-      text-decoration:none;
-      font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial;
-    }
-    .fb-messenger-text{
-      background:#fff;
-      color:#111;
-      padding:8px 12px;
-      border-radius:20px;
-      font-size:13px;
-      box-shadow:0 10px 25px rgba(0,0,0,.25);
-      white-space:nowrap;
-    }
-    .fb-messenger-btn{
-      width:64px;height:64px;border-radius:50%;
-      display:flex;align-items:center;justify-content:center;
-      background:#0068FF;
-      box-shadow:0 0 0 rgba(0,104,255,.6);
-      animation: pulse 1.4s infinite, wiggle 2.6s infinite;
-    }
-    @keyframes pulse{
-      0%{box-shadow:0 0 0 0 rgba(0,104,255,.6)}
-      70%{box-shadow:0 0 0 18px rgba(0,104,255,0)}
-      100%{box-shadow:0 0 0 0 rgba(0,104,255,0)}
-    }
-    @keyframes wiggle{
-      0%,85%,100%{transform:rotate(0deg)}
-      88%{transform:rotate(6deg)}
-      91%{transform:rotate(-6deg)}
-      94%{transform:rotate(4deg)}
-      97%{transform:rotate(-4deg)}
-    }
+/* toast */
+.toast{
+  position:fixed;
+  left:50%;
+  bottom:140px;
+  transform:translateX(-50%);
+  background:rgba(0,0,0,.85);
+  color:#fff;
+  padding:10px 14px;
+  border-radius:14px;
+  font-size:13px;
+  box-shadow:0 10px 30px rgba(0,0,0,.45);
+  opacity:0;
+  transition:.4s;
+  z-index:999999;
+}
+.toast.show{opacity:1; transform:translateX(-50%) translateY(-6px);}
 
-    /* MOBILE STICKY CTA */
-    .mobile-cta{
-      position:fixed;
-      left:0; right:0;
-      bottom:0;
-      padding:10px 12px;
-      background:rgba(0,0,0,.78);
-      backdrop-filter: blur(10px);
-      border-top:1px solid rgba(255,215,0,.15);
-      display:none;
-      gap:10px;
-      z-index:999999;
-    }
-    .mobile-cta a{
-      flex:1;
-      text-align:center;
-      padding:14px 12px;
-      border-radius:14px;
-      font-weight:1000;
-      text-decoration:none;
-      font-size:15px;
-    }
-    .cta-zalo{
-      background:linear-gradient(90deg,#00e676,#00c853);
-      color:#08110b;
-      box-shadow:0 0 18px rgba(0,230,118,.25);
-    }
-    .cta-call{
-      background:linear-gradient(90deg,#ffd700,#c9a227);
-      color:#111;
-      box-shadow:0 0 18px rgba(255,215,0,.22);
-    }
-    .cta-hot{
-      animation: ctaPulse 1.2s infinite;
-    }
-    @keyframes ctaPulse{
-      0%{transform:scale(1); box-shadow:0 0 0 rgba(255,215,0,.0)}
-      70%{transform:scale(1.02); box-shadow:0 0 26px rgba(255,215,0,.18)}
-      100%{transform:scale(1); box-shadow:0 0 0 rgba(255,215,0,.0)}
-    }
+/* Responsive */
+@media(max-width:900px){
+  .hero-inner{grid-template-columns:1fr}
+  .video-grid{grid-template-columns:1fr}
+  .grid{grid-template-columns:1fr; gap:12px}
+  .modal-inner{grid-template-columns:1fr}
+  .modal-media{border-right:0; border-bottom:1px solid rgba(255,255,255,.06);}
+}
+@media(max-width:768px){
+  .h-title{font-size:24px}
+  .pill{display:none}
+  .urgency-bar{flex-direction:column; align-items:flex-start}
+  .stock-left{text-align:left; width:100%}
+  .fb-messenger-text,.zalo-text{display:none}
+  .mobile-cta{display:flex;}
+  body{ padding-bottom:86px; }
+  .bs-wrap{grid-template-columns:1fr}
+  .bs-photo{aspect-ratio: 4/3}
+}
 
-    /* Quickview button */
-    .quickview{
-      display:block;
-      margin-top:10px;
-      text-align:center;
-      padding:11px 10px;
-      border-radius:14px;
-      text-decoration:none;
-      font-weight:1000;
-      font-size:13px;
-      background:rgba(255,255,255,.06);
-      border:1px solid rgba(255,255,255,.10);
-      color:#fff;
-    }
-    .quickview:hover{opacity:.95; transform:translateY(-1px)}
-
-    /* Modal */
-    .modal{
-      position:fixed;
-      inset:0;
-      background:rgba(0,0,0,.72);
-      backdrop-filter: blur(8px);
-      display:none;
-      align-items:center;
-      justify-content:center;
-      padding:18px;
-      z-index:1000000;
-    }
-    .modal.show{display:flex;}
-    .modal-card{
-      width:min(920px, 100%);
-      border-radius:18px;
-      background:linear-gradient(180deg,#0a0c10,#141621);
-      border:1px solid rgba(255,215,0,.18);
-      box-shadow:0 20px 70px rgba(0,0,0,.6);
-      overflow:hidden;
-      position:relative;
-    }
-    .modal-close{
-      position:absolute;
-      top:10px; right:10px;
-      width:38px; height:38px;
-      border-radius:12px;
-      border:1px solid rgba(255,255,255,.10);
-      background:rgba(255,255,255,.06);
-      color:#fff;
-      font-weight:1000;
-      cursor:pointer;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      z-index:2;
-    }
-    .modal-inner{
-      display:grid;
-      grid-template-columns: 1.2fr .8fr;
-      gap:0;
-    }
-    .modal-media{
-      background:#0b0d11;
-      border-right:1px solid rgba(255,255,255,.06);
-    }
-    .modal-media img{
-      width:100%;
-      height:100%;
-      object-fit:cover;
-      display:block;
-      aspect-ratio: 4/3;
-    }
-
-    /* Gallery thumbs */
-    .thumb-row{
-      display:flex;
-      gap:10px;
-      padding:10px;
-      overflow:auto;
-      border-top:1px solid rgba(255,255,255,.06);
-      background:rgba(255,255,255,.02);
-    }
-    .thumb-row::-webkit-scrollbar{height:8px}
-    .thumb-row::-webkit-scrollbar-thumb{background:rgba(255,215,0,.18); border-radius:999px}
-    .thumb{
-      flex:0 0 86px;
-      border-radius:12px;
-      overflow:hidden;
-      border:1px solid rgba(255,255,255,.10);
-      background:#0b0d11;
-      cursor:pointer;
-    }
-    .thumb img{width:100%; height:64px; object-fit:cover; display:block}
-    .thumb.active{border-color:rgba(255,215,0,.55); box-shadow:0 0 0 2px rgba(255,215,0,.18) inset}
-
-    .modal-info{padding:14px 14px 16px;}
-    .modal-title{
-      font-size:18px;
-      font-weight:1000;
-      color:var(--gold);
-      margin:2px 0 6px;
-    }
-    .modal-desc{
-      color:var(--muted);
-      font-size:13px;
-      line-height:1.45;
-      margin:0 0 10px;
-    }
-    .modal-bullets{
-      display:flex;
-      flex-wrap:wrap;
-      gap:8px 10px;
-      margin:10px 0 12px;
-    }
-    .modal-bullets span{
-      display:inline-flex;
-      align-items:center;
-      gap:6px;
-      background:rgba(255,255,255,.04);
-      border:1px solid rgba(255,255,255,.06);
-      border-radius:999px;
-      padding:6px 10px;
-      color:var(--muted);
-      font-size:13px;
-    }
-    .modal-bullets i{color:#2dff7a; font-style:normal}
-
-    .modal-actions{
-      display:flex;
-      gap:10px;
-      margin-top:10px;
-    }
-    .modal-actions a{
-      flex:1;
-      text-align:center;
-      padding:12px 12px;
-      border-radius:14px;
-      text-decoration:none;
-      font-weight:1000;
-      font-size:14px;
-    }
-    .modal-actions .m-buy{
-      background:linear-gradient(90deg,var(--gold),var(--gold2));
-      color:#111;
-    }
-    .modal-actions .m-call{
-      background:rgba(255,255,255,.06);
-      border:1px solid rgba(255,255,255,.10);
-      color:#fff;
-    }
-
-    /* toast */
-    .toast{
-      position:fixed;
-      left:50%;
-      bottom:140px;
-      transform:translateX(-50%);
-      background:rgba(0,0,0,.85);
-      color:#fff;
-      padding:10px 14px;
-      border-radius:14px;
-      font-size:13px;
-      box-shadow:0 10px 30px rgba(0,0,0,.45);
-      opacity:0;
-      transition:.4s;
-      z-index:999999;
-    }
-    .toast.show{opacity:1; transform:translateX(-50%) translateY(-6px);}
-
-    /* Responsive */
-    @media(max-width:900px){
-      .hero-inner{grid-template-columns:1fr}
-      .video-grid{grid-template-columns:1fr}
-      .video-card iframe{height:260px}
-      .grid{grid-template-columns:1fr; gap:12px}
-      .modal-inner{grid-template-columns:1fr}
-      .modal-media{border-right:0; border-bottom:1px solid rgba(255,255,255,.06);}
-    }
-    @media(max-width:768px){
-      .h-title{font-size:24px}
-      .pill{display:none}
-      .urgency-bar{flex-direction:column; align-items:flex-start}
-      .stock-left{text-align:left; width:100%}
-      .fb-messenger-text,.zalo-text{display:none}
-      .mobile-cta{display:flex;}
-      body{ padding-bottom:86px; }
-      .bs-wrap{grid-template-columns:1fr}
-      .bs-photo{aspect-ratio: 4/3}
-    }
-  /* ===== HERO LUXURY ADDON ===== */
+/* ===== HERO LUXURY ADDON ===== */
 .h-luxline{
   margin:10px 0 8px;
   color:rgba(255,255,255,.78);
@@ -1015,7 +814,6 @@
   letter-spacing:.25px;
   font-size:14px;
 }
-
 .price-tag{
   display:inline-flex;
   align-items:center;
@@ -1030,41 +828,13 @@
   font-size:12px;
   letter-spacing:.35px;
 }
-
 .price-sub{
   color:rgba(255,255,255,.72);
   font-size:13px;
   line-height:1.35;
   margin-top:-6px;
 }
-/* Best seller: ảnh phụ cao bằng ảnh chính */
-.bs-media{ 
-  align-items:stretch; 
-}
-
-.bs-photo{
-  height:100%;
-}
-
-/* cột ảnh phụ cao bằng ảnh chính */
-.bs-subphotos{
-  height:100%;
-}
-
-/* 2 ảnh phụ chia đều chiều cao */
-.sub-photo{
-  flex:1;
-  aspect-ratio:auto;   /* bỏ 1:1 */
-  height:auto;
-}
-
-/* đảm bảo ảnh phủ kín khung */
-.sub-photo img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-}
-</style>
+  </style>
 </head>
 
 <body>
@@ -1077,17 +847,14 @@
       <div class="pill">🔥 <b>Hơn 999+</b> khách đã mua</div>
     </div>
 
+    <!-- HERO -->
     <div class="hero">
       <div class="hero-inner">
         <div class="hero-left">
           <div class="h-title">MenWatch Luxury – Đồng hồ nam Sang Trọng <span>Lịch Lãm</span></div>
-<div class="h-luxline">Thiết kế nổi bật • Lên tay sang • Hoàn thiện sắc nét • Tặng hộp</div>
-<p class="h-note">
-  Nhận <b>ảnh/video thật</b> trước khi chốt • <b>Kiểm tra trước khi nhận</b> • Đóng gói quà tặng • Giao nhanh toàn quốc.
-</p>
+          <div class="h-luxline">Thiết kế nổi bật • Lên tay sang • Hoàn thiện sắc nét • Tặng hộp</div>
           <p class="h-note">
-            Nhận ảnh/video thật qua Zalo trước khi chốt • Đóng gói kỹ • Giao nhanh toàn quốc •
-            <b>Kiểm tra trước khi nhận</b>.
+            Nhận <b>ảnh/video thật</b> trước khi chốt • <b>Kiểm tra trước khi nhận</b> • Đóng gói quà tặng • Giao nhanh toàn quốc.
           </p>
 
           <div class="cta-row">
@@ -1110,7 +877,6 @@
             </div>
           </div>
 
-          <!-- Urgency -->
           <div class="urgency-bar">
             <div class="live-view">
               <span class="dot"></span>
@@ -1124,47 +890,52 @@
       </div>
     </div>
 
-    <!-- SO SÁNH NHANH -->
-    <div class="section" id="compare">
-      <h2>So sánh nhanh <span class="gold">399K</span> vs đồng hồ hãng</h2>
+    <!-- ✅ ĐỊNH VỊ CAO CẤP: TIÊU CHUẨN MENWATCH LUXURY -->
+    <div class="section" id="standard">
+      <h2>Tiêu chuẩn <span class="gold">MenWatch Luxury</span></h2>
+
       <div class="compare">
-        <h3><span>Chốt nhanh:</span> 399K là lựa chọn “đeo sang – lên tay” tối ưu chi phí</h3>
-        <table>
-          <thead>
-            <tr>
-              <th>Tiêu chí</th>
-              <th>MenWatch Luxury 399K</th>
-              <th>Đồng hồ hãng (2–3 triệu)</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Ngoại hình / lên tay</td>
-              <td class="ok">✔️ Đẹp – nổi bật</td>
-              <td class="ok">✔️</td>
-            </tr>
-            <tr>
-              <td>Phối đồ đi làm / đi chơi</td>
-              <td class="ok">✔️ Dễ phối</td>
-              <td class="ok">✔️</td>
-            </tr>
-            <tr>
-              <td>Quà tặng</td>
-              <td class="ok">✔️ Có hộp – lịch sự</td>
-              <td class="ok">✔️</td>
-            </tr>
-            <tr>
-              <td>Giá</td>
-              <td class="ok">✔️ 399K</td>
-              <td class="no">❌ 2–3 triệu</td>
-            </tr>
-            <tr>
-              <td>Nhận ảnh/video thật trước khi chốt</td>
-              <td class="ok">✔️ Có</td>
-              <td class="no">Tuỳ nơi</td>
-            </tr>
-          </tbody>
-        </table>
+        <h3>Trải nghiệm mua đồng hồ theo chuẩn <span>Luxury</span></h3>
+        <p style="margin:0 0 14px;color:var(--muted);font-size:13px;line-height:1.55;">
+          MenWatch Luxury không chạy theo “giá rẻ”. Shop tập trung vào <b>cảm giác lên tay</b>, <b>trải nghiệm nhận hàng</b> và <b>dịch vụ 5 sao</b>.
+        </p>
+
+        <div class="grid" style="grid-template-columns:repeat(2,1fr);gap:12px;">
+          <div class="card"><div class="c-body">
+            <div class="c-title">🎥 Video & ảnh thật trước khi chốt</div>
+            <p class="c-desc">Gửi video cận cảnh – lên tay – bắt sáng đúng mẫu bạn chọn.</p>
+          </div></div>
+
+          <div class="card"><div class="c-body">
+            <div class="c-title">📦 Đóng gói hộp & chống sốc</div>
+            <p class="c-desc">Hộp lịch sự, gói kỹ 2 lớp – nhận hàng như mở quà.</p>
+          </div></div>
+
+          <div class="card"><div class="c-body">
+            <div class="c-title">✅ COD kiểm tra trước khi nhận</div>
+            <p class="c-desc">Được kiểm tra hàng trước khi thanh toán (tuỳ khu vực).</p>
+          </div></div>
+
+          <div class="card"><div class="c-body">
+            <div class="c-title">🛡️ Bảo hành 6 tháng</div>
+            <p class="c-desc">Hỗ trợ lỗi kỹ thuật, tư vấn sử dụng & bảo quản.</p>
+          </div></div>
+
+          <div class="card"><div class="c-body">
+            <div class="c-title">👔 Tư vấn theo cổ tay & phong cách</div>
+            <p class="c-desc">Chọn mẫu hợp tay, hợp outfit: đi làm – đi chơi – đi tiệc.</p>
+          </div></div>
+
+          <div class="card"><div class="c-body">
+            <div class="c-title">⚡ Giao nhanh 24–48h</div>
+            <p class="c-desc">Đóng đơn nhanh, theo dõi đơn – hỗ trợ xuyên suốt.</p>
+          </div></div>
+        </div>
+
+        <div style="margin-top:14px;display:flex;gap:10px;flex-wrap:wrap;">
+          <a class="btn btn-green" href="https://zalo.me/0966922183" target="_blank" rel="noopener">Nhắn Zalo nhận video thật</a>
+          <a class="btn btn-gold" href="#products">Xem mẫu bán chạy</a>
+        </div>
       </div>
     </div>
 
@@ -1176,26 +947,19 @@
         <div class="bs-badge">🔥 BEST SELLER</div>
 
         <div class="bs-wrap">
-          <!-- CỤM ẢNH (ảnh chính + 2 ảnh phụ) -->
           <div class="bs-media">
             <div class="bs-photo">
               <img src="dongho-b.jpg" loading="lazy" alt="Mẫu Hublot Quốc Dân">
             </div>
             <div class="bs-subphotos">
-              <div class="sub-photo">
-                <img src="dongho-b-1.jpg" alt="Hublot mặt nghiêng">
-              </div>
-              <div class="sub-photo">
-                <img src="dongho-b-2.jpg" alt="Hublot lên tay">
-              </div>
+              <div class="sub-photo"><img src="dongho-b-1.jpg" alt="Hublot mặt nghiêng"></div>
+              <div class="sub-photo"><img src="dongho-b-2.jpg" alt="Hublot lên tay"></div>
             </div>
           </div>
 
           <div class="bs-info">
             <div class="bs-title">Đồng Hồ Hublot – Mặt Đen Đính Đá</div>
-            <div class="bs-sub">
-              Hơn <b>999+</b> khách đã mua • Đổi trả lỗi kỹ thuật • Giao nhanh
-            </div>
+            <div class="bs-sub">Hơn <b>999+</b> khách đã mua • Đổi trả lỗi kỹ thuật • Giao nhanh</div>
             <div class="stars">★★★★★ <small>(5.0/5)</small></div>
 
             <div class="bs-cta">
@@ -1218,104 +982,224 @@
     <div class="section" id="products">
       <h2>Mẫu bán chạy</h2>
       <div class="grid">
+
         <!-- A -->
         <div class="card"
-             data-tag="A"
-             data-title="Mẫu Hublot Trắng Đính Đá"
-             data-desc="Form gọn, mặt sáng, hợp đi làm/đi chơi."
-             data-img="dongho-a.jpg"
-             data-gallery="dongho-a.jpg,dongho-a-1.jpg,dongho-a-2.jpg">
+          data-tag="A"
+          data-title="Mẫu Hublot Trắng Đính Đá"
+          data-desc="Form gọn, mặt sáng, hợp đi làm/đi chơi."
+          data-img="dongho-a.jpg"
+          data-gallery="dongho-a.jpg,dongho-a-1.jpg,dongho-a-2.jpg">
           <div class="sale-badge">-43%</div>
           <div class="view-hint">👀 Vừa có người xem mẫu này</div>
-          <div class="imgbox">
-            <img src="dongho-a.jpg" loading="lazy" alt="Mẫu A 399K">
-          </div>
+          <div class="imgbox"><img src="dongho-a.jpg" loading="lazy" alt="Mẫu A 399K"></div>
           <div class="c-body">
             <div class="c-title">Mẫu Hublot Trắng Đính Đá – 399K</div>
             <p class="c-desc">Form gọn, mặt sáng, hợp đi làm/đi chơi.</p>
-
             <div class="card-stars">★★★★★ <small>(5.0)</small></div>
             <div class="card-stock">⏳ Còn <b>3</b> chiếc</div>
-
-            <div class="card-price">
-              <span class="old">699.000đ</span>
-              <span class="new">399.000đ</span>
-            </div>
-
+            <div class="card-price"><span class="old">699.000đ</span><span class="new">399.000đ</span></div>
             <div class="c-actions">
               <a class="buy" href="https://zalo.me/0966922183" target="_blank" rel="noopener">Đặt Ngay</a>
               <a class="call" href="tel:0966922183">Gọi</a>
             </div>
-
             <a class="quickview" href="#" data-qv="1">Xem nhanh (ảnh lớn + thông tin)</a>
           </div>
         </div>
 
         <!-- B -->
         <div class="card"
-             data-tag="B"
-             data-title="Mẫu Hublot Đính Đá Full"
-             data-desc="Nhìn nam tính, dễ phối đồ, tặng quà hợp."
-             data-img="dongho-c.jpg"
-             data-gallery="dongho-c.jpg,dongho-c-1.jpg,dongho-c-2.jpg">
+          data-tag="B"
+          data-title="Mẫu Hublot Đính Đá Full"
+          data-desc="Nhìn nam tính, dễ phối đồ, tặng quà hợp."
+          data-img="dongho-c.jpg"
+          data-gallery="dongho-c.jpg,dongho-c-1.jpg,dongho-c-2.jpg">
           <div class="sale-badge">-50%</div>
           <div class="view-hint">👀 Vừa có người xem mẫu này</div>
-          <div class="imgbox">
-            <img src="dongho-c.jpg" loading="lazy" alt="Mẫu B 399K">
-          </div>
+          <div class="imgbox"><img src="dongho-c.jpg" loading="lazy" alt="Mẫu B 399K"></div>
           <div class="c-body">
             <div class="c-title">Mẫu Hublot Đính Đá Full – 399K</div>
             <p class="c-desc">Nhìn nam tính, dễ phối đồ, tặng quà hợp.</p>
-
             <div class="card-stars">★★★★★ <small>(5.0)</small></div>
             <div class="card-stock">⏳ Còn <b>2</b> chiếc</div>
-
-            <div class="card-price">
-              <span class="old">799.000đ</span>
-              <span class="new">399.000đ</span>
-            </div>
-
+            <div class="card-price"><span class="old">799.000đ</span><span class="new">399.000đ</span></div>
             <div class="c-actions">
               <a class="buy" href="https://zalo.me/0966922183" target="_blank" rel="noopener">Đặt Ngay</a>
               <a class="call" href="tel:0966922183">Gọi</a>
             </div>
-
             <a class="quickview" href="#" data-qv="1">Xem nhanh (ảnh lớn + thông tin)</a>
           </div>
         </div>
 
         <!-- C -->
         <div class="card"
-             data-tag="C"
-             data-title="Mẫu C"
-             data-desc="Dây chắc, khoá tiện, đeo êm tay."
-             data-img="dongho-d.jpg"
-             data-gallery="dongho-d.jpg,dongho-d-1.jpg,dongho-d-2.jpg">
+          data-tag="C"
+          data-title="Mẫu C"
+          data-desc="Dây chắc, khoá tiện, đeo êm tay."
+          data-img="dongho-d.jpg"
+          data-gallery="dongho-d.jpg,dongho-d-1.jpg,dongho-d-2.jpg">
           <div class="sale-badge">-33%</div>
           <div class="view-hint">👀 Vừa có người xem mẫu này</div>
-          <div class="imgbox">
-            <img src="dongho-d.jpg" loading="lazy" alt="Mẫu C 399K">
-          </div>
+          <div class="imgbox"><img src="dongho-d.jpg" loading="lazy" alt="Mẫu C 399K"></div>
           <div class="c-body">
             <div class="c-title">Mẫu C – 399K</div>
             <p class="c-desc">Dây chắc, khoá tiện, đeo êm tay.</p>
-
             <div class="card-stars">★★★★★ <small>(5.0)</small></div>
             <div class="card-stock">⏳ Còn <b>4</b> chiếc</div>
-
-            <div class="card-price">
-              <span class="old">599.000đ</span>
-              <span class="new">399.000đ</span>
-            </div>
-
+            <div class="card-price"><span class="old">599.000đ</span><span class="new">399.000đ</span></div>
             <div class="c-actions">
               <a class="buy" href="https://zalo.me/0966922183" target="_blank" rel="noopener">Đặt Ngay</a>
               <a class="call" href="tel:0966922183">Gọi</a>
             </div>
-
             <a class="quickview" href="#" data-qv="1">Xem nhanh (ảnh lớn + thông tin)</a>
           </div>
         </div>
+
+      </div>
+    </div>
+
+    <!-- ✅ ALBUM 1 + ALBUM 2 (6 ẢNH) -->
+    <div class="section" id="albums">
+      <h2>Album 1 – Ảnh thực tế (cận cảnh)</h2>
+      <div class="grid">
+
+        <div class="card"
+          data-title="Album 1 – Cận cảnh mặt Luxury"
+          data-desc="Zoom rõ viền đá, mặt sáng – lên tay rất sang."
+          data-img="album1-1.jpg"
+          data-gallery="album1-1.jpg">
+          <div class="sale-badge">-38%</div>
+          <div class="view-hint">👀 Góc chụp thực tế</div>
+          <div class="imgbox"><img src="album1-1.jpg" loading="lazy" alt="Album 1 - 1"></div>
+          <div class="c-body">
+            <div class="c-title">Cận cảnh mặt Luxury – 399K</div>
+            <p class="c-desc">Zoom rõ viền đá, mặt sáng – lên tay rất sang.</p>
+            <div class="card-stars">★★★★★ <small>(5.0)</small></div>
+            <div class="card-stock">⏳ Còn <b>6</b> chiếc</div>
+            <div class="card-price"><span class="old">649.000đ</span><span class="new">399.000đ</span></div>
+            <div class="c-actions">
+              <a class="buy" href="https://zalo.me/0966922183" target="_blank" rel="noopener">Đặt Ngay</a>
+              <a class="call" href="tel:0966922183">Gọi</a>
+            </div>
+            <a class="quickview" href="#" data-qv="1">Xem nhanh (ảnh lớn + thông tin)</a>
+          </div>
+        </div>
+
+        <div class="card"
+          data-title="Album 1 – Dây & khoá hoàn thiện"
+          data-desc="Dây chắc tay, khoá gọn – đeo êm cả ngày."
+          data-img="album1-2.jpg"
+          data-gallery="album1-2.jpg">
+          <div class="sale-badge">-45%</div>
+          <div class="view-hint">👀 Góc chụp thực tế</div>
+          <div class="imgbox"><img src="album1-2.jpg" loading="lazy" alt="Album 1 - 2"></div>
+          <div class="c-body">
+            <div class="c-title">Dây & khoá hoàn thiện – 399K</div>
+            <p class="c-desc">Dây chắc tay, khoá gọn – đeo êm cả ngày.</p>
+            <div class="card-stars">★★★★★ <small>(5.0)</small></div>
+            <div class="card-stock">⏳ Còn <b>4</b> chiếc</div>
+            <div class="card-price"><span class="old">729.000đ</span><span class="new">399.000đ</span></div>
+            <div class="c-actions">
+              <a class="buy" href="https://zalo.me/0966922183" target="_blank" rel="noopener">Đặt Ngay</a>
+              <a class="call" href="tel:0966922183">Gọi</a>
+            </div>
+            <a class="quickview" href="#" data-qv="1">Xem nhanh (ảnh lớn + thông tin)</a>
+          </div>
+        </div>
+
+        <div class="card"
+          data-title="Album 1 – Hộp & đóng gói"
+          data-desc="Gói kỹ, tặng hộp – hợp làm quà tặng."
+          data-img="album1-3.jpg"
+          data-gallery="album1-3.jpg">
+          <div class="sale-badge">-33%</div>
+          <div class="view-hint">👀 Góc chụp thực tế</div>
+          <div class="imgbox"><img src="album1-3.jpg" loading="lazy" alt="Album 1 - 3"></div>
+          <div class="c-body">
+            <div class="c-title">Tặng hộp & đóng gói – 399K</div>
+            <p class="c-desc">Gói kỹ, tặng hộp – hợp làm quà tặng.</p>
+            <div class="card-stars">★★★★★ <small>(5.0)</small></div>
+            <div class="card-stock">⏳ Còn <b>7</b> chiếc</div>
+            <div class="card-price"><span class="old">599.000đ</span><span class="new">399.000đ</span></div>
+            <div class="c-actions">
+              <a class="buy" href="https://zalo.me/0966922183" target="_blank" rel="noopener">Đặt Ngay</a>
+              <a class="call" href="tel:0966922183">Gọi</a>
+            </div>
+            <a class="quickview" href="#" data-qv="1">Xem nhanh (ảnh lớn + thông tin)</a>
+          </div>
+        </div>
+
+      </div>
+
+      <h2 style="margin-top:22px;">Album 2 – Thêm góc chụp (tùy chọn)</h2>
+      <div class="grid">
+
+        <div class="card"
+          data-title="Album 2 – Góc nghiêng lên tay"
+          data-desc="Góc nghiêng tôn dáng – nhìn dày dặn, sang."
+          data-img="album2-1.jpg"
+          data-gallery="album2-1.jpg">
+          <div class="sale-badge">-40%</div>
+          <div class="view-hint">👀 Góc chụp thực tế</div>
+          <div class="imgbox"><img src="album2-1.jpg" loading="lazy" alt="Album 2 - 1"></div>
+          <div class="c-body">
+            <div class="c-title">Góc nghiêng lên tay – 399K</div>
+            <p class="c-desc">Góc nghiêng tôn dáng – nhìn dày dặn, sang.</p>
+            <div class="card-stars">★★★★★ <small>(5.0)</small></div>
+            <div class="card-stock">⏳ Còn <b>5</b> chiếc</div>
+            <div class="card-price"><span class="old">669.000đ</span><span class="new">399.000đ</span></div>
+            <div class="c-actions">
+              <a class="buy" href="https://zalo.me/0966922183" target="_blank" rel="noopener">Đặt Ngay</a>
+              <a class="call" href="tel:0966922183">Gọi</a>
+            </div>
+            <a class="quickview" href="#" data-qv="1">Xem nhanh (ảnh lớn + thông tin)</a>
+          </div>
+        </div>
+
+        <div class="card"
+          data-title="Album 2 – Cận viền đá sáng"
+          data-desc="Độ bắt sáng tốt – chụp hình rất nổi bật."
+          data-img="album2-2.jpg"
+          data-gallery="album2-2.jpg">
+          <div class="sale-badge">-50%</div>
+          <div class="view-hint">👀 Góc chụp thực tế</div>
+          <div class="imgbox"><img src="album2-2.jpg" loading="lazy" alt="Album 2 - 2"></div>
+          <div class="c-body">
+            <div class="c-title">Cận viền đá sáng – 399K</div>
+            <p class="c-desc">Độ bắt sáng tốt – chụp hình rất nổi bật.</p>
+            <div class="card-stars">★★★★★ <small>(5.0)</small></div>
+            <div class="card-stock">⏳ Còn <b>3</b> chiếc</div>
+            <div class="card-price"><span class="old">799.000đ</span><span class="new">399.000đ</span></div>
+            <div class="c-actions">
+              <a class="buy" href="https://zalo.me/0966922183" target="_blank" rel="noopener">Đặt Ngay</a>
+              <a class="call" href="tel:0966922183">Gọi</a>
+            </div>
+            <a class="quickview" href="#" data-qv="1">Xem nhanh (ảnh lớn + thông tin)</a>
+          </div>
+        </div>
+
+        <div class="card"
+          data-title="Album 2 – Full set (ảnh thật)"
+          data-desc="Full set rõ chi tiết – xem trước khi chốt."
+          data-img="album2-3.jpg"
+          data-gallery="album2-3.jpg">
+          <div class="sale-badge">-35%</div>
+          <div class="view-hint">👀 Góc chụp thực tế</div>
+          <div class="imgbox"><img src="album2-3.jpg" loading="lazy" alt="Album 2 - 3"></div>
+          <div class="c-body">
+            <div class="c-title">Full set (ảnh thật) – 399K</div>
+            <p class="c-desc">Full set rõ chi tiết – xem trước khi chốt.</p>
+            <div class="card-stars">★★★★★ <small>(5.0)</small></div>
+            <div class="card-stock">⏳ Còn <b>8</b> chiếc</div>
+            <div class="card-price"><span class="old">619.000đ</span><span class="new">399.000đ</span></div>
+            <div class="c-actions">
+              <a class="buy" href="https://zalo.me/0966922183" target="_blank" rel="noopener">Đặt Ngay</a>
+              <a class="call" href="tel:0966922183">Gọi</a>
+            </div>
+            <a class="quickview" href="#" data-qv="1">Xem nhanh (ảnh lớn + thông tin)</a>
+          </div>
+        </div>
+
       </div>
     </div>
 
@@ -1324,28 +1208,21 @@
       <h2>Video ngắn (review thật)</h2>
 
       <div class="video-grid">
-        <div class="video-card"><div class="video-wrapper">
-  <iframe
-    src="https://www.facebook.com/plugins/video.php?href=https://www.facebook.com/reel/672912495815449&show_text=false"
-    allow="autoplay; clipboard-write; encrypted-media; picture-in-picture"
-    allowfullscreen="true"
-    scrolling="no"
-    frameborder="0">
-  </iframe>
+        <div class="video-card">
+          <div class="video-wrapper">
+            <iframe
+              src="https://www.facebook.com/plugins/video.php?href=https://www.facebook.com/reel/672912495815449&show_text=false"
+              allow="autoplay; clipboard-write; encrypted-media; picture-in-picture"
+              allowfullscreen="true"
+              scrolling="no"
+              frameborder="0"></iframe>
 
-  <!-- Overlay cho mobile -->
-  <a class="video-mobile-cover"
-     href="https://www.facebook.com/reel/672912495815449"
-     target="_blank"
-     rel="noopener">
-    <span>▶ Xem video thật</span>
-  </a>
-</div>
-
-          <!-- Lưu ý: iframe chỉ chạy đúng khi dùng link embed chuẩn (YouTube/Facebook embed).
-               Nếu bạn muốn, gửi link video thật mình đổi giúp. -->
-       
-
+            <a class="video-mobile-cover"
+              href="https://www.facebook.com/reel/672912495815449"
+              target="_blank" rel="noopener">
+              <span>▶ Xem video thật</span>
+            </a>
+          </div>
         </div>
 
         <div class="video-card">
@@ -1418,6 +1295,11 @@
     </div>
   </div>
 
+  <!-- MOBILE STICKY CTA -->
+  <div class="mobile-cta">
+    <a id="ctaZalo" class="cta-zalo" href="https://zalo.me/0966922183" target="_blank" rel="noopener">Nhắn Zalo chốt nhanh</a>
+    <a class="cta-call" href="tel:0966922183">Gọi để chốt</a>
+  </div>
 
   <!-- Messenger nổi -->
   <a class="fb-messenger-float" href="https://m.me/61551243728713" target="_blank" rel="noopener" aria-label="Chat Messenger">
@@ -1513,8 +1395,8 @@
       setInterval(tick, 1000);
     })();
 
-
-      // Modal
+    // ===== MODAL + PRO =====
+    (function(){
       const bulletsMap = {
         "A": ["✅ Đeo sang – lên tay","✅ Có hộp","✅ Kiểm tra trước khi nhận","✅ Nhắn Zalo nhận ảnh/video thật"],
         "B": ["✅ Nam tính – dễ phối đồ","✅ Có hộp","✅ Đóng gói kỹ","✅ Giao nhanh toàn quốc"],
@@ -1552,9 +1434,9 @@
         const title = card.dataset.title || "Sản phẩm";
         const desc = card.dataset.desc || "";
         const img = card.dataset.img || "";
-        const tag = card.dataset.tag || "A";
+        const tag = card.dataset.tag || "";
 
-        titleEl.textContent = title + " – 399K";
+        titleEl.textContent = title;
         descEl.textContent = desc;
         imgEl.src = img;
 
@@ -1587,14 +1469,10 @@
       });
 
       closeBtn && closeBtn.addEventListener("click", closeModal);
-      modal && modal.addEventListener("click", (e)=>{
-        if(e.target === modal) closeModal();
-      });
-      document.addEventListener("keydown",(e)=>{
-        if(e.key === "Escape") closeModal();
-      });
+      modal && modal.addEventListener("click", (e)=>{ if(e.target === modal) closeModal(); });
+      document.addEventListener("keydown",(e)=>{ if(e.key === "Escape") closeModal(); });
 
-      // PRO: view hint khi card vào viewport
+      // view hint khi card vào viewport
       const io = new IntersectionObserver((entries)=>{
         entries.forEach(e=>{
           if(!e.isIntersecting) return;
@@ -1605,19 +1483,17 @@
           setTimeout(()=>hint.classList.remove("show"), 1600);
         });
       }, {threshold: 0.55});
-      document.querySelectorAll(".card[data-tag]").forEach(c=>io.observe(c));
+      document.querySelectorAll(".card").forEach(c=>io.observe(c));
 
-      // PRO: tồn kho riêng từng mẫu + tự giảm ngẫu nhiên
+      // tồn kho riêng từng mẫu + tự giảm ngẫu nhiên
       let currentTag = null;
       const stock = {A:3, B:2, C:4};
       const stockEls = {};
-
       document.querySelectorAll('.card[data-tag]').forEach(card=>{
         const tag = card.dataset.tag;
         const el = card.querySelector('.card-stock');
         if(tag && el) stockEls[tag] = el;
       });
-
       function updateStock(tag){
         if(stockEls[tag]) stockEls[tag].innerHTML = "⏳ Còn <b>"+stock[tag]+"</b> chiếc";
       }
@@ -1637,7 +1513,6 @@
       }
       scheduleStockDrop();
 
-      // PRO: ưu tiên mẫu đang xem cho toast
       document.addEventListener("click",(e)=>{
         const card = e.target.closest(".card[data-tag]");
         if(card) currentTag = card.dataset.tag || currentTag;
@@ -1651,7 +1526,6 @@
         toast.className = "toast";
         document.body.appendChild(toast);
       }
-
       function showToast(){
         const city = names[Math.floor(Math.random()*names.length)];
         const tag = currentTag && products[currentTag] ? currentTag : ["A","B","C"][Math.floor(Math.random()*3)];
@@ -1665,7 +1539,6 @@
       }
       setInterval(showToast, 6500);
 
-      // Nếu mẫu đang xem tồn <=2 thì CTA đổi theo mẫu
       function checkHotCTA(){
         const ctaZalo = document.getElementById("ctaZalo");
         if(!ctaZalo) return;
