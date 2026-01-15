@@ -6,7 +6,52 @@
   <title>Đồng hồ nam 399K – MenWatch Luxury</title>
   <meta name="description" content="Đồng hồ nam 399K – đeo sang, giao nhanh, kiểm tra trước khi nhận. Đặt hàng qua Zalo 0966922183." />
 
-  <style>
+  <style>.video-wrapper{
+  position:relative;
+  width:100%;
+  padding-top:56.25%;
+  border-radius:18px;
+  overflow:hidden;
+  background:#000;
+}
+
+.video-wrapper iframe{
+  position:absolute;
+  top:0; left:0;
+  width:100%;
+  height:100%;
+  border:0;
+}
+
+.video-mobile-cover{
+  position:absolute;
+  inset:0;
+  display:none;
+  align-items:center;
+  justify-content:center;
+  background:rgba(0,0,0,.55);
+  color:#fff;
+  font-weight:900;
+  font-size:16px;
+  text-decoration:none;
+}
+
+.video-mobile-cover span{
+  padding:14px 20px;
+  border-radius:999px;
+  background:linear-gradient(90deg,#ffd700,#c9a227);
+  color:#111;
+}
+
+@media(max-width:768px){
+  .video-wrapper iframe{
+    pointer-events:none;
+  }
+  .video-mobile-cover{
+    display:flex;
+  }
+}
+
     :root{
       --bg:#07080a;
       --panel:#0c0f14;
@@ -1218,19 +1263,27 @@
       <h2>Video ngắn (review thật)</h2>
 
       <div class="video-grid">
-        <div class="video-card">
+        <div class="video-card"><div class="video-wrapper">
+  <iframe
+    src="https://www.facebook.com/plugins/video.php?href=https://www.facebook.com/reel/672912495815449&show_text=false"
+    allow="autoplay; clipboard-write; encrypted-media; picture-in-picture"
+    allowfullscreen="true"
+    scrolling="no"
+    frameborder="0">
+  </iframe>
+
+  <!-- Overlay cho mobile -->
+  <a class="video-mobile-cover"
+     href="https://www.facebook.com/reel/672912495815449"
+     target="_blank"
+     rel="noopener">
+    <span>▶ Xem video thật</span>
+  </a>
+</div>
+
           <!-- Lưu ý: iframe chỉ chạy đúng khi dùng link embed chuẩn (YouTube/Facebook embed).
                Nếu bạn muốn, gửi link video thật mình đổi giúp. -->
-         <iframe
-  src="https://www.facebook.com/plugins/video.php?href=https://www.facebook.com/reel/672912495815449/&show_text=false"
-  width="100%"
-  height="100%"
-  style="border:none;overflow:hidden"
-  scrolling="no"
-  frameborder="0"
-  allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
-  allowfullscreen>
-</iframe>
+       
 
         </div>
 
