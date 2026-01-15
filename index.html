@@ -1,220 +1,1554 @@
 <!doctype html>
 <html lang="vi">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
-<title>MenWatch Luxury – Đồng hồ nam cao cấp</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <title>Đồng hồ nam 399K – MenWatch Luxury</title>
+  <meta name="description" content="Đồng hồ nam 399K – đeo sang, giao nhanh, kiểm tra trước khi nhận. Đặt hàng qua Zalo 0966922183." />
 
-<style>
-/* ================== BASE ================== */
+  <style>
+/* ===== VIDEO EMBED + MOBILE VIEW FIX ===== */
+.video-wrapper{
+  position:relative;
+  width:100%;
+  padding-top:56.25%;
+  border-radius:18px;
+  overflow:hidden;
+  background:#000;
+}
+.video-wrapper iframe{
+  position:absolute;
+  top:0; left:0;
+  width:100%;
+  height:100%;
+  border:0;
+}
+.video-mobile-cover{
+  position:absolute;
+  inset:0;
+  display:none;
+  align-items:center;
+  justify-content:center;
+  background:rgba(0,0,0,.55);
+  color:#fff;
+  font-weight:900;
+  font-size:16px;
+  text-decoration:none;
+}
+.video-mobile-cover span{
+  padding:14px 20px;
+  border-radius:999px;
+  background:linear-gradient(90deg,#ffd700,#c9a227);
+  color:#111;
+}
+@media(max-width:768px){
+  .video-wrapper iframe{ pointer-events:none; }
+  .video-mobile-cover{ display:flex; }
+}
+
+/* ===== BASE ===== */
 :root{
   --bg:#07080a;
-  --gold:#ffd700;
-  --gold2:#c9a227;
+  --panel:#0c0f14;
+  --panel2:#0a0c10;
   --text:#e9eef6;
   --muted:#b7c0cd;
+  --gold:#ffd700;
+  --gold2:#c9a227;
+  --line:rgba(255,215,0,.18);
+  --shadow: 0 18px 55px rgba(0,0,0,.55);
   --radius:18px;
 }
 *{box-sizing:border-box}
 body{
   margin:0;
   font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial;
-  background:var(--bg);
-  color:var(--text);
-}
-a{text-decoration:none;color:inherit}
-
-.wrap{max-width:980px;margin:auto;padding:20px 16px 120px}
-
-/* ================== TOP ================== */
-.topbar{
-  display:flex;justify-content:space-between;align-items:center;
-}
-.brand .name{font-weight:900;font-size:18px}
-.brand .sub{font-size:13px;color:var(--muted)}
-.pill{
-  padding:8px 12px;border-radius:999px;
-  background:rgba(255,215,0,.12);
-  border:1px solid rgba(255,215,0,.3);
-}
-
-/* ================== TẾT BADGE ================== */
-.tet-badge{
-  display:inline-flex;align-items:center;gap:6px;
-  color:#ffd1dc;font-weight:900;
-}
-.tet-icon{
-  width:16px;height:16px;border-radius:50%;
   background:
-    radial-gradient(circle at 30% 30%, #ffd1dc 35%, transparent 36%),
-    radial-gradient(circle at 70% 30%, #ff9fbf 35%, transparent 36%),
-    radial-gradient(circle at 30% 70%, #ff9fbf 35%, transparent 36%),
-    radial-gradient(circle at 70% 70%, #ffd1dc 35%, transparent 36%);
+    radial-gradient(900px 450px at 10% 0%, rgba(255,215,0,.08), transparent 60%),
+    radial-gradient(900px 450px at 90% 20%, rgba(0,104,255,.10), transparent 60%),
+    radial-gradient(900px 700px at 50% 100%, rgba(255,215,0,.05), transparent 60%),
+    var(--bg);
+  color:var(--text);
+  min-height:100vh;
+}
+a{color:inherit}
+
+.wrap{
+  max-width:980px;
+  margin:0 auto;
+  padding:22px 16px 120px;
+}
+
+/* Top */
+.topbar{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  margin-bottom:14px;
+}
+.brand{display:flex; flex-direction:column; gap:4px;}
+.brand .name{font-weight:900; letter-spacing:.2px; color:#fff; opacity:.95;}
+.brand .sub{color:var(--muted); font-size:13px;}
+.pill{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding:10px 12px;
+  border-radius:999px;
+  background:rgba(255,215,0,.10);
+  border:1px solid var(--line);
+  box-shadow:0 0 22px rgba(255,215,0,.08);
+  font-size:13px;
+  color:#fff;
+  white-space:nowrap;
+}
+.pill b{color:var(--gold)}
+
+/* Hero */
+.hero{
+  border-radius:22px;
+  background:linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.01));
+  border:1px solid rgba(255,255,255,.06);
+  box-shadow: var(--shadow);
+  overflow:hidden;
   position:relative;
 }
-.tet-icon::after{
-  content:"";position:absolute;bottom:-4px;left:7px;
-  width:2px;height:6px;background:#8b5a2b;border-radius:2px;
-}
-
-/* ================== HERO ================== */
-.hero{
-  margin-top:14px;
+.hero::before{
+  content:"";
+  position:absolute; inset:-1px;
   border-radius:22px;
-  border:1px solid rgba(255,255,255,.08);
-  overflow:hidden;
+  padding:1px;
+  background:linear-gradient(135deg, rgba(255,215,0,.30), rgba(0,104,255,.18), rgba(255,215,0,.10));
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite:xor;
+  mask-composite:exclude;
+  pointer-events:none;
 }
 .hero-inner{
-  display:grid;grid-template-columns:1.2fr .8fr;gap:14px;padding:16px;
+  display:grid;
+  grid-template-columns: 1.2fr .8fr;
+  gap:16px;
+  padding:18px;
 }
-.hero-banner img{
-  width:100%;height:220px;object-fit:cover;border-radius:18px;
+.hero-left{padding:6px 6px 10px;}
+.h-title{
+  font-size:28px;
+  line-height:1.15;
+  margin:6px 0 10px;
+  font-weight:1000;
+  letter-spacing:.2px;
+}
+.h-title span{
+  color:var(--gold);
+  text-shadow:0 0 18px rgba(255,215,0,.18);
+}
+.h-note{
+  color:var(--muted);
+  margin:0 0 12px;
+  font-size:14px;
+  line-height:1.45;
+}
+.cta-row{display:flex; flex-wrap:wrap; gap:10px; margin-top:12px;}
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  padding:12px 14px;
+  border-radius:14px;
+  text-decoration:none;
+  font-weight:900;
+  font-size:14px;
+  border:1px solid rgba(255,255,255,.08);
+  background:rgba(255,255,255,.06);
+  color:#fff;
+  transition:.2s;
+}
+.btn:hover{transform:translateY(-1px); opacity:.95}
+.btn-gold{
+  background:linear-gradient(90deg,var(--gold),var(--gold2));
+  color:#111;
+  border:0;
+  box-shadow:0 0 22px rgba(255,215,0,.22);
+}
+.btn-green{
+  background:linear-gradient(90deg,#00e676,#00c853);
+  color:#08110b;
+  border:0;
+  box-shadow:0 0 22px rgba(0,230,118,.18);
+}
+.hero-right{
+  border-radius:18px;
+  background:linear-gradient(180deg, rgba(0,0,0,.35), rgba(0,0,0,.15));
+  border:1px solid rgba(255,215,0,.12);
+  overflow:hidden;
+  display:flex;
+  flex-direction:column;
 }
 .price-box{
-  border:1px solid rgba(255,215,0,.25);
-  border-radius:18px;padding:14px;
+  padding:16px;
+  display:flex;
+  flex-direction:column;
+  gap:10px;
 }
-.price-tag{
-  display:inline-block;
-  padding:6px 12px;border-radius:999px;
-  background:rgba(255,215,0,.12);
+.price{
+  font-size:30px;
+  font-weight:1000;
+  color:var(--gold);
+  letter-spacing:.3px;
+  text-shadow:0 0 20px rgba(255,215,0,.15);
 }
-.price{font-size:28px;color:var(--gold);font-weight:900;margin:8px 0}
+.checks{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px 10px;
+  color:var(--muted);
+  font-size:13px;
+  line-height:1.35;
+}
 .checks span{
-  display:inline-block;margin:4px 6px 0 0;
-  padding:6px 10px;border-radius:999px;
-  background:rgba(255,255,255,.05);
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  background:rgba(255,255,255,.04);
+  border:1px solid rgba(255,255,255,.06);
+  border-radius:999px;
+  padding:6px 10px;
+}
+.checks i{color:#2dff7a; font-style:normal}
+
+/* URGENCY BAR */
+.urgency-bar{
+  margin:0 16px 14px;
+  padding:12px 14px;
+  border-radius:14px;
+  background:linear-gradient(180deg,#0c0c0c,#141414);
+  border:1px solid rgba(255,215,0,.22);
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+  box-shadow:0 0 30px rgba(255,215,0,.06);
+}
+.live-view{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  color:#eaeaea;
+  font-size:13px;
+  font-weight:700;
+}
+.live-view .dot{
+  width:9px;height:9px;border-radius:50%;
+  background:#2dff7a;
+  box-shadow:0 0 0 rgba(45,255,122,.6);
+  animation:dotPulse 1.2s infinite;
+}
+@keyframes dotPulse{
+  0%{box-shadow:0 0 0 0 rgba(45,255,122,.55)}
+  70%{box-shadow:0 0 0 10px rgba(45,255,122,0)}
+  100%{box-shadow:0 0 0 0 rgba(45,255,122,0)}
+}
+.stock-left{
+  color:var(--gold);
+  font-size:13px;
+  text-align:right;
+  font-weight:800;
+}
+
+/* Sections */
+.section{margin-top:18px; padding:4px;}
+.section h2{margin:14px 0 12px; font-size:18px; letter-spacing:.2px; color:#fff;}
+.section h2 .gold{color:var(--gold)}
+.grid{display:grid; grid-template-columns: repeat(3, 1fr); gap:14px;}
+
+.card{
+  background:linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.01));
+  border:1px solid rgba(255,255,255,.07);
+  border-radius:var(--radius);
+  box-shadow:0 12px 40px rgba(0,0,0,.35);
+  overflow:hidden;
+  position:relative;
+}
+.card::after{
+  content:"";
+  position:absolute; inset:0;
+  background: radial-gradient(300px 180px at 30% 0%, rgba(255,215,0,.10), transparent 60%);
+  pointer-events:none;
+}
+.imgbox{
+  aspect-ratio: 4/3;
+  background:linear-gradient(135deg, rgba(255,215,0,.06), rgba(0,104,255,.05));
+  border-bottom:1px solid rgba(255,255,255,.06);
+  overflow:hidden;
+  position:relative;
+}
+.imgbox img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+}
+.c-body{padding:14px}
+.c-title{font-weight:1000; margin:0 0 6px; color:#fff;}
+.c-desc{margin:0; color:var(--muted); font-size:13px; line-height:1.35; min-height:36px;}
+.c-actions{display:flex; gap:10px; margin-top:10px;}
+.c-actions a{
+  flex:1;
+  text-align:center;
+  padding:11px 10px;
+  border-radius:14px;
+  text-decoration:none;
+  font-weight:1000;
+  font-size:13px;
+}
+.c-actions .buy{background:linear-gradient(90deg,var(--gold),var(--gold2)); color:#111;}
+.c-actions .call{
+  background:rgba(255,255,255,.06);
+  border:1px solid rgba(255,255,255,.08);
+  color:#fff;
+}
+
+/* ===== GIÁ CŨ – GIÁ MỚI ===== */
+.card-price{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:10px;
+  margin:10px 0 6px;
+}
+.card-price .old{color:#8f8f8f; text-decoration:line-through; font-size:14px;}
+.card-price .new{color:var(--gold); font-size:16px; font-weight:900;}
+.card-stars{text-align:center; color:#ffd700; font-weight:900; font-size:13px; margin-bottom:4px;}
+.card-stock{text-align:center; font-size:12px; color:#ffd700; font-weight:800; margin-bottom:4px;}
+
+/* ===== SALE BADGE + VIEW HINT ===== */
+.sale-badge{
+  position:absolute;
+  top:10px; left:10px;
+  background:linear-gradient(90deg,#ff3b3b,#ff6b6b);
+  color:#fff;
+  font-size:12px;
+  font-weight:900;
+  padding:6px 10px;
+  border-radius:999px;
+  z-index:3;
+  box-shadow:0 6px 18px rgba(0,0,0,.35);
+}
+.view-hint{
+  position:absolute;
+  right:10px;
+  top:10px;
+  background:rgba(0,0,0,.55);
+  border:1px solid rgba(255,255,255,.10);
+  color:#fff;
+  font-size:11px;
+  font-weight:900;
+  padding:6px 10px;
+  border-radius:999px;
+  z-index:3;
+  display:none;
+}
+.view-hint.show{display:inline-flex}
+
+/* Best seller */
+.best-seller{
+  margin-top:14px;
+  padding:18px;
+  border-radius:20px;
+  background:linear-gradient(180deg,#090a0d,#121318);
+  border:1px solid rgba(255,215,0,.22);
+  box-shadow:0 0 40px rgba(255,215,0,.08);
+  position:relative;
+  overflow:hidden;
+}
+.best-seller::before{
+  content:"";
+  position:absolute; inset:-2px;
+  background:radial-gradient(500px 250px at 20% 0%, rgba(255,215,0,.12), transparent 60%);
+  pointer-events:none;
+}
+.bs-badge{
+  position:absolute;
+  top:14px;
+  left:14px;
+  background:linear-gradient(90deg,#ffd700,#c9a227);
+  color:#111;
+  font-weight:1000;
+  padding:7px 12px;
+  border-radius:999px;
+  font-size:12px;
+  z-index:2;
+}
+.bs-wrap{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap:14px;
+  position:relative;
+  z-index:1;
+}
+.bs-photo{
+  border-radius:16px;
+  overflow:hidden;
+  border:1px solid rgba(255,255,255,.08);
+  background:#0b0d11;
+}
+.bs-photo img{
+  width:100%; height:100%;
+  object-fit:cover;
+  display:block;
+  transition:.25s;
+}
+.bs-photo:hover img{transform:scale(1.04)}
+.bs-info{
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+  padding:4px 2px;
+}
+.bs-title{font-size:20px; font-weight:1000; color:var(--gold); margin-top:2px;}
+.bs-sub{color:#dfe7f3; font-size:14px; line-height:1.4;}
+.bs-sub b{color:#fff}
+.stars{display:flex; align-items:center; gap:6px; color:#ffd700; font-weight:900;}
+.stars small{color:var(--muted); font-weight:700}
+.bs-cta{display:flex; gap:10px; margin-top:6px;}
+.bs-cta a{
+  flex:1;
+  text-align:center;
+  padding:12px 12px;
+  border-radius:14px;
+  text-decoration:none;
+  font-weight:1000;
+  font-size:14px;
+}
+
+/* ===== BEST SELLER SUB IMAGES (2 ô ảnh phụ) ===== */
+.bs-media{
+  display:grid;
+  grid-template-columns: 1fr 120px;
+  gap:12px;
+  align-items:stretch;
+}
+.bs-photo{height:100%;}
+.bs-subphotos{display:flex; flex-direction:column; gap:12px; height:100%;}
+.sub-photo{
+  border-radius:14px;
+  overflow:hidden;
+  border:1px solid rgba(255,255,255,.08);
+  background:#0b0d11;
+  flex:1;
+  aspect-ratio:auto;
+}
+.sub-photo img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+  transition:.25s;
+}
+.sub-photo:hover img{transform:scale(1.05)}
+@media(max-width:768px){
+  .bs-media{grid-template-columns:1fr}
+  .bs-subphotos{flex-direction:row}
+}
+
+/* Compare panel reuse (for Standard section) */
+.compare{
+  margin-top:14px;
+  padding:16px;
+  border-radius:20px;
+  background:linear-gradient(180deg,#090a0d,#121318);
+  border:1px solid rgba(255,215,0,.18);
+  box-shadow:0 0 40px rgba(255,215,0,.06);
+}
+.compare h3{
+  margin:0 0 10px;
+  font-size:16px;
+  font-weight:1000;
+  color:#fff;
+}
+.compare h3 span{color:var(--gold)}
+
+/* Video */
+.video-grid{
+  display:grid;
+  grid-template-columns: 1.2fr .8fr;
+  gap:14px;
+}
+.video-card{
+  border-radius:18px;
+  overflow:hidden;
+  border:1px solid rgba(255,255,255,.08);
+  background:#0b0d11;
+  box-shadow:0 12px 40px rgba(0,0,0,.35);
+}
+.video-note{
+  padding:14px;
+  color:var(--muted);
+  font-size:13px;
+  line-height:1.5;
+}
+.video-note b{color:#fff}
+
+/* Feedback slider */
+.slider{
+  display:flex;
+  gap:12px;
+  overflow:auto;
+  scroll-snap-type:x mandatory;
+  padding:6px 2px 10px;
+  -webkit-overflow-scrolling:touch;
+}
+.slider::-webkit-scrollbar{height:8px}
+.slider::-webkit-scrollbar-thumb{background:rgba(255,215,0,.18); border-radius:999px;}
+.fb-card{
+  flex:0 0 320px;
+  scroll-snap-align:start;
+  background:linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.01));
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:18px;
+  overflow:hidden;
+  box-shadow:0 12px 40px rgba(0,0,0,.35);
+}
+.fb-head{
+  padding:12px 14px 10px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:8px;
+}
+.fb-title{font-weight:1000;color:#fff;}
+.fb-stars{color:#ffd700; font-weight:1000; font-size:14px; white-space:nowrap;}
+.fb-body{padding:0 14px 14px; color:var(--muted); font-size:13px; line-height:1.45;}
+.fb-tag{
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  margin-top:10px;
+  padding:6px 10px;
+  border-radius:999px;
+  background:rgba(255,215,0,.10);
+  border:1px solid rgba(255,215,0,.18);
+  color:#fff;
+  font-weight:900;
   font-size:12px;
 }
 
-/* ================== SECTION ================== */
-.section{margin-top:26px}
-.section h2{font-size:18px;margin-bottom:12px}
-.gold{color:var(--gold)}
+/* Footer */
+.footer{margin-top:22px; text-align:center; color:rgba(255,255,255,.55); font-size:12px; padding:10px 0 0;}
 
-.grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:14px;
+/* Zalo float */
+.zalo-float{
+  position:fixed;
+  right:20px;
+  bottom:18px;
+  z-index:99998;
+  display:flex;
+  align-items:center;
+  gap:10px;
+  text-decoration:none;
+  font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial;
+}
+.zalo-text{
+  background:#fff;
+  color:#111;
+  padding:8px 12px;
+  border-radius:20px;
+  font-size:13px;
+  box-shadow:0 10px 25px rgba(0,0,0,.25);
+  white-space:nowrap;
+}
+.zalo-btn{
+  width:64px;height:64px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  background:#0a68ff;
+  box-shadow:0 0 0 rgba(10,104,255,.55);
+  animation: zPulse 1.4s infinite, zWiggle 2.6s infinite;
+}
+.zalo-btn span{
+  width:38px;height:38px;border-radius:12px;
+  display:flex;align-items:center;justify-content:center;
+  background:rgba(255,255,255,.12);
+  color:#fff;
+  font-weight:1000;
+  font-size:14px;
+  letter-spacing:.5px;
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,.18);
+}
+@keyframes zPulse{
+  0%{box-shadow:0 0 0 0 rgba(10,104,255,.55)}
+  70%{box-shadow:0 0 0 18px rgba(10,104,255,0)}
+  100%{box-shadow:0 0 0 0 rgba(10,104,255,0)}
+}
+@keyframes zWiggle{
+  0%,85%,100%{transform:rotate(0deg)}
+  88%{transform:rotate(6deg)}
+  91%{transform:rotate(-6deg)}
+  94%{transform:rotate(4deg)}
+  97%{transform:rotate(-4deg)}
 }
 
-/* ================== CARD ================== */
-.card{
-  border-radius:var(--radius);
-  border:1px solid rgba(255,255,255,.08);
+/* Messenger float */
+.fb-messenger-float{
+  position:fixed;
+  right:20px;
+  bottom:95px;
+  z-index:99999;
+  display:flex;
+  align-items:center;
+  gap:10px;
+  text-decoration:none;
+  font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial;
+}
+.fb-messenger-text{
+  background:#fff;
+  color:#111;
+  padding:8px 12px;
+  border-radius:20px;
+  font-size:13px;
+  box-shadow:0 10px 25px rgba(0,0,0,.25);
+  white-space:nowrap;
+}
+.fb-messenger-btn{
+  width:64px;height:64px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  background:#0068FF;
+  box-shadow:0 0 0 rgba(0,104,255,.6);
+  animation: pulse 1.4s infinite, wiggle 2.6s infinite;
+}
+@keyframes pulse{
+  0%{box-shadow:0 0 0 0 rgba(0,104,255,.6)}
+  70%{box-shadow:0 0 0 18px rgba(0,104,255,0)}
+  100%{box-shadow:0 0 0 0 rgba(0,104,255,0)}
+}
+@keyframes wiggle{
+  0%,85%,100%{transform:rotate(0deg)}
+  88%{transform:rotate(6deg)}
+  91%{transform:rotate(-6deg)}
+  94%{transform:rotate(4deg)}
+  97%{transform:rotate(-4deg)}
+}
+
+/* MOBILE STICKY CTA */
+.mobile-cta{
+  position:fixed;
+  left:0; right:0;
+  bottom:0;
+  padding:10px 12px;
+  background:rgba(0,0,0,.78);
+  backdrop-filter: blur(10px);
+  border-top:1px solid rgba(255,215,0,.15);
+  display:none;
+  gap:10px;
+  z-index:999999;
+}
+.mobile-cta a{
+  flex:1;
+  text-align:center;
+  padding:14px 12px;
+  border-radius:14px;
+  font-weight:1000;
+  text-decoration:none;
+  font-size:15px;
+}
+.cta-zalo{
+  background:linear-gradient(90deg,#00e676,#00c853);
+  color:#08110b;
+  box-shadow:0 0 18px rgba(0,230,118,.25);
+}
+.cta-call{
+  background:linear-gradient(90deg,#ffd700,#c9a227);
+  color:#111;
+  box-shadow:0 0 18px rgba(255,215,0,.22);
+}
+.cta-hot{ animation: ctaPulse 1.2s infinite; }
+@keyframes ctaPulse{
+  0%{transform:scale(1); box-shadow:0 0 0 rgba(255,215,0,.0)}
+  70%{transform:scale(1.02); box-shadow:0 0 26px rgba(255,215,0,.18)}
+  100%{transform:scale(1); box-shadow:0 0 0 rgba(255,215,0,.0)}
+}
+
+/* Quickview */
+.quickview{
+  display:block;
+  margin-top:10px;
+  text-align:center;
+  padding:11px 10px;
+  border-radius:14px;
+  text-decoration:none;
+  font-weight:1000;
+  font-size:13px;
+  background:rgba(255,255,255,.06);
+  border:1px solid rgba(255,255,255,.10);
+  color:#fff;
+}
+.quickview:hover{opacity:.95; transform:translateY(-1px)}
+
+/* Modal */
+.modal{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.72);
+  backdrop-filter: blur(8px);
+  display:none;
+  align-items:center;
+  justify-content:center;
+  padding:18px;
+  z-index:1000000;
+}
+.modal.show{display:flex;}
+.modal-card{
+  width:min(920px, 100%);
+  border-radius:18px;
+  background:linear-gradient(180deg,#0a0c10,#141621);
+  border:1px solid rgba(255,215,0,.18);
+  box-shadow:0 20px 70px rgba(0,0,0,.6);
   overflow:hidden;
   position:relative;
 }
-.sale-badge{
-  position:absolute;top:10px;left:10px;
-  background:#ff3b3b;color:#fff;
-  padding:6px 10px;border-radius:999px;
-  font-size:12px;font-weight:900;
+.modal-close{
+  position:absolute;
+  top:10px; right:10px;
+  width:38px; height:38px;
+  border-radius:12px;
+  border:1px solid rgba(255,255,255,.10);
+  background:rgba(255,255,255,.06);
+  color:#fff;
+  font-weight:1000;
+  cursor:pointer;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  z-index:2;
 }
-.imgbox{aspect-ratio:4/3}
-.imgbox img{width:100%;height:100%;object-fit:cover}
-.c-body{padding:12px}
-.c-title{font-weight:900}
-.c-desc{font-size:13px;color:var(--muted)}
-.card-price{
-  display:flex;gap:10px;justify-content:center;margin:8px 0;
+.modal-inner{display:grid; grid-template-columns: 1.2fr .8fr; gap:0;}
+.modal-media{background:#0b0d11; border-right:1px solid rgba(255,255,255,.06);}
+.modal-media img{width:100%; height:100%; object-fit:cover; display:block; aspect-ratio: 4/3;}
+.thumb-row{
+  display:flex; gap:10px; padding:10px;
+  overflow:auto;
+  border-top:1px solid rgba(255,255,255,.06);
+  background:rgba(255,255,255,.02);
 }
-.card-price .old{text-decoration:line-through;color:#888}
-.card-price .new{color:var(--gold);font-weight:900}
-.c-actions{display:flex;gap:8px}
-.c-actions a{
-  flex:1;text-align:center;
-  padding:10px;border-radius:12px;
-  font-weight:900;font-size:13px;
+.thumb-row::-webkit-scrollbar{height:8px}
+.thumb-row::-webkit-scrollbar-thumb{background:rgba(255,215,0,.18); border-radius:999px}
+.thumb{
+  flex:0 0 86px;
+  border-radius:12px;
+  overflow:hidden;
+  border:1px solid rgba(255,255,255,.10);
+  background:#0b0d11;
+  cursor:pointer;
 }
-.buy{background:linear-gradient(90deg,var(--gold),var(--gold2));color:#111}
-.call{border:1px solid rgba(255,255,255,.2)}
+.thumb img{width:100%; height:64px; object-fit:cover; display:block}
+.thumb.active{border-color:rgba(255,215,0,.55); box-shadow:0 0 0 2px rgba(255,215,0,.18) inset}
 
-/* ================== VIDEO ================== */
-.video-wrapper{
-  position:relative;padding-top:56.25%;
-  border-radius:18px;overflow:hidden;
+.modal-info{padding:14px 14px 16px;}
+.modal-title{font-size:18px; font-weight:1000; color:var(--gold); margin:2px 0 6px;}
+.modal-desc{color:var(--muted); font-size:13px; line-height:1.45; margin:0 0 10px;}
+.modal-bullets{display:flex; flex-wrap:wrap; gap:8px 10px; margin:10px 0 12px;}
+.modal-bullets span{
+  display:inline-flex; align-items:center; gap:6px;
+  background:rgba(255,255,255,.04);
+  border:1px solid rgba(255,255,255,.06);
+  border-radius:999px;
+  padding:6px 10px;
+  color:var(--muted);
+  font-size:13px;
 }
-.video-wrapper iframe{
-  position:absolute;inset:0;width:100%;height:100%;
+.modal-bullets i{color:#2dff7a; font-style:normal}
+.modal-actions{display:flex; gap:10px; margin-top:10px;}
+.modal-actions a{
+  flex:1; text-align:center; padding:12px 12px;
+  border-radius:14px; text-decoration:none; font-weight:1000; font-size:14px;
 }
+.modal-actions .m-buy{background:linear-gradient(90deg,var(--gold),var(--gold2)); color:#111;}
+.modal-actions .m-call{background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.10); color:#fff;}
 
-/* ================== MOBILE ================== */
-@media(max-width:768px){
+/* toast */
+.toast{
+  position:fixed;
+  left:50%;
+  bottom:140px;
+  transform:translateX(-50%);
+  background:rgba(0,0,0,.85);
+  color:#fff;
+  padding:10px 14px;
+  border-radius:14px;
+  font-size:13px;
+  box-shadow:0 10px 30px rgba(0,0,0,.45);
+  opacity:0;
+  transition:.4s;
+  z-index:999999;
+}
+.toast.show{opacity:1; transform:translateX(-50%) translateY(-6px);}
+
+/* Responsive */
+@media(max-width:900px){
   .hero-inner{grid-template-columns:1fr}
-  .grid{grid-template-columns:1fr}
+  .video-grid{grid-template-columns:1fr}
+  .grid{grid-template-columns:1fr; gap:12px}
+  .modal-inner{grid-template-columns:1fr}
+  .modal-media{border-right:0; border-bottom:1px solid rgba(255,255,255,.06);}
 }
-</style>
+@media(max-width:768px){
+  .h-title{font-size:24px}
+  .pill{display:none}
+  .urgency-bar{flex-direction:column; align-items:flex-start}
+  .stock-left{text-align:left; width:100%}
+  .fb-messenger-text,.zalo-text{display:none}
+  .mobile-cta{display:flex;}
+  body{ padding-bottom:86px; }
+  .bs-wrap{grid-template-columns:1fr}
+  .bs-photo{aspect-ratio: 4/3}
+}
+
+/* ===== HERO LUXURY ADDON ===== */
+.h-luxline{
+  margin:10px 0 8px;
+  color:rgba(255,255,255,.78);
+  font-weight:900;
+  letter-spacing:.25px;
+  font-size:14px;
+}
+.price-tag{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  width:max-content;
+  padding:7px 12px;
+  border-radius:999px;
+  background:rgba(255,215,0,.10);
+  border:1px solid rgba(255,215,0,.22);
+  color:#fff;
+  font-weight:1000;
+  font-size:12px;
+  letter-spacing:.35px;
+}
+.price-sub{
+  color:rgba(255,255,255,.72);
+  font-size:13px;
+  line-height:1.35;
+  margin-top:-6px;
+}
+  </style>
 </head>
 
 <body>
-<div class="wrap">
-
-<!-- TOP -->
-<div class="topbar">
-  <div class="brand">
-    <div class="name">MenWatch Luxury</div>
-    <div class="sub">Vui mừng sắc xuân <span class="tet-badge"><span class="tet-icon"></span>Đón Tết</span></div>
-  </div>
-  <div class="pill">🔥 999+ khách đã mua</div>
-</div>
-
-<!-- HERO -->
-<div class="hero">
-  <div class="hero-inner">
-    <div class="hero-banner">
-      <img src="hero.jpg" alt="MenWatch Luxury">
+  <div class="wrap">
+    <div class="topbar">
+      <div class="brand">
+        <div class="name">MenWatch Luxury</div>
+        <div class="sub">Đồng hồ nam cao cấp • Giao nhanh • Kiểm tra trước khi nhận</div>
+      </div>
+      <div class="pill">🔥 <b>Hơn 999+</b> khách đã mua</div>
     </div>
-    <div class="price-box">
-      <span class="price-tag">Ưu đãi năm mới</span>
-      <div class="price">Sale đến 60%</div>
-      <div class="checks">
-        <span>✅ Full box</span>
-        <span>✅ Bao kiểm</span>
-        <span>✅ Bảo hành 6T</span>
+
+    <!-- HERO -->
+    <div class="hero">
+      <div class="hero-inner">
+        <div class="hero-left">
+          <div class="h-title">MenWatch Luxury – Đồng hồ nam Sang Trọng <span>Lịch Lãm</span></div>
+          <div class="h-luxline">Thiết kế nổi bật • Lên tay sang • Hoàn thiện sắc nét • Tặng hộp</div>
+          <p class="h-note">
+            Nhận <b>ảnh/video thật</b> trước khi chốt • <b>Kiểm tra trước khi nhận</b> • Đóng gói quà tặng • Giao nhanh toàn quốc.
+          </p>
+
+          <div class="cta-row">
+            <a class="btn btn-green" href="https://zalo.me/0966922183" target="_blank" rel="noopener">Đặt hàng qua Zalo</a>
+            <a class="btn" href="tel:0966922183">Gọi ngay: 0966922183</a>
+            <a class="btn btn-gold" href="#best">Xem mẫu bán chạy</a>
+          </div>
+        </div>
+
+        <div class="hero-right">
+          <div class="price-box">
+            <div class="price-tag">Ưu đãi trải nghiệm hôm nay</div>
+            <div class="price">399.000đ</div>
+            <div class="price-sub">Phong cách Luxury • Có hộp • Giao nhanh • Kiểm tra trước khi nhận</div>
+            <div class="checks">
+              <span><i>✅</i> Có hộp</span>
+              <span><i>✅</i> Đóng gói kỹ</span>
+              <span><i>✅</i> Kiểm tra trước khi nhận</span>
+              <span><i>✅</i> Nhắn Zalo để nhận ảnh/video thật</span>
+            </div>
+          </div>
+
+          <div class="urgency-bar">
+            <div class="live-view">
+              <span class="dot"></span>
+              <span><b id="viewCount">23</b> người đang xem</span>
+            </div>
+            <div class="stock-left">
+              ⏳ Còn <b id="stockCount">7</b> sản phẩm • Chốt trong <b id="countdown">09:59</b>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ✅ ĐỊNH VỊ CAO CẤP: TIÊU CHUẨN MENWATCH LUXURY -->
+    <div class="section" id="standard">
+      <h2>Tiêu chuẩn <span class="gold">MenWatch Luxury</span></h2>
+
+      <div class="compare">
+        <h3>Trải nghiệm mua đồng hồ theo chuẩn <span>Luxury</span></h3>
+        <p style="margin:0 0 14px;color:var(--muted);font-size:13px;line-height:1.55;">
+          MenWatch Luxury không chạy theo “giá rẻ”. Shop tập trung vào <b>cảm giác lên tay</b>, <b>trải nghiệm nhận hàng</b> và <b>dịch vụ 5 sao</b>.
+        </p>
+
+        <div class="grid" style="grid-template-columns:repeat(2,1fr);gap:12px;">
+          <div class="card"><div class="c-body">
+            <div class="c-title">🎥 Video & ảnh thật trước khi chốt</div>
+            <p class="c-desc">Gửi video cận cảnh – lên tay – bắt sáng đúng mẫu bạn chọn.</p>
+          </div></div>
+
+          <div class="card"><div class="c-body">
+            <div class="c-title">📦 Đóng gói hộp & chống sốc</div>
+            <p class="c-desc">Hộp lịch sự, gói kỹ 2 lớp – nhận hàng như mở quà.</p>
+          </div></div>
+
+          <div class="card"><div class="c-body">
+            <div class="c-title">✅ COD kiểm tra trước khi nhận</div>
+            <p class="c-desc">Được kiểm tra hàng trước khi thanh toán (tuỳ khu vực).</p>
+          </div></div>
+
+          <div class="card"><div class="c-body">
+            <div class="c-title">🛡️ Bảo hành 6 tháng</div>
+            <p class="c-desc">Hỗ trợ lỗi kỹ thuật, tư vấn sử dụng & bảo quản.</p>
+          </div></div>
+
+          <div class="card"><div class="c-body">
+            <div class="c-title">👔 Tư vấn theo cổ tay & phong cách</div>
+            <p class="c-desc">Chọn mẫu hợp tay, hợp outfit: đi làm – đi chơi – đi tiệc.</p>
+          </div></div>
+
+          <div class="card"><div class="c-body">
+            <div class="c-title">⚡ Giao nhanh 24–48h</div>
+            <p class="c-desc">Đóng đơn nhanh, theo dõi đơn – hỗ trợ xuyên suốt.</p>
+          </div></div>
+        </div>
+
+        <div style="margin-top:14px;display:flex;gap:10px;flex-wrap:wrap;">
+          <a class="btn btn-green" href="https://zalo.me/0966922183" target="_blank" rel="noopener">Nhắn Zalo nhận video thật</a>
+          <a class="btn btn-gold" href="#products">Xem mẫu bán chạy</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- BEST SELLER -->
+    <div class="section" id="best">
+      <h2><span class="gold">Mẫu Best Seller</span> (bán chạy nhất)</h2>
+
+      <div class="best-seller">
+        <div class="bs-badge">🔥 BEST SELLER</div>
+
+        <div class="bs-wrap">
+          <div class="bs-media">
+            <div class="bs-photo">
+              <img src="dongho-b.jpg" loading="lazy" alt="Mẫu Hublot Quốc Dân">
+            </div>
+            <div class="bs-subphotos">
+              <div class="sub-photo"><img src="dongho-b-1.jpg" alt="Hublot mặt nghiêng"></div>
+              <div class="sub-photo"><img src="dongho-b-2.jpg" alt="Hublot lên tay"></div>
+            </div>
+          </div>
+
+          <div class="bs-info">
+            <div class="bs-title">Đồng Hồ Hublot – Mặt Đen Đính Đá</div>
+            <div class="bs-sub">Hơn <b>999+</b> khách đã mua • Đổi trả lỗi kỹ thuật • Giao nhanh</div>
+            <div class="stars">★★★★★ <small>(5.0/5)</small></div>
+
+            <div class="bs-cta">
+              <a class="btn-green" href="https://zalo.me/0966922183" target="_blank" rel="noopener">Chốt mẫu Hublot qua Zalo</a>
+              <a class="btn-gold" href="tel:0966922183">Gọi để chốt</a>
+            </div>
+
+            <div class="checks" style="margin-top:6px">
+              <span><i>✅</i> Đeo sang – lên tay</span>
+              <span><i>✅</i> Tặng hộp</span>
+              <span><i>✅</i> Bảo hành 6 tháng</span>
+              <span><i>✅</i> Dây thơm vani</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MẪU BÁN CHẠY -->
+    <div class="section" id="products">
+      <h2>Mẫu bán chạy</h2>
+      <div class="grid">
+
+        <!-- A -->
+        <div class="card"
+          data-tag="A"
+          data-title="Mẫu Hublot Trắng Đính Đá"
+          data-desc="Form gọn, mặt sáng, hợp đi làm/đi chơi."
+          data-img="dongho-a.jpg"
+          data-gallery="dongho-a.jpg,dongho-a-1.jpg,dongho-a-2.jpg">
+          <div class="sale-badge">-43%</div>
+          <div class="view-hint">👀 Vừa có người xem mẫu này</div>
+          <div class="imgbox"><img src="dongho-a.jpg" loading="lazy" alt="Mẫu A 399K"></div>
+          <div class="c-body">
+            <div class="c-title">Mẫu Hublot Trắng Đính Đá – 399K</div>
+            <p class="c-desc">Form gọn, mặt sáng, hợp đi làm/đi chơi.</p>
+            <div class="card-stars">★★★★★ <small>(5.0)</small></div>
+            <div class="card-stock">⏳ Còn <b>3</b> chiếc</div>
+            <div class="card-price"><span class="old">699.000đ</span><span class="new">399.000đ</span></div>
+            <div class="c-actions">
+              <a class="buy" href="https://zalo.me/0966922183" target="_blank" rel="noopener">Đặt Ngay</a>
+              <a class="call" href="tel:0966922183">Gọi</a>
+            </div>
+            <a class="quickview" href="#" data-qv="1">Xem nhanh (ảnh lớn + thông tin)</a>
+          </div>
+        </div>
+
+        <!-- B -->
+        <div class="card"
+          data-tag="B"
+          data-title="Mẫu Hublot Đính Đá Full"
+          data-desc="Nhìn nam tính, dễ phối đồ, tặng quà hợp."
+          data-img="dongho-c.jpg"
+          data-gallery="dongho-c.jpg,dongho-c-1.jpg,dongho-c-2.jpg">
+          <div class="sale-badge">-50%</div>
+          <div class="view-hint">👀 Vừa có người xem mẫu này</div>
+          <div class="imgbox"><img src="dongho-c.jpg" loading="lazy" alt="Mẫu B 399K"></div>
+          <div class="c-body">
+            <div class="c-title">Mẫu Hublot Đính Đá Full – 399K</div>
+            <p class="c-desc">Nhìn nam tính, dễ phối đồ, tặng quà hợp.</p>
+            <div class="card-stars">★★★★★ <small>(5.0)</small></div>
+            <div class="card-stock">⏳ Còn <b>2</b> chiếc</div>
+            <div class="card-price"><span class="old">799.000đ</span><span class="new">399.000đ</span></div>
+            <div class="c-actions">
+              <a class="buy" href="https://zalo.me/0966922183" target="_blank" rel="noopener">Đặt Ngay</a>
+              <a class="call" href="tel:0966922183">Gọi</a>
+            </div>
+            <a class="quickview" href="#" data-qv="1">Xem nhanh (ảnh lớn + thông tin)</a>
+          </div>
+        </div>
+
+        <!-- C -->
+        <div class="card"
+          data-tag="C"
+          data-title="Mẫu C"
+          data-desc="Dây chắc, khoá tiện, đeo êm tay."
+          data-img="dongho-d.jpg"
+          data-gallery="dongho-d.jpg,dongho-d-1.jpg,dongho-d-2.jpg">
+          <div class="sale-badge">-33%</div>
+          <div class="view-hint">👀 Vừa có người xem mẫu này</div>
+          <div class="imgbox"><img src="dongho-d.jpg" loading="lazy" alt="Mẫu C 399K"></div>
+          <div class="c-body">
+            <div class="c-title">Mẫu C – 399K</div>
+            <p class="c-desc">Dây chắc, khoá tiện, đeo êm tay.</p>
+            <div class="card-stars">★★★★★ <small>(5.0)</small></div>
+            <div class="card-stock">⏳ Còn <b>4</b> chiếc</div>
+            <div class="card-price"><span class="old">599.000đ</span><span class="new">399.000đ</span></div>
+            <div class="c-actions">
+              <a class="buy" href="https://zalo.me/0966922183" target="_blank" rel="noopener">Đặt Ngay</a>
+              <a class="call" href="tel:0966922183">Gọi</a>
+            </div>
+            <a class="quickview" href="#" data-qv="1">Xem nhanh (ảnh lớn + thông tin)</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ✅ ALBUM 1 + ALBUM 2 (6 ẢNH) -->
+    <div class="section" id="albums">
+      <h2>Album 1 – Ảnh thực tế (cận cảnh)</h2>
+      <div class="grid">
+
+        <div class="card"
+          data-title="Album 1 – Cận cảnh mặt Luxury"
+          data-desc="Zoom rõ viền đá, mặt sáng – lên tay rất sang."
+          data-img="album1-1.jpg"
+          data-gallery="album1-1.jpg">
+          <div class="sale-badge">-38%</div>
+          <div class="view-hint">👀 Góc chụp thực tế</div>
+          <div class="imgbox"><img src="album1-1.jpg" loading="lazy" alt="Album 1 - 1"></div>
+          <div class="c-body">
+            <div class="c-title">Cận cảnh mặt Luxury – 399K</div>
+            <p class="c-desc">Zoom rõ viền đá, mặt sáng – lên tay rất sang.</p>
+            <div class="card-stars">★★★★★ <small>(5.0)</small></div>
+            <div class="card-stock">⏳ Còn <b>6</b> chiếc</div>
+            <div class="card-price"><span class="old">649.000đ</span><span class="new">399.000đ</span></div>
+            <div class="c-actions">
+              <a class="buy" href="https://zalo.me/0966922183" target="_blank" rel="noopener">Đặt Ngay</a>
+              <a class="call" href="tel:0966922183">Gọi</a>
+            </div>
+            <a class="quickview" href="#" data-qv="1">Xem nhanh (ảnh lớn + thông tin)</a>
+          </div>
+        </div>
+
+        <div class="card"
+          data-title="Album 1 – Dây & khoá hoàn thiện"
+          data-desc="Dây chắc tay, khoá gọn – đeo êm cả ngày."
+          data-img="album1-2.jpg"
+          data-gallery="album1-2.jpg">
+          <div class="sale-badge">-45%</div>
+          <div class="view-hint">👀 Góc chụp thực tế</div>
+          <div class="imgbox"><img src="album1-2.jpg" loading="lazy" alt="Album 1 - 2"></div>
+          <div class="c-body">
+            <div class="c-title">Dây & khoá hoàn thiện – 399K</div>
+            <p class="c-desc">Dây chắc tay, khoá gọn – đeo êm cả ngày.</p>
+            <div class="card-stars">★★★★★ <small>(5.0)</small></div>
+            <div class="card-stock">⏳ Còn <b>4</b> chiếc</div>
+            <div class="card-price"><span class="old">729.000đ</span><span class="new">399.000đ</span></div>
+            <div class="c-actions">
+              <a class="buy" href="https://zalo.me/0966922183" target="_blank" rel="noopener">Đặt Ngay</a>
+              <a class="call" href="tel:0966922183">Gọi</a>
+            </div>
+            <a class="quickview" href="#" data-qv="1">Xem nhanh (ảnh lớn + thông tin)</a>
+          </div>
+        </div>
+
+        <div class="card"
+          data-title="Album 1 – Hộp & đóng gói"
+          data-desc="Gói kỹ, tặng hộp – hợp làm quà tặng."
+          data-img="album1-3.jpg"
+          data-gallery="album1-3.jpg">
+          <div class="sale-badge">-33%</div>
+          <div class="view-hint">👀 Góc chụp thực tế</div>
+          <div class="imgbox"><img src="album1-3.jpg" loading="lazy" alt="Album 1 - 3"></div>
+          <div class="c-body">
+            <div class="c-title">Tặng hộp & đóng gói – 399K</div>
+            <p class="c-desc">Gói kỹ, tặng hộp – hợp làm quà tặng.</p>
+            <div class="card-stars">★★★★★ <small>(5.0)</small></div>
+            <div class="card-stock">⏳ Còn <b>7</b> chiếc</div>
+            <div class="card-price"><span class="old">599.000đ</span><span class="new">399.000đ</span></div>
+            <div class="c-actions">
+              <a class="buy" href="https://zalo.me/0966922183" target="_blank" rel="noopener">Đặt Ngay</a>
+              <a class="call" href="tel:0966922183">Gọi</a>
+            </div>
+            <a class="quickview" href="#" data-qv="1">Xem nhanh (ảnh lớn + thông tin)</a>
+          </div>
+        </div>
+
+      </div>
+
+      <h2 style="margin-top:22px;">Album 2 – Thêm góc chụp (tùy chọn)</h2>
+      <div class="grid">
+
+        <div class="card"
+          data-title="Album 2 – Góc nghiêng lên tay"
+          data-desc="Góc nghiêng tôn dáng – nhìn dày dặn, sang."
+          data-img="album2-1.jpg"
+          data-gallery="album2-1.jpg">
+          <div class="sale-badge">-40%</div>
+          <div class="view-hint">👀 Góc chụp thực tế</div>
+          <div class="imgbox"><img src="album2-1.jpg" loading="lazy" alt="Album 2 - 1"></div>
+          <div class="c-body">
+            <div class="c-title">Góc nghiêng lên tay – 399K</div>
+            <p class="c-desc">Góc nghiêng tôn dáng – nhìn dày dặn, sang.</p>
+            <div class="card-stars">★★★★★ <small>(5.0)</small></div>
+            <div class="card-stock">⏳ Còn <b>5</b> chiếc</div>
+            <div class="card-price"><span class="old">669.000đ</span><span class="new">399.000đ</span></div>
+            <div class="c-actions">
+              <a class="buy" href="https://zalo.me/0966922183" target="_blank" rel="noopener">Đặt Ngay</a>
+              <a class="call" href="tel:0966922183">Gọi</a>
+            </div>
+            <a class="quickview" href="#" data-qv="1">Xem nhanh (ảnh lớn + thông tin)</a>
+          </div>
+        </div>
+
+        <div class="card"
+          data-title="Album 2 – Cận viền đá sáng"
+          data-desc="Độ bắt sáng tốt – chụp hình rất nổi bật."
+          data-img="album2-2.jpg"
+          data-gallery="album2-2.jpg">
+          <div class="sale-badge">-50%</div>
+          <div class="view-hint">👀 Góc chụp thực tế</div>
+          <div class="imgbox"><img src="album2-2.jpg" loading="lazy" alt="Album 2 - 2"></div>
+          <div class="c-body">
+            <div class="c-title">Cận viền đá sáng – 399K</div>
+            <p class="c-desc">Độ bắt sáng tốt – chụp hình rất nổi bật.</p>
+            <div class="card-stars">★★★★★ <small>(5.0)</small></div>
+            <div class="card-stock">⏳ Còn <b>3</b> chiếc</div>
+            <div class="card-price"><span class="old">799.000đ</span><span class="new">399.000đ</span></div>
+            <div class="c-actions">
+              <a class="buy" href="https://zalo.me/0966922183" target="_blank" rel="noopener">Đặt Ngay</a>
+              <a class="call" href="tel:0966922183">Gọi</a>
+            </div>
+            <a class="quickview" href="#" data-qv="1">Xem nhanh (ảnh lớn + thông tin)</a>
+          </div>
+        </div>
+
+        <div class="card"
+          data-title="Album 2 – Full set (ảnh thật)"
+          data-desc="Full set rõ chi tiết – xem trước khi chốt."
+          data-img="album2-3.jpg"
+          data-gallery="album2-3.jpg">
+          <div class="sale-badge">-35%</div>
+          <div class="view-hint">👀 Góc chụp thực tế</div>
+          <div class="imgbox"><img src="album2-3.jpg" loading="lazy" alt="Album 2 - 3"></div>
+          <div class="c-body">
+            <div class="c-title">Full set (ảnh thật) – 399K</div>
+            <p class="c-desc">Full set rõ chi tiết – xem trước khi chốt.</p>
+            <div class="card-stars">★★★★★ <small>(5.0)</small></div>
+            <div class="card-stock">⏳ Còn <b>8</b> chiếc</div>
+            <div class="card-price"><span class="old">619.000đ</span><span class="new">399.000đ</span></div>
+            <div class="c-actions">
+              <a class="buy" href="https://zalo.me/0966922183" target="_blank" rel="noopener">Đặt Ngay</a>
+              <a class="call" href="tel:0966922183">Gọi</a>
+            </div>
+            <a class="quickview" href="#" data-qv="1">Xem nhanh (ảnh lớn + thông tin)</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- VIDEO NGẮN -->
+    <div class="section" id="video">
+      <h2>Video ngắn (review thật)</h2>
+
+      <div class="video-grid">
+        <div class="video-card">
+          <div class="video-wrapper">
+            <iframe
+              src="https://www.facebook.com/plugins/video.php?href=https://www.facebook.com/reel/672912495815449&show_text=false"
+              allow="autoplay; clipboard-write; encrypted-media; picture-in-picture"
+              allowfullscreen="true"
+              scrolling="no"
+              frameborder="0"></iframe>
+
+            <a class="video-mobile-cover"
+              href="https://www.facebook.com/reel/672912495815449"
+              target="_blank" rel="noopener">
+              <span>▶ Xem video thật</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="video-card">
+          <div class="video-note">
+            <b>Mẹo chốt nhanh:</b><br>
+            Nhắn Zalo để nhận <b>ảnh/video thật</b> & shop tư vấn chọn mẫu hợp tay.<br><br>
+            ✅ Giao nhanh • ✅ Có hộp • ✅ Kiểm tra trước khi nhận
+            <div style="margin-top:12px; display:flex; gap:10px;">
+              <a class="btn btn-green" style="flex:1" href="https://zalo.me/0966922183" target="_blank" rel="noopener">Nhắn Zalo nhận video</a>
+              <a class="btn btn-gold" style="flex:1" href="tel:0966922183">Gọi tư vấn</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FEEDBACK -->
+    <div class="section" id="feedback">
+      <h2>Feedback khách hàng</h2>
+
+      <div class="slider" aria-label="Feedback slider">
+        <div class="fb-card">
+          <div class="fb-head">
+            <div class="fb-title">Khách Hà Nội (mẫu Hublot Trắng)</div>
+            <div class="fb-stars">★★★★★</div>
+          </div>
+          <div class="fb-body">
+            “Mẫu trắng lên tay sáng, nhìn sang hơn ảnh. Giao nhanh, đóng gói kỹ.”
+            <div class="fb-tag">✅ Đã mua mẫu A</div>
+          </div>
+        </div>
+
+        <div class="fb-card">
+          <div class="fb-head">
+            <div class="fb-title">Khách TP.HCM (mẫu Full Đá)</div>
+            <div class="fb-stars">★★★★★</div>
+          </div>
+          <div class="fb-body">
+            “Full đá nhìn nổi bật, đi tiệc hợp. Shop gửi ảnh/video thật trước khi chốt.”
+            <div class="fb-tag">✅ Đã mua mẫu B</div>
+          </div>
+        </div>
+
+        <div class="fb-card">
+          <div class="fb-head">
+            <div class="fb-title">Khách Hải Phòng (mẫu C)</div>
+            <div class="fb-stars">★★★★★</div>
+          </div>
+          <div class="fb-body">
+            “Dây chắc, khoá tiện. Giá 399K quá ổn, được kiểm tra trước khi nhận.”
+            <div class="fb-tag">🚚 Giao nhanh</div>
+          </div>
+        </div>
+
+        <div class="fb-card">
+          <div class="fb-head">
+            <div class="fb-title">Khách đặt làm quà</div>
+            <div class="fb-stars">★★★★★</div>
+          </div>
+          <div class="fb-body">
+            “Tặng bạn rất hợp, có hộp nhìn lịch sự. Bạn nhận quà khen đẹp.”
+            <div class="fb-tag">🎁 Quà tặng</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer">
+        © MenWatch Luxury • Hotline/Zalo: 0966922183 • Fanpage: MenWatch Luxury
       </div>
     </div>
   </div>
-</div>
 
-<!-- ĐỊNH VỊ CAO CẤP -->
-<div class="section">
-  <h2>Tiêu chuẩn <span class="gold">MenWatch Luxury</span></h2>
-  <div class="grid">
-    <div class="card"><div class="c-body"><b>🎥 Ảnh & video thật</b><p class="c-desc">Xem đúng mẫu trước khi chốt</p></div></div>
-    <div class="card"><div class="c-body"><b>📦 Đóng gói quà</b><p class="c-desc">Mở hộp như nhận quà cao cấp</p></div></div>
-    <div class="card"><div class="c-body"><b>🛡️ Bảo hành 6 tháng</b><p class="c-desc">Hỗ trợ kỹ thuật rõ ràng</p></div></div>
+  <!-- MOBILE STICKY CTA -->
+  <div class="mobile-cta">
+    <a id="ctaZalo" class="cta-zalo" href="https://zalo.me/0966922183" target="_blank" rel="noopener">Nhắn Zalo chốt nhanh</a>
+    <a class="cta-call" href="tel:0966922183">Gọi để chốt</a>
   </div>
-</div>
 
-<!-- ALBUM 1 -->
-<div class="section">
-  <h2>Mẫu Hot Gần Đây</h2>
-  <div class="grid">
-    <div class="card"><div class="sale-badge">-40%</div><div class="imgbox"><img src="album1-1.jpg"></div><div class="c-body"><div class="c-title">Cận mặt Luxury</div></div></div>
-    <div class="card"><div class="sale-badge">-45%</div><div class="imgbox"><img src="album1-2.jpg"></div><div class="c-body"><div class="c-title">Dây & khoá</div></div></div>
-    <div class="card"><div class="sale-badge">-35%</div><div class="imgbox"><img src="album1-3.jpg"></div><div class="c-body"><div class="c-title">Hộp quà</div></div></div>
+  <!-- Messenger nổi -->
+  <a class="fb-messenger-float" href="https://m.me/61551243728713" target="_blank" rel="noopener" aria-label="Chat Messenger">
+    <div class="fb-messenger-text">Chat Messenger – phản hồi ngay</div>
+    <div class="fb-messenger-btn">
+      <svg viewBox="0 0 48 48" width="34" height="34" xmlns="http://www.w3.org/2000/svg">
+        <radialGradient id="g" cx="19.247" cy="19.247" r="28.86" gradientUnits="userSpaceOnUse">
+          <stop offset="0" stop-color="#00C6FF"/>
+          <stop offset="1" stop-color="#0068FF"/>
+        </radialGradient>
+        <path fill="url(#g)" d="M24 4C12.954 4 4 12.06 4 22c0 5.017 2.286 9.54 6 12.722V44l6.758-3.708c2.213.614 4.594.95 7.242.95 11.046 0 20-8.06 20-18.242S35.046 4 24 4z"/>
+        <path fill="#fff" d="M15.5 26.5l7.1-7.6 4.9 4.9 7.5-4.9-7.1 7.6-4.9-4.9z"/>
+      </svg>
+    </div>
+  </a>
+
+  <!-- Zalo nổi -->
+  <a class="zalo-float" href="https://zalo.me/0966922183" target="_blank" rel="noopener" aria-label="Chat Zalo">
+    <div class="zalo-text">Chat Zalo – tư vấn nhanh</div>
+    <div class="zalo-btn"><span>Zalo</span></div>
+  </a>
+
+  <!-- QUICK VIEW MODAL -->
+  <div class="modal" id="qvModal" aria-hidden="true">
+    <div class="modal-card" role="dialog" aria-modal="true" aria-label="Xem nhanh sản phẩm">
+      <button class="modal-close" id="qvClose" aria-label="Đóng">✕</button>
+      <div class="modal-inner">
+        <div class="modal-media">
+          <img id="qvImg" src="" alt="Ảnh sản phẩm">
+          <div class="thumb-row" id="qvThumbs" aria-label="Ảnh khác"></div>
+        </div>
+        <div class="modal-info">
+          <div class="modal-title" id="qvTitle">Sản phẩm</div>
+          <p class="modal-desc" id="qvDesc"></p>
+
+          <div class="modal-bullets" id="qvBullets"></div>
+
+          <div class="modal-actions">
+            <a class="m-buy" href="https://zalo.me/0966922183" target="_blank" rel="noopener">Chốt qua Zalo</a>
+            <a class="m-call" href="tel:0966922183">Gọi để chốt</a>
+          </div>
+
+          <div class="checks" style="margin-top:12px">
+            <span><i>✅</i> Nhận ảnh/video thật</span>
+            <span><i>✅</i> Kiểm tra trước khi nhận</span>
+            <span><i>✅</i> Giao nhanh</span>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-</div>
 
-<!-- ALBUM 2 -->
-<div class="section">
-  <h2>Mẫu Cao Cấp Bán Chạy</h2>
-  <div class="grid">
-    <div class="card"><div class="sale-badge">-50%</div><div class="imgbox"><img src="album2-1.jpg"></div></div>
-    <div class="card"><div class="sale-badge">-40%</div><div class="imgbox"><img src="album2-2.jpg"></div></div>
-    <div class="card"><div class="sale-badge">-30%</div><div class="imgbox"><img src="album2-3.jpg"></div></div>
-  </div>
-</div>
+  <script>
+    // ====== ĐANG CÓ NGƯỜI XEM (nhảy số) ======
+    (function(){
+      const el = document.getElementById("viewCount");
+      if(!el) return;
+      const rand = (min,max)=>Math.floor(Math.random()*(max-min+1))+min;
+      let current = rand(18, 46);
+      el.textContent = current;
+      setInterval(()=>{
+        current += rand(-3, 4);
+        if(current < 12) current = 12;
+        if(current > 69) current = 69;
+        el.textContent = current;
+      }, 3500);
+    })();
 
-<!-- VIDEO -->
-<div class="section">
-  <h2>Video review thật</h2>
-  <div class="video-wrapper">
-    <iframe src="https://www.facebook.com/plugins/video.php?href=https://www.facebook.com/reel/672912495815449&show_text=false" allowfullscreen></iframe>
-  </div>
-</div>
+    // ====== KHAN HIẾM CHUNG + ĐẾM NGƯỢC ======
+    (function(){
+      const stockEl = document.getElementById("stockCount");
+      const cdEl = document.getElementById("countdown");
+      if(!stockEl || !cdEl) return;
 
-</div>
+      let stock = 7;
+      stockEl.textContent = stock;
+
+      let seconds = 10 * 60; // 10 phút
+
+      function tick(){
+        seconds--;
+        if(seconds <= 0){
+          seconds = 10 * 60;
+          if(stock > 1){
+            stock--;
+            stockEl.textContent = stock;
+          }
+        }
+        const m = String(Math.floor(seconds/60)).padStart(2,"0");
+        const s = String(seconds%60).padStart(2,"0");
+        cdEl.textContent = m + ":" + s;
+      }
+      setInterval(tick, 1000);
+    })();
+
+    // ===== MODAL + PRO =====
+    (function(){
+      const bulletsMap = {
+        "A": ["✅ Đeo sang – lên tay","✅ Có hộp","✅ Kiểm tra trước khi nhận","✅ Nhắn Zalo nhận ảnh/video thật"],
+        "B": ["✅ Nam tính – dễ phối đồ","✅ Có hộp","✅ Đóng gói kỹ","✅ Giao nhanh toàn quốc"],
+        "C": ["✅ Dây chắc – khoá tiện","✅ Đeo êm tay","✅ Có hộp","✅ Kiểm tra trước khi nhận"]
+      };
+
+      const modal = document.getElementById("qvModal");
+      const closeBtn = document.getElementById("qvClose");
+      const imgEl = document.getElementById("qvImg");
+      const thumbsEl = document.getElementById("qvThumbs");
+      const titleEl = document.getElementById("qvTitle");
+      const descEl = document.getElementById("qvDesc");
+      const bulletsEl = document.getElementById("qvBullets");
+
+      function renderThumbs(card){
+        if(!thumbsEl || !imgEl) return;
+        const gallery = (card.dataset.gallery || card.dataset.img || "")
+          .split(",").map(s=>s.trim()).filter(Boolean);
+
+        thumbsEl.innerHTML = "";
+        gallery.forEach((src, idx)=>{
+          const d = document.createElement("div");
+          d.className = "thumb" + (idx===0 ? " active" : "");
+          d.innerHTML = '<img src="'+src+'" alt="Ảnh '+(idx+1)+'">';
+          d.addEventListener("click", ()=>{
+            imgEl.src = src;
+            thumbsEl.querySelectorAll(".thumb").forEach(t=>t.classList.remove("active"));
+            d.classList.add("active");
+          });
+          thumbsEl.appendChild(d);
+        });
+      }
+
+      function openModal(card){
+        const title = card.dataset.title || "Sản phẩm";
+        const desc = card.dataset.desc || "";
+        const img = card.dataset.img || "";
+        const tag = card.dataset.tag || "";
+
+        titleEl.textContent = title;
+        descEl.textContent = desc;
+        imgEl.src = img;
+
+        bulletsEl.innerHTML = "";
+        (bulletsMap[tag] || []).forEach(t=>{
+          const s = document.createElement("span");
+          s.innerHTML = '<i>✅</i> ' + t.replace("✅ ","");
+          bulletsEl.appendChild(s);
+        });
+
+        renderThumbs(card);
+
+        modal.classList.add("show");
+        modal.setAttribute("aria-hidden","false");
+        document.body.style.overflow = "hidden";
+      }
+
+      function closeModal(){
+        modal.classList.remove("show");
+        modal.setAttribute("aria-hidden","true");
+        document.body.style.overflow = "";
+      }
+
+      document.addEventListener("click", (e)=>{
+        const btn = e.target.closest('a.quickview[data-qv="1"]');
+        if(!btn) return;
+        e.preventDefault();
+        const card = btn.closest(".card");
+        if(card) openModal(card);
+      });
+
+      closeBtn && closeBtn.addEventListener("click", closeModal);
+      modal && modal.addEventListener("click", (e)=>{ if(e.target === modal) closeModal(); });
+      document.addEventListener("keydown",(e)=>{ if(e.key === "Escape") closeModal(); });
+
+      // view hint khi card vào viewport
+      const io = new IntersectionObserver((entries)=>{
+        entries.forEach(e=>{
+          if(!e.isIntersecting) return;
+          const card = e.target;
+          const hint = card.querySelector(".view-hint");
+          if(!hint) return;
+          hint.classList.add("show");
+          setTimeout(()=>hint.classList.remove("show"), 1600);
+        });
+      }, {threshold: 0.55});
+      document.querySelectorAll(".card").forEach(c=>io.observe(c));
+
+      // tồn kho riêng từng mẫu + tự giảm ngẫu nhiên
+      let currentTag = null;
+      const stock = {A:3, B:2, C:4};
+      const stockEls = {};
+      document.querySelectorAll('.card[data-tag]').forEach(card=>{
+        const tag = card.dataset.tag;
+        const el = card.querySelector('.card-stock');
+        if(tag && el) stockEls[tag] = el;
+      });
+      function updateStock(tag){
+        if(stockEls[tag]) stockEls[tag].innerHTML = "⏳ Còn <b>"+stock[tag]+"</b> chiếc";
+      }
+      Object.keys(stock).forEach(updateStock);
+
+      function scheduleStockDrop(){
+        const delay = 70000 + Math.floor(Math.random()*50000);
+        setTimeout(()=>{
+          const tags = ["A","B","C"];
+          const pick = tags[Math.floor(Math.random()*tags.length)];
+          if(stock[pick] > 1){
+            stock[pick]--;
+            updateStock(pick);
+          }
+          scheduleStockDrop();
+        }, delay);
+      }
+      scheduleStockDrop();
+
+      document.addEventListener("click",(e)=>{
+        const card = e.target.closest(".card[data-tag]");
+        if(card) currentTag = card.dataset.tag || currentTag;
+      });
+
+      const names = ["Hà Nội","TP.HCM","Hải Phòng","Đà Nẵng","Cần Thơ","Bình Dương"];
+      const products = {A:"Hublot Trắng", B:"Hublot Full Đá", C:"Mẫu C"};
+      let toast = document.querySelector(".toast");
+      if(!toast){
+        toast = document.createElement("div");
+        toast.className = "toast";
+        document.body.appendChild(toast);
+      }
+      function showToast(){
+        const city = names[Math.floor(Math.random()*names.length)];
+        const tag = currentTag && products[currentTag] ? currentTag : ["A","B","C"][Math.floor(Math.random()*3)];
+        const p = products[tag] || "mẫu hot";
+        const variant = Math.random() < 0.5
+          ? "🔥 Khách ở <b>"+city+"</b> vừa đặt <b>"+p+"</b>"
+          : "👀 Có người vừa xem <b>"+p+"</b> (đang hot)";
+        toast.innerHTML = variant;
+        toast.classList.add("show");
+        setTimeout(()=>toast.classList.remove("show"),2200);
+      }
+      setInterval(showToast, 6500);
+
+      function checkHotCTA(){
+        const ctaZalo = document.getElementById("ctaZalo");
+        if(!ctaZalo) return;
+        if(currentTag && stock[currentTag] <= 2){
+          ctaZalo.textContent = "⚠️ "+(products[currentTag]||"Mẫu hot")+" sắp hết – chốt ngay";
+          ctaZalo.classList.add("cta-hot");
+        }
+      }
+      setInterval(checkHotCTA, 2500);
+    })();
+  </script>
 </body>
 </html>
